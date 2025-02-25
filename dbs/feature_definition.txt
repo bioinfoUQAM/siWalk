@@ -1,0 +1,312 @@
+======== Column definition ===============
+# ============ parameters ====	 : 	
+cycle               	 : 	number of DicerCall interval; Default 9; the size of default searching window is 9 * 21 + 1= 190 nt
+DicerCall           	 : 	possible values are 21, 22, 23, 24; Default 21
+# ============ contig feature ====	 : 	
+CONTIG              	 : 	a 5250-nt genomic region defined by coordinates, eg: 3__5860000_5865250 is on chr3 between 5860000 and 5865250
+Wfreq_21            	 : 	contig expression of the contig on Watson strand
+Cfreq_21            	 : 	contig expression of the contig on Crick strand
+cntgfrq_all         	 : 	contig expression of the contig on both strands
+# ============ window feature ====	 : 	
+freq                	 : 	frequency of this position; If STRAND is Crick: store freq at POS + 2
+frqw                	 : 	frequency of this position on Watson strand, without 2-nt shift
+frqc                	 : 	frequency of this position on Crick strand, without 2-nt shift
+k                   	 : 	number of phase positions expressed by 21-nt sRNA within the 9-cycle window
+n                   	 : 	number of all positions expressed by 21-nt sRNA within the 9-cycle window
+N                   	 : 	number of all positions expressed by sRNA of any size within the 9-cycle window
+p                   	 : 	frequency of 21-nt sRNAs on phase positions within the 9-cycle window
+u                   	 : 	frequency of 21-nt sRNAs on all positions within the 9-cycle window
+U                   	 : 	total frequency within the 9-cycle window
+maxf                	 : 	frequency of the most abundant 21-nt sRNA on phase position within a 9-cycle window, 
+				   allowing phase drift by including 21-nt sRNAs shifted by 1 or 2 positions for the highest peak
+pos_of_maxf         	 : 	position of the most abundant in-phase sRNA, allowing drift (may not be the exact position, 
+				   could be on Watson or Crick strands); frequency of such is recorded in the previous column.
+eff_strand          	 : 	coordinate of the most abundant effector siRNA allowing drift
+eff_pos             	 : 	coordinate of the most abundant effector siRNA allowing drift
+eff_frq             	 : 	freqeuncy of the most abundant effector siRNA allowing drift
+ext_k               	 : 	updated number of phasing positions after increasing the boundary beyond the 9-cycle window
+# ============ segment feature ====	 : 	
+segment             	 : 	chr:start-end
+chr                 	 : 	chromosome
+L_bound             	 : 	start, inclusive boundary of the segment
+R_bound             	 : 	end, inclusive boundary of the segment
+length              	 : 	length of the segment; R_bound - L_bound + 1
+Howell              	 : 	maximum score in a segment's windows; Howell_Xia_2013 (p, u, k)
+Howellb             	 : 	maximum score in a segment's windows; Howell_2007 (p, k)
+Guo                 	 : 	maximum score in a segment's windows; Guo (u, k, p, maxf)
+Guo_b               	 : 	maximun score among the windows of a segment; Guo (U, k, p, maxf)
+pval                	 : 	minimun score in a segment's windows; Chen_Xia_2013 (cycle, k, n)
+pval_b              	 : 	minimun score in a segment's windows; Chen_Xia_2013 (cycle, k, N)
+dominant_strand     	 : 	proportion of forward reads to the total reads within a window; 
+				   if the ratio exceeds 0.8, it's labeled as Watson; if it falls below 0.2, it's labeled as Crick; otherwise, it's labeled as both. 
+				   The final label is determined by the majority vote among the windows within a segment.
+max_mfe             	 : 	maximum MFE of folding sequences in a segment's scanning windows
+min_mfe             	 : 	minimun MFE of folding sequences in a segment's scanning windows
+eff_seq             	 : 	active siRNA: sequence of the most abundant effector siRNA, allowing drift; 
+				 determined from segment windows via soft aggregation
+star_seq_ifDominantBoth	 : 	pseudo-star siRNA; the 2-nt shifted complementary sequence of eff_seq, 
+				   assuming equal expression of both strands
+precursor           	 : 	sequence of the segment on eff_strand
+prefold             	 : 	secondary structure in Dot-Bracket Notation of the RNA sequence in previous column, calculated by RNAfold
+premfe              	 : 	MFE of the structure in previous column, calculated by RNAfold
+dist_5p             	 : 	eff_seq relative position on precursor
+dist_3p             	 : 	eff_seq relative position on precursor
+precursor_200_500   	 : 	alternative precursor sequence extracted from genome; [eff_seq-200, eff_seq+500]
+prefold_200_500     	 : 	secondary structure in Dot-Bracket Notation of the RNA sequence in previous column, calculated by RNAfold
+premfe_200_500      	 : 	MFE of the structure in previous column, calculated by RNAfold
+precursor_500_200   	 : 	alternative precursor sequence extracted from genome; [eff_seq-500, eff_seq+200]
+prefold_500_200     	 : 	secondary structure in Dot-Bracket Notation of the RNA sequence in previous column, calculated by RNAfold
+premfe_500_200      	 : 	MFE of the structure in previous column, calculated by RNAfold
+total_frq_DicerCall 	 : 	total expression of a segment considering only DicerCall, ie 21nt if DicerCall = 21
+A%                  	 : 	expression-weighted percentage of a nucleotide base type (A, C, G, T/U) in a segment, considering Diver Call
+C%                  	 : 	see previous column
+G%                  	 : 	see previous column
+T%                  	 : 	see previous column
+GC%                 	 : 	expression-weighted percentage of G or C in a segment considering Diver Call; i.e., G% + C%
+# ============ segment feature, continued: statistic evaluation of segment phasing scores ====	 : 	
+pval_fdr            	 : 	FDR < 0.05
+pval_accept         	 : 	accepted by FDR; True or False
+pvalb_fdr           	 : 	FDR < 0.05
+pvalb_accept        	 : 	accepted by FDR; True or False
+Howell_ccdf         	 : 	significant if < 0.05, Complementary Cumulative Distribution Function
+Howellb_ccdf        	 : 	see previous column
+Guo_ccdf            	 : 	see previous column
+Guo_b_ccdf          	 : 	see previous column
+pval_cdf            	 : 	significant if < 0.05, Cumulative Distribution Function
+pval_b_cdf          	 : 	see previous column
+# ============ segment feature, continued: miRNA trigger predicted by miRanda ====	 : 	
+Best_miR            	 : 	miRNA targeting this segment with the highest score
+BestScore           	 : 	the highest targeting score
+anyhitBool          	 : 	boolean, any miRNA targeting this segment
+twohitBool          	 : 	boolean, miRNA that targets this segment twice or more
+# ============ segment feature, continued: precursor hairpin structure predicted by mirCheck ====	 : 	
+mircheck_conclu     	 : 	checking if the precursor (the sequence of this segment) forms a hairpin; 
+				   True if it says 5-prime or 3-prime, else False
+fback_start         	 : 	hairpin start position on the precursor
+fback_stop          	 : 	hairpin stop position on the precursor
+mircheck_conclu25   	 : 	checking the alternative precursor [eff_seq-200, eff_seq+500]
+fback_start25       	 : 	see previous column
+fback_stop25        	 : 	see previous column
+mircheck_conclu52   	 : 	checking the alternative precursor [eff_seq-500, eff_seq+200]
+fback_start52       	 : 	see previous column
+fback_stop52        	 : 	see previous column
+# ============ segment feature, continued: weighted expression ====	 : 	
+5p1A                	 : 	expression-weighted percentage of a nucleotide base type in a segment considering Diver Call at a specific position 
+				   on active siRNA; e.g., 5p1A: A at the first (1) position on the 5-prime end of the active siRNA
+5p1C                	 : 	see previous column
+5p1G                	 : 	see previous column
+5p1T                	 : 	see previous column
+5p2A                	 : 	see previous column
+5p2C                	 : 	see previous column
+5p2G                	 : 	see previous column
+5p2T                	 : 	see previous column
+5p3A                	 : 	see previous column
+5p3C                	 : 	see previous column
+5p3G                	 : 	see previous column
+5p3T                	 : 	see previous column
+5p4A                	 : 	see previous column
+5p4C                	 : 	see previous column
+5p4G                	 : 	see previous column
+5p4T                	 : 	see previous column
+5p5A                	 : 	see previous column
+5p5C                	 : 	see previous column
+5p5G                	 : 	see previous column
+5p5T                	 : 	see previous column
+3p1A                	 : 	expression-weighted percentage of a nucleotide base type in a segment considering Diver Call at a specific position 
+				   on active siRNA; e.g., 3p1A: A at the first (1) position on the 3-prime end of the active siRNA
+3p1C                	 : 	see previous column
+3p1G                	 : 	see previous column
+3p1T                	 : 	see previous column
+3p2A                	 : 	see previous column
+3p2C                	 : 	see previous column
+3p2G                	 : 	see previous column
+3p2T                	 : 	see previous column
+3p3A                	 : 	see previous column
+3p3C                	 : 	see previous column
+3p3G                	 : 	see previous column
+3p3T                	 : 	see previous column
+3p4A                	 : 	see previous column
+3p4C                	 : 	see previous column
+3p4G                	 : 	see previous column
+3p4T                	 : 	see previous column
+3p5A                	 : 	see previous column
+3p5C                	 : 	see previous column
+3p5G                	 : 	see previous column
+3p5T                	 : 	see previous column
+md1A                	 : 	expression-weighted percentage of a nucleotide base type in a segment considering Diver Call at a specific position 
+				   on active siRNA; e.g., md1A: A at the first (1) position in the middle of the active siRNA
+md1C                	 : 	see previous column
+md1G                	 : 	see previous column
+md1T                	 : 	see previous column
+md2A                	 : 	see previous column
+md2C                	 : 	see previous column
+md2G                	 : 	see previous column
+md2T                	 : 	see previous column
+md3A                	 : 	see previous column
+md3C                	 : 	see previous column
+md3G                	 : 	see previous column
+md3T                	 : 	see previous column
+md4A                	 : 	see previous column
+md4C                	 : 	see previous column
+md4G                	 : 	see previous column
+md4T                	 : 	see previous column
+md5A                	 : 	see previous column
+md5C                	 : 	see previous column
+md5G                	 : 	see previous column
+md5T                	 : 	see previous column
+# ============ active siRNA feature: primary sequence motif analysis ====	 : 	
+eff5p1              	 : 	single nucleotide base type at a specific position on active siRNA
+eff5p2              	 : 	see previous column
+eff5p3              	 : 	see previous column
+eff5p4              	 : 	see previous column
+eff5p5              	 : 	see previous column
+eff3p1              	 : 	see previous column
+eff3p2              	 : 	see previous column
+eff3p3              	 : 	see previous column
+eff3p4              	 : 	see previous column
+eff3p5              	 : 	see previous column
+effmd1              	 : 	see previous column
+effmd2              	 : 	see previous column
+effmd3              	 : 	see previous column
+effmd4              	 : 	see previous column
+effmd5              	 : 	see previous column
+eff5p1di            	 : 	di-nucleotide base type at a specific position on active siRNA
+eff5p2di            	 : 	see previous column
+eff5p3di            	 : 	see previous column
+eff5p4di            	 : 	see previous column
+eff5p5di            	 : 	see previous column
+eff3p1di            	 : 	see previous column
+eff3p2di            	 : 	see previous column
+eff3p3di            	 : 	see previous column
+eff3p4di            	 : 	see previous column
+eff3p5di            	 : 	see previous column
+effmd1di            	 : 	see previous column
+effmd2di            	 : 	see previous column
+effmd3di            	 : 	see previous column
+effmd4di            	 : 	see previous column
+effmd5di            	 : 	see previous column
+eff5p1tri           	 : 	tri-nucleotide base type at a specific position on active siRNA
+eff5p2tri           	 : 	see previous column
+eff5p3tri           	 : 	see previous column
+eff5p4tri           	 : 	see previous column
+eff5p5tri           	 : 	see previous column
+eff3p1tri           	 : 	see previous column
+eff3p2tri           	 : 	see previous column
+eff3p3tri           	 : 	see previous column
+eff3p4tri           	 : 	see previous column
+eff3p5tri           	 : 	see previous column
+effmd1tri           	 : 	see previous column
+effmd2tri           	 : 	see previous column
+effmd3tri           	 : 	see previous column
+effmd4tri           	 : 	see previous column
+effmd5tri           	 : 	see previous column
+eff5p1_3p3          	 : 	the first and the last nucelotides on active siRNA
+# ============ active siRNA feature, continued: structure motif analysis at positions -4 to +4 around start and end of the active siRNA ====	 : 	
+paired_percentage   	 : 	paired percentage at positions -4 to +4 around start and end of the active siRNA (abbreviation: around eff_seq)
+paired_roll3        	 : 	average of paired nucleotides in rolling window of 3 bp around eff_seq
+paired_roll5        	 : 	average of paired nucleotides in rolling window of 5 bp around eff_seq
+paired_roll7        	 : 	average of paired nucleotides in rolling window of 7 bp around eff_seq
+length_longest_bulge	 : 	length of longest bulge around eff_seq
+length_longest_loop 	 : 	length of longest loop around eff_seq
+longest_paired_length	 : 	length of longest paired nucleotides around eff_seq
+NBtripletA          	 : 	number of triplet A around eff_seq
+NBtripletT          	 : 	number of triplet T around eff_seq
+NBtripletC          	 : 	number of triplet C around eff_seq
+NBtripletG          	 : 	number of triplet G around eff_seq
+AAA(((              	 : 	occurrences of triplet A with "paired, paired, paired" structure around eff_seq. 
+				   Note: Open brackets denote both opening and closing brackets in the structure
+AAA((.              	 : 	occurrences of triplet A with "paired, paired, non-paired" structure around eff_seq. see previous column
+AAA(.(              	 : 	see previous column
+AAA.((              	 : 	see previous column
+AAA..(              	 : 	see previous column
+AAA.(.              	 : 	see previous column
+AAA(..              	 : 	see previous column
+AAA...              	 : 	see previous column
+TTT(((              	 : 	see previous column
+TTT((.              	 : 	see previous column
+TTT(.(              	 : 	see previous column
+TTT.((              	 : 	see previous column
+TTT..(              	 : 	see previous column
+TTT.(.              	 : 	see previous column
+TTT(..              	 : 	see previous column
+TTT...              	 : 	see previous column
+CCC(((              	 : 	see previous column
+CCC((.              	 : 	see previous column
+CCC(.(              	 : 	see previous column
+CCC.((              	 : 	see previous column
+CCC..(              	 : 	see previous column
+CCC.(.              	 : 	see previous column
+CCC(..              	 : 	see previous column
+CCC...              	 : 	see previous column
+GGG(((              	 : 	see previous column
+GGG((.              	 : 	see previous column
+GGG(.(              	 : 	see previous column
+GGG.((              	 : 	see previous column
+GGG..(              	 : 	see previous column
+GGG.(.              	 : 	see previous column
+GGG(..              	 : 	see previous column
+GGG...              	 : 	see previous column
+A.(.                	 : 	occurrences of lone paired nucleotide around eff_seq, A in this case. 
+				   Note: Open brackets denote both opening and closing brackets in the structure
+T.(.                	 : 	see previous column
+C.(.                	 : 	see previous column
+G.(.                	 : 	see previous column
+A(.(                	 : 	occurrences of lone bulge nucleotide around eff_seq, A in this case. 
+				   Note: Open brackets denote both opening and closing brackets in the structure
+T(.(                	 : 	see previous column
+C(.(                	 : 	see previous column
+G(.(                	 : 	see previous column
+occ_bulgeAllnt      	 : 	occurrences of bulge around eff_seq, any length
+occ_bulge1nt        	 : 	occurrences of 1-nt bulges around eff_seq
+occ_bulge2nt        	 : 	see previous column
+occ_bulge3nt        	 : 	see previous column
+occ_bulge4nt        	 : 	see previous column
+occ_bulge5nt        	 : 	see previous column
+occ_bulge6nt        	 : 	see previous column
+occ_bulge7nt        	 : 	see previous column
+occ_bulge8nt        	 : 	see previous column
+occ_bulge9nt        	 : 	see previous column
+occ_bulge10nt       	 : 	see previous column
+occ_bulge11nt       	 : 	see previous column
+occ_bulge12nt       	 : 	see previous column
+occ_bulge13nt       	 : 	see previous column
+occ_bulge14nt       	 : 	see previous column
+occ_bulge15nt       	 : 	see previous column
+occ_bulge16nt       	 : 	see previous column
+occ_bulge17nt       	 : 	see previous column
+occ_bulge18nt       	 : 	see previous column
+occ_bulge19nt       	 : 	see previous column
+occ_bulge20nt       	 : 	see previous column
+occ_bulge21nt       	 : 	see previous column
+occ_bulge22nt       	 : 	see previous column
+occ_bulge23nt       	 : 	see previous column
+occ_loopAllnt       	 : 	occurrences of loop around eff_seq, any length
+occ_loop3nt         	 : 	occurrences of 3-nt loop around eff_seq
+occ_loop4nt         	 : 	see previous column
+occ_loop5nt         	 : 	see previous column
+occ_loop6nt         	 : 	see previous column
+occ_loop7nt         	 : 	see previous column
+occ_loop8nt         	 : 	see previous column
+occ_loop9nt         	 : 	see previous column
+occ_loop10nt        	 : 	see previous column
+occ_loop11nt        	 : 	see previous column
+occ_loop12nt        	 : 	see previous column
+occ_loop13nt        	 : 	see previous column
+occ_loop14nt        	 : 	see previous column
+occ_loop15nt        	 : 	see previous column
+occ_loop16nt        	 : 	see previous column
+occ_loop17nt        	 : 	see previous column
+occ_loop18nt        	 : 	see previous column
+occ_loop19nt        	 : 	see previous column
+occ_loop20nt        	 : 	see previous column
+occ_loop21nt        	 : 	see previous column
+occ_loop22nt        	 : 	see previous column
+occ_loop23nt        	 : 	see previous column
+# ============ Literature annotation and vote by multiple scores ====	 : 	
+Literature          	 : 	phasing locus annotation in the literature overlaps with this contig; True or False
+retained            	 : 	Segments were retained if their contig was true in the literature,   
+				   and at least 2 of 6 phase scores had q < 0.05  
+				   where q = {Howell_ccdf, Howellb_ccdf, Guo_ccdf, Guo_b_ccdf, pval_cdf, pval_b_cdf}
+consistent          	 : 	A segment is consistent if its eff_seq is present in at least two libraries.
+======== End of column definition ===============
+
