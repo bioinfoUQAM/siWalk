@@ -192,27 +192,6 @@ if __name__ == '__main__' :
 
 
 
-
-    ### 241107 I don't want to make addref.tsv file. Let's test.
-    # print(msg, datetime.datetime.now(), '----Adding literature True/False; evaluate gamma')
-    # if os.path.isfile(args.ref_file):
-      # final_summaryFile = addref.run(args.ref_file, final_summaryFile)
-      
-
-    # print(msg, datetime.datetime.now(), '----Performing one-held-out ML')
-    # rm_nonfeat_File = mpp.run(final_summaryFile)
-    # report_HeldOneOut, report_HeldOneOutfig = mo.run(rm_nonfeat_File)
-    # print(msg, datetime.datetime.now(), '----Generating ML output files', rm_nonfeat_File, report_HeldOneOut, report_HeldOneOutfig)
-
-
-
-
     
     print('==========================================================')
   print(msg, datetime.datetime.now(), 'End of jobid ' + appId + ' =============')
-
-'''
-Spark operation notes:
-#= take the first 3 elements as samples and finish processing
-for i in phas_stat_rdd.take(3): print(i[0])
-'''
