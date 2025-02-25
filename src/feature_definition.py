@@ -1,0 +1,387 @@
+import pandas as pd
+
+def dictionary ():
+  d = {}
+  # d["see previous column"] = "abbreviation for see previous column"
+  d["# ============ parameters ===="] = "" ####
+  d["cycle"] = "number of DicerCall interval; Default 9; the size of default searching window is 9 * 21 + 1= 190 nt"
+  d["DicerCall"] = "possible values are 21, 22, 23, 24; Default 21"
+  d["# ============ contig feature ===="] = ""
+  d["CONTIG"] = "a 5250-nt genomic region defined by coordinates, eg: 3__5860000_5865250 is on chr3 between 5860000 and 5865250"
+  d["Wfreq_21"] = "contig expression of the contig on Watson strand"
+  d["Cfreq_21"] = "contig expression of the contig on Crick strand"
+  d["cntgfrq_all"] = "contig expression of the contig on both strands"
+  d["# ============ window feature ===="] = "" ####
+  d["freq"] = "frequency of this position; If STRAND is Crick: store freq at POS + 2"
+  d["frqw"] = "frequency of this position on Watson strand, without 2-nt shift"
+  d["frqc"] = "frequency of this position on Crick strand, without 2-nt shift"
+  d["k"] = "number of phase positions expressed by 21-nt sRNA within the 9-cycle window"
+  d["n"] = "number of all positions expressed by 21-nt sRNA within the 9-cycle window"
+  d["N"] = "number of all positions expressed by sRNA of any size within the 9-cycle window"
+  d["p"] = "frequency of 21-nt sRNAs on phase positions within the 9-cycle window"
+  d["u"] = "frequency of 21-nt sRNAs on all positions within the 9-cycle window"
+  d["U"] = "total frequency within the 9-cycle window"
+  d["maxf"] = "frequency of the most abundant 21-nt sRNA on phase position within a 9-cycle window, \n\t\t\t\t   allowing phase drift by including 21-nt sRNAs shifted by 1 or 2 positions for the highest peak" 
+  d["pos_of_maxf"] = "position of the most abundant in-phase sRNA, allowing drift (may not be the exact position, \n\t\t\t\t   could be on Watson or Crick strands); frequency of such is recorded in the previous column."
+  d["eff_strand"] = "coordinate of the most abundant effector siRNA allowing drift"
+  d["eff_pos"] = "coordinate of the most abundant effector siRNA allowing drift"
+  d["eff_frq"] = "freqeuncy of the most abundant effector siRNA allowing drift"
+  d["ext_k"] = "updated number of phasing positions after increasing the boundary beyond the 9-cycle window"
+  d["# ============ segment feature ===="] = "" ####
+  d["segment"] = "chr:start-end"
+  d["chr"] = "chromosome"
+  d["L_bound"] = "start, inclusive boundary of the segment"
+  d["R_bound"] = "end, inclusive boundary of the segment"
+  d["length"] = "length of the segment; R_bound - L_bound + 1"
+  d["Howell"] = "maximum score in a segment's windows; Howell_Xia_2013 (p, u, k)"
+  d["Howellb"] = "maximum score in a segment's windows; Howell_2007 (p, k)"
+  d["Guo"] = "maximum score in a segment's windows; Guo (u, k, p, maxf)"
+  d["Guo_b"] = "maximun score among the windows of a segment; Guo (U, k, p, maxf)"
+  d["pval"] = "minimun score in a segment's windows; Chen_Xia_2013 (cycle, k, n)"
+  d["pval_b"] = "minimun score in a segment's windows; Chen_Xia_2013 (cycle, k, N)"
+  d["dominant_strand"] = "proportion of forward reads to the total reads within a window; \n\t\t\t\t   if the ratio exceeds 0.8, it's labeled as Watson; if it falls below 0.2, it's labeled as Crick; otherwise, it's labeled as both. \n\t\t\t\t   The final label is determined by the majority vote among the windows within a segment."
+  d["max_mfe"] = "maximum MFE of folding sequences in a segment's scanning windows"
+  d["min_mfe"] = "minimun MFE of folding sequences in a segment's scanning windows"
+  d["eff_seq"] = "active siRNA: sequence of the most abundant effector siRNA, allowing drift; \n\t\t\t\t determined from segment windows via soft aggregation"
+  d["star_seq_ifDominantBoth"] = "pseudo-star siRNA; the 2-nt shifted complementary sequence of eff_seq, \n\t\t\t\t   assuming equal expression of both strands" 
+  d["precursor"] = "sequence of the segment on eff_strand"
+  d["prefold"] = "secondary structure in Dot-Bracket Notation of the RNA sequence in previous column, calculated by RNAfold"
+  d["premfe"] = "MFE of the precursor structure, calculated by RNAfold"
+  d["dist_5p"] = "eff_seq relative position on precursor"
+  d["dist_3p"] = "eff_seq relative position on precursor"
+  d["precursor_200_500"] = "alternative precursor sequence extracted from genome; [eff_seq-200, eff_seq+500]"
+  d["prefold_200_500"] = "secondary structure in Dot-Bracket Notation of the RNA sequence in previous column, calculated by RNAfold"
+  d["premfe_200_500"] = "MFE of the structure, calculated by RNAfold"
+  d["precursor_500_200"] = "alternative precursor sequence extracted from genome; [eff_seq-500, eff_seq+200]"
+  d["prefold_500_200"] = "secondary structure in Dot-Bracket Notation of the RNA sequence in previous column, calculated by RNAfold"
+  d["premfe_500_200"] = "MFE of the structure, calculated by RNAfold"
+  d["total_frq_DicerCall"] = "total expression of a segment considering only DicerCall, ie 21nt if DicerCall = 21"
+  d["A%"] = "expression-weighted percentage of a nucleotide base type (A, C, G, T/U) in a segment, considering Diver Call"
+  d["C%"] = "see previous column"
+  d["G%"] = "see previous column"
+  d["T%"] = "see previous column"
+  d["GC%"] = "expression-weighted percentage of G or C in a segment considering Diver Call; i.e., G% + C%"
+  d["# ============ segment feature, continued: statistic evaluation of segment phasing scores ===="] = ""
+  d["pval_fdr"] = "FDR < 0.05"
+  d["pval_accept"] = "accepted by FDR; True or False"
+  d["pvalb_fdr"] = "FDR < 0.05"
+  d["pvalb_accept"] = "accepted by FDR; True or False"
+  #
+  d["Howell_ccdf"] = "significant if < 0.05, Complementary Cumulative Distribution Function"
+  d["Howellb_ccdf"] = "see previous column"
+  d["Guo_ccdf"] = "see previous column"
+  d["Guo_b_ccdf"] = "see previous column"
+  d["pval_cdf"] = "significant if < 0.05, Cumulative Distribution Function"
+  d["pval_b_cdf"] = "see previous column"
+  # d["Howell >= 9.6651"] = "accepted by threshold where Gamma CDF is below cutoff 0.05; True or False"
+  # d["Howellb >= 35.1513"] = "see previous column"
+  # d["Guo >= 39.8273"] = "see previous column"
+  # d["Guo_b >= 13.9763"] = "see previous column"
+  # d["pval_fdr <= 0.0481"] = "see previous column"
+  # d["pval_b <= 0.2132"] = "see previous column"
+  d["# ============ segment feature, continued: miRNA trigger predicted by miRanda ===="] = ""
+  d["Best_miR"] = "miRNA targeting this segment with the highest score"
+  d["BestScore"] = "the highest targeting score among miRBase microRNAs"
+  # d["anyhit"] = "list, any miRNA targeting this segment"
+  # d["twohit"] = "list, miRNA that targets this segment twice or more"
+  d["anyhitBool"] = "boolean, any miRNA targeting this segment"
+  d["twohitBool"] = "boolean, miRNA that targets this segment twice or more"
+  d["# ============ segment feature, continued: precursor hairpin structure predicted by mirCheck ===="] = ""
+  d["mircheck_conclu"] = "checking if the precursor (the sequence of this segment) forms a hairpin; \n\t\t\t\t   True if it says 5-prime or 3-prime, else False"
+  d["fback_start"] = "hairpin start position on the precursor"
+  d["fback_stop"] = "hairpin stop position on the precursor"
+  d["mircheck_conclu25"] = "checking the alternative precursor [eff_seq-200, eff_seq+500]"
+  d["fback_start25"] = "see previous column"
+  d["fback_stop25"] = "see previous column"
+  d["mircheck_conclu52"] = "checking the alternative precursor [eff_seq-500, eff_seq+200]"
+  d["fback_start52"] = "see previous column"
+  d["fback_stop52"] = "see previous column"
+  d["# ============ segment feature, continued: weighted expression ===="] = ""
+  d["5p1A"] = "expression-weighted percentage of a nucleotide base type in a segment considering Diver Call at a specific position \n\t\t\t\t   on active siRNA; e.g., 5p1A: A at the first (1) position on the 5-prime end of the active siRNA"
+  d["5p1C"] = "see previous column"
+  d["5p1G"] = "see previous column"
+  d["5p1T"] = "see previous column"
+  d["5p2A"] = "see previous column"
+  d["5p2C"] = "see previous column"
+  d["5p2G"] = "see previous column"
+  d["5p2T"] = "see previous column"
+  d["5p3A"] = "see previous column"
+  d["5p3C"] = "see previous column"
+  d["5p3G"] = "see previous column"
+  d["5p3T"] = "see previous column"
+  d["5p4A"] = "see previous column"
+  d["5p4C"] = "see previous column"
+  d["5p4G"] = "see previous column"
+  d["5p4T"] = "see previous column"
+  d["5p5A"] = "see previous column"
+  d["5p5C"] = "see previous column"
+  d["5p5G"] = "see previous column"
+  d["5p5T"] = "see previous column"
+  d["3p1A"] = "expression-weighted percentage of a nucleotide base type in a segment considering Diver Call at a specific position \n\t\t\t\t   on active siRNA; e.g., 3p1A: A at the first (1) position on the 3-prime end of the active siRNA"
+  d["3p1C"] = "see previous column"
+  d["3p1G"] = "see previous column"
+  d["3p1T"] = "see previous column"
+  d["3p2A"] = "see previous column"
+  d["3p2C"] = "see previous column"
+  d["3p2G"] = "see previous column"
+  d["3p2T"] = "see previous column"
+  d["3p3A"] = "see previous column"
+  d["3p3C"] = "see previous column"
+  d["3p3G"] = "see previous column"
+  d["3p3T"] = "see previous column"
+  d["3p4A"] = "see previous column"
+  d["3p4C"] = "see previous column"
+  d["3p4G"] = "see previous column"
+  d["3p4T"] = "see previous column"
+  d["3p5A"] = "see previous column"
+  d["3p5C"] = "see previous column"
+  d["3p5G"] = "see previous column"
+  d["3p5T"] = "see previous column"
+  d["md1A"] = "expression-weighted percentage of a nucleotide base type in a segment considering Diver Call at a specific position \n\t\t\t\t   on active siRNA; e.g., md1A: A at the first (1) position in the middle of the active siRNA"
+  d["md1C"] = "see previous column"
+  d["md1G"] = "see previous column"
+  d["md1T"] = "see previous column"
+  d["md2A"] = "see previous column"
+  d["md2C"] = "see previous column"
+  d["md2G"] = "see previous column"
+  d["md2T"] = "see previous column"
+  d["md3A"] = "see previous column"
+  d["md3C"] = "see previous column"
+  d["md3G"] = "see previous column"
+  d["md3T"] = "see previous column"
+  d["md4A"] = "see previous column"
+  d["md4C"] = "see previous column"
+  d["md4G"] = "see previous column"
+  d["md4T"] = "see previous column"
+  d["md5A"] = "see previous column"
+  d["md5C"] = "see previous column"
+  d["md5G"] = "see previous column"
+  d["md5T"] = "see previous column"
+  d["# ============ active siRNA feature: primary sequence motif analysis ===="] = ""
+  d["eff5p1"] = "single nucleotide base type at a specific position on active siRNA"
+  d["eff5p2"] = "see previous column"
+  d["eff5p3"] = "see previous column"
+  d["eff5p4"] = "see previous column"
+  d["eff5p5"] = "see previous column"
+  d["eff3p1"] = "see previous column"
+  d["eff3p2"] = "see previous column"
+  d["eff3p3"] = "see previous column"
+  d["eff3p4"] = "see previous column"
+  d["eff3p5"] = "see previous column"
+  d["effmd1"] = "see previous column"
+  d["effmd2"] = "see previous column"
+  d["effmd3"] = "see previous column"
+  d["effmd4"] = "see previous column"
+  d["effmd5"] = "see previous column"
+  d["eff5p1di"] = "di-nucleotide base type at a specific position on active siRNA"
+  d["eff5p2di"] = "see previous column"
+  d["eff5p3di"] = "see previous column"
+  d["eff5p4di"] = "see previous column"
+  d["eff5p5di"] = "see previous column"
+  d["eff3p1di"] = "see previous column"
+  d["eff3p2di"] = "see previous column"
+  d["eff3p3di"] = "see previous column"
+  d["eff3p4di"] = "see previous column"
+  d["eff3p5di"] = "see previous column"
+  d["effmd1di"] = "see previous column"
+  d["effmd2di"] = "see previous column"
+  d["effmd3di"] = "see previous column"
+  d["effmd4di"] = "see previous column"
+  d["effmd5di"] = "see previous column"
+  d["eff5p1tri"] = "tri-nucleotide base type at a specific position on active siRNA"
+  d["eff5p2tri"] = "see previous column"
+  d["eff5p3tri"] = "see previous column"
+  d["eff5p4tri"] = "see previous column"
+  d["eff5p5tri"] = "see previous column"
+  d["eff3p1tri"] = "see previous column"
+  d["eff3p2tri"] = "see previous column"
+  d["eff3p3tri"] = "see previous column"
+  d["eff3p4tri"] = "see previous column"
+  d["eff3p5tri"] = "see previous column"
+  d["effmd1tri"] = "see previous column"
+  d["effmd2tri"] = "see previous column"
+  d["effmd3tri"] = "see previous column"
+  d["effmd4tri"] = "see previous column"
+  d["effmd5tri"] = "see previous column"
+  d["eff5p1_3p3"] = "the first and the last nucelotides on active siRNA"
+  d["# ============ active siRNA feature, continued: structure motif analysis at positions -4 to +4 around start and end of the active siRNA ===="] = ""
+  d["paired_percentage"] = "paired percentage at positions -4 to +4 around start and end of the active siRNA (abbreviation: around eff_seq)"
+  d["paired_roll3"] = "average of paired nucleotides in rolling window of 3 bp around eff_seq"
+  d["paired_roll5"] = "average of paired nucleotides in rolling window of 5 bp around eff_seq"
+  d["paired_roll7"] = "average of paired nucleotides in rolling window of 7 bp around eff_seq"
+  d["length_longest_bulge"] = "length of longest bulge around eff_seq"
+  d["length_longest_loop"] = "length of longest loop around eff_seq"
+  d["longest_paired_length"] = "length of longest paired nucleotides around eff_seq"
+  d["NBtripletA"] = "occurrences of triplet A around eff_seq"
+  d["NBtripletT"] = "see previous column"
+  d["NBtripletC"] = "see previous column"
+  d["NBtripletG"] = "see previous column"
+  d["AAA((("] = "occurrences of triplet A with \"paired, paired, paired\" structure around eff_seq. \n\t\t\t\t   Note: Open brackets denote both opening and closing brackets in the structure"
+  d["AAA((."] = "occurrences of triplet A with \"paired, paired, non-paired\" structure around eff_seq. see previous column"
+  d["AAA(.("] = "see previous column"
+  d["AAA.(("] = "see previous column"
+  d["AAA..("] = "see previous column"
+  d["AAA.(."] = "see previous column"
+  d["AAA(.."] = "see previous column"
+  d["AAA..."] = "see previous column"
+  d["TTT((("] = "see previous column"
+  d["TTT((."] = "see previous column"
+  d["TTT(.("] = "see previous column"
+  d["TTT.(("] = "see previous column"
+  d["TTT..("] = "see previous column"
+  d["TTT.(."] = "see previous column"
+  d["TTT(.."] = "see previous column"
+  d["TTT..."] = "see previous column"
+  d["CCC((("] = "see previous column"
+  d["CCC((."] = "see previous column"
+  d["CCC(.("] = "see previous column"
+  d["CCC.(("] = "see previous column"
+  d["CCC..("] = "see previous column"
+  d["CCC.(."] = "see previous column"
+  d["CCC(.."] = "see previous column"
+  d["CCC..."] = "see previous column"
+  d["GGG((("] = "see previous column"
+  d["GGG((."] = "see previous column"
+  d["GGG(.("] = "see previous column"
+  d["GGG.(("] = "see previous column"
+  d["GGG..("] = "see previous column"
+  d["GGG.(."] = "see previous column"
+  d["GGG(.."] = "see previous column"
+  d["GGG..."] = "see previous column"
+  d["A.(."] = "occurrences of lone paired nucleotide around eff_seq, A in this case. \n\t\t\t\t   Note: Open brackets denote both opening and closing brackets in the structure"
+  d["T.(."] = "see previous column"
+  d["C.(."] = "see previous column"
+  d["G.(."] = "see previous column"
+  d["A(.("] = "occurrences of lone bulge nucleotide around eff_seq, A in this case. \n\t\t\t\t   Note: Open brackets denote both opening and closing brackets in the structure"
+  d["T(.("] = "see previous column"
+  d["C(.("] = "see previous column"
+  d["G(.("] = "see previous column"
+  d["occ_bulgeAllnt"] = "occurrences of bulge around eff_seq, any length"
+  d["occ_bulge1nt"] = "occurrences of 1-nt bulges around eff_seq"
+  d["occ_bulge2nt"] = "see previous column"
+  d["occ_bulge3nt"] = "see previous column"
+  d["occ_bulge4nt"] = "see previous column"
+  d["occ_bulge5nt"] = "see previous column"
+  d["occ_bulge6nt"] = "see previous column"
+  d["occ_bulge7nt"] = "see previous column"
+  d["occ_bulge8nt"] = "see previous column"
+  d["occ_bulge9nt"] = "see previous column"
+  d["occ_bulge10nt"] = "see previous column"
+  d["occ_bulge11nt"] = "see previous column"
+  d["occ_bulge12nt"] = "see previous column"
+  d["occ_bulge13nt"] = "see previous column"
+  d["occ_bulge14nt"] = "see previous column"
+  d["occ_bulge15nt"] = "see previous column"
+  d["occ_bulge16nt"] = "see previous column"
+  d["occ_bulge17nt"] = "see previous column"
+  d["occ_bulge18nt"] = "see previous column"
+  d["occ_bulge19nt"] = "see previous column"
+  d["occ_bulge20nt"] = "see previous column"
+  d["occ_bulge21nt"] = "see previous column"
+  d["occ_bulge22nt"] = "see previous column"
+  d["occ_bulge23nt"] = "see previous column"
+  d["occ_loopAllnt"] = "occurrences of loop around eff_seq, any length"
+  d["occ_loop3nt"] = "occurrences of 3-nt loop around eff_seq"
+  d["occ_loop4nt"] = "see previous column"
+  d["occ_loop5nt"] = "see previous column"
+  d["occ_loop6nt"] = "see previous column"
+  d["occ_loop7nt"] = "see previous column"
+  d["occ_loop8nt"] = "see previous column"
+  d["occ_loop9nt"] = "see previous column"
+  d["occ_loop10nt"] = "see previous column"
+  d["occ_loop11nt"] = "see previous column"
+  d["occ_loop12nt"] = "see previous column"
+  d["occ_loop13nt"] = "see previous column"
+  d["occ_loop14nt"] = "see previous column"
+  d["occ_loop15nt"] = "see previous column"
+  d["occ_loop16nt"] = "see previous column"
+  d["occ_loop17nt"] = "see previous column"
+  d["occ_loop18nt"] = "see previous column"
+  d["occ_loop19nt"] = "see previous column"
+  d["occ_loop20nt"] = "see previous column"
+  d["occ_loop21nt"] = "see previous column"
+  d["occ_loop22nt"] = "see previous column"
+  d["occ_loop23nt"] = "see previous column"
+  d["# ============ Literature annotation and vote by multiple scores ===="] = ""
+  # d["start"] = "start position of the locus as annotated in the literature overlaps with this contig"
+  # d["end"] = "see previous column"
+  # d["strand"] = "see previous column"
+  # d["Phas_Ratio"] = "see previous column"
+  # d["Phas_Score"] = "see previous column"
+  # d["Pvalue"] = "see previous column"
+  d["Literature"] = "phasing locus annotation in the literature overlaps with this contig; True or False"
+  # d["vote"] = "Vote count; six scores transformed to True/False if p < 0.05, fitting gamma distribution. \n\t\t\t\t   Scores: Howell, Howellb, Guo, Guo_b, pval, pval_b."
+  # d["vote >= 2"] = "vote >= 2"
+  # d["vote >= 3"] = "see previous column"
+  # d["vote >= 4"] = "see previous column"
+  # d["vote >= 5"] = "see previous column"
+  d["retained"] = "Segments were retained if their contig was true in the literature,   \n\t\t\t\t   and at least 2 of 6 phase scores had q < 0.05  \n\t\t\t\t   where q = {Howell_ccdf, Howellb_ccdf, Guo_ccdf, Guo_b_ccdf, pval_cdf, pval_b_cdf}"
+  d["consistent"] = "A segment is consistent if its eff_seq is present in at least two libraries."
+  return d
+
+def documentation_of_all_features ():
+  d = dictionary()
+  print('======== Column definition ===============')
+  for k, v in d.items():
+    print(f"{k:<20}\t : \t{v}")
+  print('======== End of column definition ===============\n')
+
+def checking_new_features_to_be_documnted_in_new_report (infile):
+  d = dictionary()
+  df = pd.read_csv(infile, sep='\t')
+  cols = df.columns.to_list()
+
+  k = 'cycle'; print(f"{k:<20}\t : \t{d[k]}")
+  k = 'DicerCall'; print(f"{k:<20}\t : \t{d[k]}")
+  for k in cols:
+    v = d.get(k, 'to do!!')
+    if v == "see previous column": continue
+    if v == 'to do!!':
+      print(f"{k:<20}\t : \t{v}")
+  print('=====================================================')
+  print('\nLook for "to do!!" for new features to be documnted')
+  print('=====================================================')
+
+def label_245_features():
+  ref = '../UnitTest_feature_definition/list_245features.txt'
+  with open(ref, 'r') as f:
+    lines = [line.rstrip("\n").rstrip("']").split("are : ['")[1].split("', '") for line in f if len(line) >= 10]
+  categorical, numerical, non_local = lines[0], lines[1], lines[2] if len(lines) > 1 else ([], [], [])
+  features = categorical + numerical
+
+
+  count = 1
+  d = dictionary()
+  print("ID\tType\tUsage\tFeature\tDescription")
+  for k, v in d.items():
+    application = 'prediction only' if k in non_local else 'prediction and validation'
+    if k in numerical:
+      print(f"{count}\tnumerical\t{application}\t{k:<20}\t{v}")
+      count += 1
+    elif k in categorical:
+      print(f"{count}\tcategorical\t{application}\t{k:<20}\t{v}")
+      count += 1
+    elif k.startswith("#"):
+      print(f"{k:<20}\t : \t{v}")
+    else:
+      continue
+      # print(f"{k:<20}\t : \t{v}")
+
+
+
+
+
+
+
+
+
+if __name__ == '__main__' :
+  infile1 = '../UnitTest_feature_definition/GSM1087987_C0FCSb.library_summary.addref.threshold.tsv'
+  infile2 = '../UnitTest_feature_definition/GSM1087987_C0FCSb.argonautestat.tsv'
+  infile3 = '../UnitTest_feature_definition/GSM1087987_C0FCSb.contig_features.tsv'
+  infile4 = '../UnitTest_feature_definition/training_set_all29libs.tsv'
+
+  # documentation_of_all_features ()
+  # checking_new_features_to_be_documnted_in_new_report(infile4)
+  
+  label_245_features()
