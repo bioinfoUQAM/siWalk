@@ -1,9 +1,3 @@
-# checklist
-[ ] item1
-
-[ ] item2
-
-
 # siWalk
 
 SiWalk is a machine learning-based tool that predicts conserved siRNA production in Arabidopsis using a Random Forest classifier, complementing established methods.
