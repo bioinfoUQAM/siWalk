@@ -2,7 +2,7 @@
 Chao-Jung Wu
 2024-08-13
 
-Need to run on compute canada
+If need to run on compute canada:
 
 module load StdEnv/2020 viennarna/2.5.1
 module load gcc/9.3.0 blast+/2.14.0
