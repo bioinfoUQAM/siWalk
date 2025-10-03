@@ -21,7 +21,9 @@ __BibTex__:
 
 Link to retrieve the paper: http...
 
-__DOI for source code__: [10.5281/zenodo.17258867](10.5281/zenodo.17258867)
+__DOI for source code NARGAB release tag__: [10.5281/zenodo.17258867](https://doi.org/10.5281/zenodo.17258867)
+
+__DOI for source codes and supporting files__: [10.5281/zenodo.17258908](https://doi.org/10.5281/zenodo.17258908)
 
 
 
@@ -310,6 +312,7 @@ cd /path/siWalk/src/
 annotated_training_file=../dbs/background.tsv #\\ or \\ annotated_training_file=from_X1
 python siWalk_pickle_localization.py $annotated_training_file
 ```
+
 
 
 
