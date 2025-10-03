@@ -21,7 +21,8 @@ __BibTex__:
 
 Link to retrieve the paper: http...
 
-__Source code DOI__: 10.5281/zenodo.17258867
+__DOI__: [Source code: 10.5281/zenodo.17258867](10.5281/zenodo.17258867)
+
 
 
 ### Dependencies:
@@ -309,4 +310,5 @@ cd /path/siWalk/src/
 annotated_training_file=../dbs/background.tsv #\\ or \\ annotated_training_file=from_X1
 python siWalk_pickle_localization.py $annotated_training_file
 ```
+
 
