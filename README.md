@@ -9,7 +9,7 @@ Copyright (c) 2024 Chao-Jung Wu, see License.
 ### Citation:
 Please cite the paper for your work using this tool.
 
-__Title__: Leveraging Machine Learning for Improved siRNA Prediction in Plant
+__Title__: Improving siRNA Prediction in Arabidopsis with Machine Learning
 
 __Cite__: Chao-Jung Wu, Abdoulaye Baniré Diallo
 
@@ -20,6 +20,8 @@ __BibTex__:
 ```
 
 Link to retrieve the paper: http...
+
+__Source code DOI__: 10.5281/zenodo.17258867
 
 
 ### Dependencies:
@@ -307,3 +309,4 @@ cd /path/siWalk/src/
 annotated_training_file=../dbs/background.tsv #\\ or \\ annotated_training_file=from_X1
 python siWalk_pickle_localization.py $annotated_training_file
 ```
+
