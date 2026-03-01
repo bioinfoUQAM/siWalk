@@ -1,9 +1,19 @@
+'''
+Feature dictionary and documentation for all siRNA analysis columns.
+
+Provides a comprehensive dictionary mapping each feature name used in siWalk
+to its description. Utility functions print feature documentation, check for
+undocumented features in a TSV file, and label features by type and usage scope.
+
+Author: Chao-Jung Wu
+'''
 import pandas as pd
 
-def dictionary ():
+
+def dictionary():
+  """Return an ordered dict mapping each siWalk feature name to its description."""
   d = {}
-  # d["see previous column"] = "abbreviation for see previous column"
-  d["# ============ parameters ===="] = "" ####
+  d["# ============ parameters ===="] = ""
   d["cycle"] = "number of DicerCall interval; Default 9; the size of default searching window is 9 * 21 + 1= 190 nt"
   d["DicerCall"] = "possible values are 21, 22, 23, 24; Default 21"
   d["# ============ contig feature ===="] = ""
@@ -11,7 +21,7 @@ def dictionary ():
   d["Wfreq_21"] = "contig expression of the contig on Watson strand"
   d["Cfreq_21"] = "contig expression of the contig on Crick strand"
   d["cntgfrq_all"] = "contig expression of the contig on both strands"
-  d["# ============ window feature ===="] = "" ####
+  d["# ============ window feature ===="] = ""
   d["freq"] = "frequency of this position; If STRAND is Crick: store freq at POS + 2"
   d["frqw"] = "frequency of this position on Watson strand, without 2-nt shift"
   d["frqc"] = "frequency of this position on Crick strand, without 2-nt shift"
@@ -21,13 +31,13 @@ def dictionary ():
   d["p"] = "frequency of 21-nt sRNAs on phase positions within the 9-cycle window"
   d["u"] = "frequency of 21-nt sRNAs on all positions within the 9-cycle window"
   d["U"] = "total frequency within the 9-cycle window"
-  d["maxf"] = "frequency of the most abundant 21-nt sRNA on phase position within a 9-cycle window, \n\t\t\t\t   allowing phase drift by including 21-nt sRNAs shifted by 1 or 2 positions for the highest peak" 
+  d["maxf"] = "frequency of the most abundant 21-nt sRNA on phase position within a 9-cycle window, \n\t\t\t\t   allowing phase drift by including 21-nt sRNAs shifted by 1 or 2 positions for the highest peak"
   d["pos_of_maxf"] = "position of the most abundant in-phase sRNA, allowing drift (may not be the exact position, \n\t\t\t\t   could be on Watson or Crick strands); frequency of such is recorded in the previous column."
   d["eff_strand"] = "coordinate of the most abundant effector siRNA allowing drift"
   d["eff_pos"] = "coordinate of the most abundant effector siRNA allowing drift"
   d["eff_frq"] = "freqeuncy of the most abundant effector siRNA allowing drift"
   d["ext_k"] = "updated number of phasing positions after increasing the boundary beyond the 9-cycle window"
-  d["# ============ segment feature ===="] = "" ####
+  d["# ============ segment feature ===="] = ""
   d["segment"] = "chr:start-end"
   d["chr"] = "chromosome"
   d["L_bound"] = "start, inclusive boundary of the segment"
@@ -43,7 +53,7 @@ def dictionary ():
   d["max_mfe"] = "maximum MFE of folding sequences in a segment's scanning windows"
   d["min_mfe"] = "minimun MFE of folding sequences in a segment's scanning windows"
   d["eff_seq"] = "active siRNA: sequence of the most abundant effector siRNA, allowing drift; \n\t\t\t\t determined from segment windows via soft aggregation"
-  d["star_seq_ifDominantBoth"] = "pseudo-star siRNA; the 2-nt shifted complementary sequence of eff_seq, \n\t\t\t\t   assuming equal expression of both strands" 
+  d["star_seq_ifDominantBoth"] = "pseudo-star siRNA; the 2-nt shifted complementary sequence of eff_seq, \n\t\t\t\t   assuming equal expression of both strands"
   d["precursor"] = "sequence of the segment on eff_strand"
   d["prefold"] = "secondary structure in Dot-Bracket Notation of the RNA sequence in previous column, calculated by RNAfold"
   d["premfe"] = "MFE of the precursor structure, calculated by RNAfold"
@@ -66,24 +76,15 @@ def dictionary ():
   d["pval_accept"] = "accepted by FDR; True or False"
   d["pvalb_fdr"] = "FDR < 0.05"
   d["pvalb_accept"] = "accepted by FDR; True or False"
-  #
   d["Howell_ccdf"] = "significant if < 0.05, Complementary Cumulative Distribution Function"
   d["Howellb_ccdf"] = "see previous column"
   d["Guo_ccdf"] = "see previous column"
   d["Guo_b_ccdf"] = "see previous column"
   d["pval_cdf"] = "significant if < 0.05, Cumulative Distribution Function"
   d["pval_b_cdf"] = "see previous column"
-  # d["Howell >= 9.6651"] = "accepted by threshold where Gamma CDF is below cutoff 0.05; True or False"
-  # d["Howellb >= 35.1513"] = "see previous column"
-  # d["Guo >= 39.8273"] = "see previous column"
-  # d["Guo_b >= 13.9763"] = "see previous column"
-  # d["pval_fdr <= 0.0481"] = "see previous column"
-  # d["pval_b <= 0.2132"] = "see previous column"
   d["# ============ segment feature, continued: miRNA trigger predicted by miRanda ===="] = ""
   d["Best_miR"] = "miRNA targeting this segment with the highest score"
   d["BestScore"] = "the highest targeting score among miRBase microRNAs"
-  # d["anyhit"] = "list, any miRNA targeting this segment"
-  # d["twohit"] = "list, miRNA that targets this segment twice or more"
   d["anyhitBool"] = "boolean, any miRNA targeting this segment"
   d["twohitBool"] = "boolean, miRNA that targets this segment twice or more"
   d["# ============ segment feature, continued: precursor hairpin structure predicted by mirCheck ===="] = ""
@@ -303,30 +304,23 @@ def dictionary ():
   d["occ_loop22nt"] = "see previous column"
   d["occ_loop23nt"] = "see previous column"
   d["# ============ Literature annotation and vote by multiple scores ===="] = ""
-  # d["start"] = "start position of the locus as annotated in the literature overlaps with this contig"
-  # d["end"] = "see previous column"
-  # d["strand"] = "see previous column"
-  # d["Phas_Ratio"] = "see previous column"
-  # d["Phas_Score"] = "see previous column"
-  # d["Pvalue"] = "see previous column"
   d["Literature"] = "phasing locus annotation in the literature overlaps with this contig; True or False"
-  # d["vote"] = "Vote count; six scores transformed to True/False if p < 0.05, fitting gamma distribution. \n\t\t\t\t   Scores: Howell, Howellb, Guo, Guo_b, pval, pval_b."
-  # d["vote >= 2"] = "vote >= 2"
-  # d["vote >= 3"] = "see previous column"
-  # d["vote >= 4"] = "see previous column"
-  # d["vote >= 5"] = "see previous column"
   d["retained"] = "Segments were retained if their contig was true in the literature,   \n\t\t\t\t   and at least 2 of 6 phase scores had q < 0.05  \n\t\t\t\t   where q = {Howell_ccdf, Howellb_ccdf, Guo_ccdf, Guo_b_ccdf, pval_cdf, pval_b_cdf}"
   d["consistent"] = "A segment is consistent if its eff_seq is present in at least two libraries."
   return d
 
-def documentation_of_all_features ():
+
+def documentation_of_all_features():
+  """Print the full feature dictionary to stdout."""
   d = dictionary()
   print('======== Column definition ===============')
   for k, v in d.items():
     print(f"{k:<20}\t : \t{v}")
   print('======== End of column definition ===============\n')
 
-def checking_new_features_to_be_documnted_in_new_report (infile):
+
+def checking_new_features_to_be_documnted_in_new_report(infile):
+  """Print features in *infile* that are not yet documented in the dictionary."""
   d = dictionary()
   df = pd.read_csv(infile, sep='\t')
   cols = df.columns.to_list()
@@ -342,13 +336,13 @@ def checking_new_features_to_be_documnted_in_new_report (infile):
   print('\nLook for "to do!!" for new features to be documnted')
   print('=====================================================')
 
+
 def label_245_features():
+  """Print all 245 features with type (numerical/categorical) and usage scope."""
   ref = '../UnitTest_feature_definition/list_245features.txt'
   with open(ref, 'r') as f:
     lines = [line.rstrip("\n").rstrip("']").split("are : ['")[1].split("', '") for line in f if len(line) >= 10]
   categorical, numerical, non_local = lines[0], lines[1], lines[2] if len(lines) > 1 else ([], [], [])
-  features = categorical + numerical
-
 
   count = 1
   d = dictionary()
@@ -365,23 +359,7 @@ def label_245_features():
       print(f"{k:<20}\t : \t{v}")
     else:
       continue
-      # print(f"{k:<20}\t : \t{v}")
 
 
-
-
-
-
-
-
-
-if __name__ == '__main__' :
-  infile1 = '../UnitTest_feature_definition/GSM1087987_C0FCSb.library_summary.addref.threshold.tsv'
-  infile2 = '../UnitTest_feature_definition/GSM1087987_C0FCSb.argonautestat.tsv'
-  infile3 = '../UnitTest_feature_definition/GSM1087987_C0FCSb.contig_features.tsv'
-  infile4 = '../UnitTest_feature_definition/training_set_all29libs.tsv'
-
-  # documentation_of_all_features ()
-  # checking_new_features_to_be_documnted_in_new_report(infile4)
-  
+if __name__ == '__main__':
   label_245_features()
