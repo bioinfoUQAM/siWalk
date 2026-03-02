@@ -1,15 +1,15 @@
 # siWalk
 
-SiWalk is a machine learning-based tool that predicts conserved siRNA production in Arabidopsis.
-It identifies siRNA precursors and active siRNAs based on structural and nucleotide patterns,
-while improving accuracy and minimizing false positives.
+SiWalk identifies effector siRNA positions within a given precursor sequence using a Random Forest
+classifier trained on structural and sequence features. It operates on sequence alone — no expression
+data required.
 
-Copyright (c) 2024 Chao-Jung Wu, see License.
+Copyright (c) 2024 Chao-Jung Wu
 
 ### Citation
 Please cite the paper for your work using this tool.
 
-__Title__: Improving siRNA Prediction in Arabidopsis with Machine Learning
+__Title__: Localization of Phased Effector siRNAs within Precursor Sequences Using Feature-Informed Machine Learning
 
 __Cite__: Chao-Jung Wu, Abdoulaye Baniré Diallo
 
@@ -21,10 +21,11 @@ __BibTex__:
 
 Link to retrieve the paper: http...
 
-__DOI for source code NARGAB release tag__: [10.5281/zenodo.17258867](https://doi.org/10.5281/zenodo.17258867)
+__DOI for source code__: [10.5281/zenodo.17258867](https://doi.org/10.5281/zenodo.17258867)
 
-__DOI for source codes and supporting files__: [10.5281/zenodo.17258908](https://doi.org/10.5281/zenodo.17258908)
+__DOI for supporting files__: [10.5281/zenodo.17258908](https://doi.org/10.5281/zenodo.17258908)
 
+*Need to mint a new zenodo link to replace current ones.*
 
 
 ---
