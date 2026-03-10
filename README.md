@@ -32,7 +32,7 @@ Given a precursor RNA or DNA sequence, siWalk scans it to identify the most like
 
 Download siWalk from GitHub: [github/JulieCJWu/siWalk](https://github.com/JulieCJWu/siWalk).
 
-Navigate to the siWalk working directory and activate the environment:
+Navigate to the siWalk working directory and activate the HPC environment at Compute Canada:
 ```
 cd /path/siWalk/workdir/
 module load StdEnv/2020 viennarna/2.5.1 gcc/9.3.0
