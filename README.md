@@ -263,3 +263,26 @@ python siWalk_pickle_localization.py $annotated_training_file
 Each run produces:
 - `output/prefix_*_model.pkl` — trained model with timestamp
 - `output/prefix_*_feature_importance_n_correlation.tsv` — ranked feature importances and correlations
+
+
+
+---
+
+## Docker (experimental)
+
+> **Note**: The Docker setup has not been tested. Use at your own risk.
+
+Build the image from the repository root:
+```
+cd /path/siWalk/
+docker build -t siwalk .
+```
+
+Run the localization example:
+```
+priseq=CTTGACCTTGTAAGGCCTTTTCTTGACCTTGTAAGACCCCATCTCTTTCTAAACGTTTTATTATTTTCTCGTTTTACAGATTCTATTCTATCTCTTCTCAATATAGAATAGATATCTATCT
+DicerCall=21
+docker run -v /path/siWalk/output:/siWalk/output siwalk $priseq $DicerCall
+```
+
+Output files will appear in `/path/siWalk/output/`.
