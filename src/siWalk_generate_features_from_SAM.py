@@ -8,7 +8,7 @@ input library.
 Author: Chao-Jung Wu
 Date:   2024-Mar-20
 '''
-SOFTWARE_NAME = 'pipeline240320'
+SOFTWARE_NAME = 'siWalk_generate_features_from_SAM'
 import os
 import datetime, time
 

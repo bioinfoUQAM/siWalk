@@ -34,7 +34,7 @@ ref=/home/cjwu/scratch/pipeline240320/dbs/At_phasing_contig_from_literature.info
 sampling=1 # sampling = [.1, 1, -1]; 0<x<1 for a fraction of library; -1 for only the contig "3__5860000_5865250"; 1 for no sampling;
 
 spark-submit --master local[*] --executor-memory ${SLURM_MEM_PER_NODE}M \
-             ../src/pipeline240320.py \
+             ../src/siWalk_generate_features_from_SAM.py \
              --jobid $SLURM_JOBID \
              --input_path $INPUT_SAM_PATH \
 			 --output_tmp $SLURM_TMPDIR \

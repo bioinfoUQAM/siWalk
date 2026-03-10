@@ -38,7 +38,7 @@ pip install --no-index statsmodels
 pip install --no-index sklearn
 export _JAVA_OPTIONS="-Xms3g -Xmx40g"
 spark-submit --master local[*] --executor-memory ${SLURM_MEM_PER_NODE}M \
-             ../src/pipeline240320.py \
+             ../src/siWalk_generate_features_from_SAM.py \
              --jobid $SLURM_JOBID \
              --input_path $INPUT_SAM_PATH \
 			 --output_tmp $SLURM_TMPDIR \

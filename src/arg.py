@@ -11,7 +11,7 @@ import argparse
 import os
 import sys
 
-SOFTWARE_NAME = 'pipeline240320'
+SOFTWARE_NAME = 'siWalk_generate_features_from_SAM'
 
 def find_project_path():
   """Return the project root by stripping /src or /workdir from cwd."""
