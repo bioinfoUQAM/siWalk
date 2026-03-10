@@ -138,10 +138,10 @@ They require a Spark-enabled server environment.
 
 ### M1. Download siWalk
 
-Download from GitHub: [github/JulieCJWu/siWalk](https://github.com/JulieCJWu/pipeline240320).
+Download from GitHub: [github/JulieCJWu/siWalk](https://github.com/JulieCJWu/siWalk).
 
 To access the release version associated with the paper, visit:
-[siWalk/releases/241106testlargefile](https://github.com/JulieCJWu/pipeline240320/releases/tag/241106testlargefile).
+[siWalk_zenodo to be updated](https://github.com/JulieCJWu/pipeline240320/releases/tag/241106testlargefile).
 - Place `background.tsv` in `/path/siWalk/dbs/`.
 - Place `TAIR10_genomic.fa` in `/path/siWalk/dbs/TAIR10/`.
 
