@@ -32,7 +32,15 @@ Given a precursor RNA or DNA sequence, siWalk scans it to identify the most like
 
 Download siWalk from GitHub: [github/JulieCJWu/siWalk](https://github.com/JulieCJWu/siWalk).
 
-Navigate to the siWalk working directory and activate the HPC environment at Compute Canada:
+**Option A — Local machine:**
+
+Install [ViennaRNA](https://www.tbi.univie.ac.at/RNA/#download) (provides `RNAfold`), then:
+```
+pip install numpy pandas scipy statsmodels scikit-learn matplotlib
+chmod +x /path/siWalk/lib/miranda
+```
+
+**Option B — HPC (Compute Canada):**
 ```
 cd /path/siWalk/workdir/
 module load StdEnv/2020 viennarna/2.5.1 gcc/9.3.0
