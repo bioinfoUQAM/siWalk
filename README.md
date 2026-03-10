@@ -107,14 +107,12 @@ __Packages__: `spark/3.3.0`, `bowtie/1.3.0`, `samtools/1.17`, `viennarna/2.5.1`,
 
 __Distributed with siWalk__: `miRanda`, `miRCheck`
 
-__Environments__: Modules A and X require a server that supports parallel computing with Spark
-(developed on Compute Canada Narval). Module B (localization mode described above) can run on a login node or personal computer.
+__Environments__: Module B (localization mode, Quick Start above) runs on any local machine or login node.
+Modules A and X (precursor prediction and model training) require a Spark-enabled server (developed on Compute Canada Narval).
 
 
 
-## Supporting files
-
-The following files are bundled with siWalk or generated during setup:
+## Supporting Files
 
 | File | Description |
 |------|-------------|
@@ -125,9 +123,22 @@ The following files are bundled with siWalk or generated during setup:
 | `dbs/feature_definition.txt` | Definitions of all variables in the analysis |
 | `model/GBA100.pkl` | Gradient Boosting + AdaBoost model, top 100 all-type features |
 | `model/GBAs100.pkl` | Gradient Boosting + AdaBoost model, top 100 structural features |
-| `model/RFAs100.pkl` | Random Forest + AdaBoost model, top 100 structural features (see M2 below) |
+| `model/RFAs100.pkl` | Random Forest + AdaBoost model, top 100 structural features |
 | `model/Arabidopsis_feature_importance_n_correlation.tsv` | Feature evaluation file paired with `GBA100.pkl` |
 | `model/Arabidopsis_structure_feature_importance_n_correlation.tsv` | Feature evaluation file paired with `GBAs100.pkl` and `RFAs100.pkl` |
+
+Large files not bundled with siWalk can be downloaded from Zenodo:
+```bash
+curl -L -O "https://zenodo.org/records/17258908/files/TAIR10_genomic.fa?download=1"
+curl -L -O "https://zenodo.org/records/17258908/files/background.tsv?download=1"
+curl -L -O "https://zenodo.org/records/17258908/files/complete_feature_list.tsv?download=1"
+curl -L -O "https://zenodo.org/records/17258908/files/RFAs100.pkl?download=1"
+```
+
+Place downloaded files as follows:
+- `background.tsv` → `/path/siWalk/dbs/`
+- `TAIR10_genomic.fa` → `/path/siWalk/dbs/TAIR10/`
+- `RFAs100.pkl` → `/path/siWalk/model/`
 
 
 
@@ -139,20 +150,6 @@ The following modules support large-scale prediction from sRNA-seq libraries and
 They require a Spark-enabled server environment.
 
 
-
-### Download Supporing Files
-
-```bash
-curl -L -O "https://zenodo.org/records/17258908/files/TAIR10_genomic.fa?download=1"
-curl -L -O "https://zenodo.org/records/17258908/files/background.tsv?download=1"
-curl -L -O "https://zenodo.org/records/17258908/files/complete_feature_list.tsv?download=1"
-curl -L -O "https://zenodo.org/records/17258908/files/RFAs100.pkl?download=1"
-```
-
-- Place `background.tsv` in `/path/siWalk/dbs/`.
-- Place `TAIR10_genomic.fa` in `/path/siWalk/dbs/TAIR10/`.
-- Place `RFAs100.pkl` in `/path/siWalk/model/`
-- `complete_feature_list.tsv` contains the full faeture list for your reference.
 
 ### M2. Generate the RFAs100 model
 
