@@ -4,8 +4,6 @@ SiWalk identifies effector siRNA positions within a given precursor sequence usi
 classifier trained on structural and sequence features. It operates on sequence alone — no expression
 data required.
 
-Copyright (c) 2024 Chao-Jung Wu
-
 ### Citation
 Please cite the paper for your work using this tool.
 
@@ -30,7 +28,7 @@ Given a precursor RNA or DNA sequence, siWalk scans it to identify the most like
 
 ### 1. Set up the environment
 
-Download siWalk from GitHub: [github/JulieCJWu/siWalk](https://github.com/JulieCJWu/siWalk).
+Download siWalk from GitHub: [github/bioinfoUQAM/siWalk](https://github.com/bioinfoUQAM/siWalk).
 
 **Option A — Local machine:**
 
@@ -265,3 +263,4 @@ python siWalk_pickle_localization.py $annotated_training_file
 Each run produces:
 - `output/prefix_*_model.pkl` — trained model with timestamp
 - `output/prefix_*_feature_importance_n_correlation.tsv` — ranked feature importances and correlations
+
