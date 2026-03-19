@@ -39,7 +39,7 @@ tag = 'consistent'
 
 k = 100
 file_used_as_training = '../dbs/background.tsv'
-datafile = '../model/Arabidopsis_strcture_feature_importance_n_correlation.tsv'
+datafile = '../model/Arabidopsis_structure_feature_importance_n_correlation.tsv'
 
 cols_to_drop = ['CONTIG', 'eff_seq', 'retained', tag, 'segment']
 cols2drop_for_locapredi = [
@@ -197,11 +197,11 @@ def encode_and_compute_weight(infile, NB_instances, datafile, k=k, cols_to_drop=
   feature_names_topk, feature_correlations, feature_importances = get_data(datafile, k)
 
   df = pd.read_csv(infile, sep='\t', index_col=False)
-  Xs = df.drop(columns=cols_to_drop, axis=1, errors='ignore')
+  Xs = df.drop(columns=cols_to_drop, errors='ignore')
 
   ord_col = []
-  cat_col = [i for i, var in enumerate(Xs.columns) if Xs[var].dtype == 'O' or Xs[var].dtype == 'bool']
-  num_col = [i for i, var in enumerate(Xs.columns) if Xs[var].dtype != 'O' and Xs[var].dtype != 'bool']
+  cat_col = [i for i, var in enumerate(Xs.columns) if not pd.api.types.is_numeric_dtype(Xs[var]) or Xs[var].dtype == 'bool']
+  num_col = [i for i, var in enumerate(Xs.columns) if pd.api.types.is_numeric_dtype(Xs[var]) and Xs[var].dtype != 'bool']
   Xs_encoded = preprocess_direct(Xs, num_col, cat_col, ord_col)
   Xs_encoded = Xs_encoded.head(NB_instances)
   df = df.head(NB_instances)
@@ -400,14 +400,21 @@ def rna_to_dna(rna_sequence):
   return dna_sequence
 
 
-def user_interface(name, pri, DicerCall, outdir):
-  """Run localization prediction and save renamed output files with a candidate plot."""
+def user_interface(name, pri, DicerCall, outdir, ground_truths=None):
+  """Run localization prediction and save renamed output files with a candidate plot.
+
+  Parameters
+  ----------
+  ground_truths : list of (label, start, end) tuples, or None
+      Passed through to the barplot so ground truth positions are marked.
+  """
   start, end, score, outfile, outfile2 = run_one_precursor(name, pri, DicerCall)
   outfile_newname = outdir + name + '.effector_localization_indication.tsv'
   outfile2_newname = outdir + name + '.effector_localization_top6_recommendation.tsv'
   os.rename(outfile, outfile_newname)
   os.rename(outfile2, outfile2_newname)
-  bpi.draw_6candidates_interface(outfile_newname, outfile2_newname, pri)
+  bpi.draw_6candidates_interface(outfile_newname, outfile2_newname, pri,
+                                  ground_truths=ground_truths)
 
 
 if __name__ == "__main__":

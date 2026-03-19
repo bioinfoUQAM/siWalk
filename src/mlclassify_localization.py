@@ -23,8 +23,8 @@ seed = 0
 set_seed(seed=seed)
 
 file_used_as_background = '../dbs/background.tsv'
-datafile     = '../model/Arabidopsis_strcture_feature_importance_n_correlation.tsv'
-pickle_file  = '../model/RFAs100.pkl'
+datafile     = '../model/Arabidopsis_structure_feature_importance_n_correlation.tsv'
+pickle_file  = '../model/GBAs100.pkl'
 
 k = 100
 tag = 'consistent'
@@ -88,13 +88,13 @@ def pretreat_location_features(infile_of_Instance):
   outfile = infile_of_Instance[:-3] + 'pretreated.tsv'
   df1 = pd.read_csv(infile_of_Instance, sep='\t', index_col=False)
   NB_instances = len(df1)
-  df1 = df1.drop(columns=cols_to_drop, axis=1, errors='ignore')
+  df1 = df1.drop(columns=cols_to_drop, errors='ignore')
   df1['CONTIG'] = 'nana'
   df1['retained'] = True
   df1['consistent'] = True
 
   df2 = pd.read_csv(file_used_as_background, sep='\t', index_col=False)
-  df2 = df2.drop(columns=cols_to_drop, axis=1, errors='ignore')
+  df2 = df2.drop(columns=cols_to_drop, errors='ignore')
   df2['_longeur_'] = 0
   result_df = concatenate(df1, df2)
   result_df.to_csv(outfile, sep='\t', index=False)
@@ -112,10 +112,10 @@ def classify_a_file(infile2, pickle_file=pickle_file, datafile=datafile, cols_to
   output_file = infile2[:-3] + 'prediction.tsv'
 
   df = pd.read_csv(infile2, sep='\t', index_col=False)
-  X  = df.drop(columns=cols_to_drop, axis=1, errors='ignore')
+  X  = df.drop(columns=cols_to_drop, errors='ignore')
   ord_col = []
-  cat_col = [i for i, var in enumerate(X.columns) if X[var].dtype == 'O' or X[var].dtype == 'bool']
-  num_col = [i for i, var in enumerate(X.columns) if X[var].dtype != 'O' and X[var].dtype != 'bool']
+  cat_col = [i for i, var in enumerate(X.columns) if not pd.api.types.is_numeric_dtype(X[var]) or X[var].dtype == 'bool']
+  num_col = [i for i, var in enumerate(X.columns) if pd.api.types.is_numeric_dtype(X[var]) and X[var].dtype != 'bool']
   X_encoded = preprocess_direct(X, num_col, cat_col, ord_col)
   X100 = X_encoded[feature_names_topk]
   print('NB of attributes after encoding:', len(X_encoded.columns))
@@ -135,7 +135,7 @@ def classify_a_file(infile2, pickle_file=pickle_file, datafile=datafile, cols_to
   df.to_csv(output_file, sep='\t', index=False)
   print("Output prediction file: \n", output_file)
 
-  df['position'] = df['dist_5p'] + 1
+  df['position'] = df['dist_5p'] + 1 #+1 or not?
   position_list = df[df['Predicted_Class'] == True]['position'].tolist()
   return list(set(position_list))
 
