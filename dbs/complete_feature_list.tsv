@@ -1,0 +1,1503 @@
+Rank	Feature	Rank score	correlation	ID	Variable	Property1	Property2	Type	Usage	Description
+1	k	3822.923622	0.211507	1	k	expression	phase score	numerical	pred	number of phase positions expressed by 21-nt sRNA within the 9-cycle window
+2	ext_k	2447.380722	0.192420	7	ext_k	expression	phase score	numerical	pred	updated number of phasing positions after increasing the boundary beyond the 9-cycle window
+3	n	1143.451981	0.201415	2	n	expression	phase score	numerical	pred	number of all positions expressed by 21-nt sRNA within the 9-cycle window
+4	Guo_b_ccdf	1045.723519	-0.184756	28	Guo_b_ccdf	expression	phase score	numerical	pred	see ID 25
+5	twohitBool_True	999.475062	0.083493	33	twohitBool	structure	miRNA targeting	categorical	"pred, vali"	"boolean, miRNA that targets this segment twice or more"
+6	eff_frq	850.318308	0.173554	6	eff_frq	expression	phase score	numerical	pred	freqeuncy of the most abundant effector siRNA allowing drift
+7	length	807.453192	-0.165376	8	length	structure	length	numerical	pred	length of the segment; R_bound - L_bound + 1
+8	md3C	802.991611	0.066423	92	md3C	expression	nucleotide frequency	numerical	pred	see ID 83
+9	eff5p1di_TA	783.107262	0.163048	118	eff5p1di	structure	nucleotide type	categorical	"pred, vali"	di-nucleotide base type at a specific position on active siRNA
+10	BestScore	714.999963	0.155127	31	BestScore	structure	miRNA targeting	numerical	"pred, vali"	the highest targeting score among miRBase microRNAs
+11	md2C	705.032285	-0.154776	88	md2C	expression	nucleotide frequency	numerical	pred	see ID 83
+12	3p3G	696.833784	0.152626	73	3p3G	expression	nucleotide frequency	numerical	pred	see ID 63
+13	eff5p1tri_TAA	669.675658	0.060433	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+14	pval_b	639.799438	-0.142551	10	pval_b	expression	phase score	numerical	pred	"minimum score in a segment's windows; Chen_Xia_2013 (cycle, k, N)"
+15	max_mfe	616.363237	0.148928	12	max_mfe	structure	MFE	numerical	pred	maximum MFE of folding sequences in a segment's scanning windows
+16	premfe	614.616807	-0.149104	14	premfe	structure	MFE	numerical	"pred, vali"	"MFE of the structure [R_bound, L_bound], calculated by RNAfold"
+17	NBtripletC	554.592813	-0.062525	158	NBtripletC	structure	triplet	numerical	"pred, vali"	see ID 156
+18	5p1T	531.864779	0.134027	46	5p1T	expression	nucleotide frequency	numerical	pred	see ID 43
+19	5p1C	527.126478	-0.133203	44	5p1C	expression	nucleotide frequency	numerical	pred	see ID 43
+20	eff5p2tri_ATG	525.347597	0.053634	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+21	eff5p1_T	513.952748	0.061537	103	eff5p1	structure	nucleotide type	categorical	"pred, vali"	single nucleotide base type at a specific position on active siRNA
+22	eff5p1_3p3_TG	513.506408	0.055135	148	eff5p1_3p3	structure	nucleotide type	categorical	"pred, vali"	the first and the last nucleotides on active siRNA
+23	effmd4tri_AAG	499.731624	0.052489	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+24	GC%	487.344754	-0.132253	23	GC%	expression	nucleotide frequency	numerical	pred	"expression-weighted percentage of G or C in a segment considering Dicer Call; i.e., G\% + C\%"
+25	effmd1tri_ATG	485.574678	0.051647	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+26	Howell_ccdf	481.076035	-0.124531	25	Howell_ccdf	expression	phase score	numerical	pred	"significant if $<$ 0.05, Complementary Cumulative Distribution Function"
+27	5p4C	479.122717	-0.126766	56	5p4C	expression	nucleotide frequency	numerical	pred	see ID 43
+28	Howellb_ccdf	478.989894	-0.123195	26	Howellb_ccdf	expression	phase score	numerical	pred	see ID 25
+29	effmd2tri_GTA	470.912263	0.050819	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+30	3p4C	454.438073	-0.123689	76	3p4C	expression	nucleotide frequency	numerical	pred	see ID 63
+31	effmd2tri_AGA	450.17802	0.049981	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+32	eff_pos	449.069567	0.120437	5	eff_pos	expression	abundance	numerical	pred	coordinate of the most abundant effector siRNA allowing drift
+33	dist_5p	447.916089	0.122603	15	dist_5p	structure	length	numerical	"pred, vali"	eff_seq relative position on precursor
+34	5p5C	443.792415	-0.120894	60	5p5C	expression	nucleotide frequency	numerical	pred	see ID 43
+35	eff3p3_G	427.44691	0.058295	110	eff3p3	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+36	dist_3p	427.354833	0.117424	16	dist_3p	structure	length	numerical	"pred, vali"	eff_seq relative position on precursor
+37	5p2T	421.345319	0.120043	50	5p2T	expression	nucleotide frequency	numerical	pred	see ID 43
+38	anyhitBool_False	409.585715	-0.048439	32	anyhitBool	structure	miRNA targeting	categorical	"pred, vali"	"boolean, any miRNA targeting this segment"
+39	5p1G	396.391852	-0.114694	45	5p1G	expression	nucleotide frequency	numerical	pred	see ID 43
+40	effmd5tri_TGG	387.900751	0.046179	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+41	5p2C	381.431134	-0.113629	48	5p2C	expression	nucleotide frequency	numerical	pred	see ID 43
+42	eff3p1tri_GGT	372.346659	0.045303	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+43	effmd4tri_TTG	367.680998	0.044970	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+44	eff3p3tri_GAG	361.931031	0.044793	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+45	eff3p3di_AG	353.782711	0.045325	125	eff3p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+46	eff5p4tri_GGA	337.237351	0.043476	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+47	md4T	333.776969	-0.107013	98	md4T	expression	nucleotide frequency	numerical	pred	see ID 83
+48	eff5p1_3p3_GA	332.903176	-0.043036	148	eff5p1_3p3	structure	nucleotide type	categorical	"pred, vali"	the first and the last nucleotides on active siRNA
+49	effmd5tri_AGA	331.441461	0.042877	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+50	effmd1tri_GAT	330.510826	0.042779	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+51	eff3p2tri_AGG	325.985531	0.042357	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+52	effmd3tri_TAA	307.893044	0.041104	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+53	eff3p3tri_ATC	307.124537	0.041102	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+54	eff3p3tri_TTG	303.451497	0.040888	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+55	eff5p5tri_ATT	299.479434	0.040469	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+56	twohitBool_False	293.936599	-0.083493	33	twohitBool	structure	miRNA targeting	categorical	"pred, vali"	"boolean, miRNA that targets this segment twice or more"
+57	effmd2_C	292.466384	-0.043675	114	effmd2	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+58	3p2C	292.004096	-0.099146	68	3p2C	expression	nucleotide frequency	numerical	pred	see ID 63
+59	effmd5di_TG	290.981054	0.041059	132	effmd5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+60	eff5p1tri_TAC	290.962943	0.039757	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+61	eff5p1_3p3_GT	269.717378	-0.038917	148	eff5p1_3p3	structure	nucleotide type	categorical	"pred, vali"	the first and the last nucleotides on active siRNA
+62	eff5p1tri_TAT	269.220374	0.038243	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+63	effmd1_C	269.15614	-0.041936	113	effmd1	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+64	eff5p5tri_GAT	268.764603	0.038701	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+65	effmd1di_GA	258.943254	0.039290	128	effmd1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+66	eff3p2tri_TGC	257.987482	0.037565	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+67	pval_b_cdf	257.800173	-0.091250	30	pval_b_cdf	expression	phase score	numerical	pred	see previous column
+68	effmd4tri_ATG	257.500572	0.037636	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+69	effmd3_C	256.48448	-0.040756	115	effmd3	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+70	eff3p2di_GA	256.121118	0.038884	124	eff3p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+71	eff3p4_C	253.105283	-0.041981	111	eff3p4	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+72	3p2T	253.070638	0.092946	70	3p2T	expression	nucleotide frequency	numerical	pred	see ID 63
+73	5p3C	251.817683	-0.092189	52	5p3C	expression	nucleotide frequency	numerical	pred	see ID 43
+74	eff5p1tri_AAT	251.248883	0.037090	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+75	eff5p5di_CC	250.134479	-0.037495	122	eff5p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+76	effmd2tri_ATG	248.860898	0.037018	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+77	eff5p5_C	246.552756	-0.040216	107	eff5p5	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+78	md1C	246.508396	-0.092487	84	md1C	expression	nucleotide frequency	numerical	pred	see ID 83
+79	eff5p3_T	244.589948	0.040467	105	eff5p3	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+80	effmd2di_TG	244.54956	0.037703	129	effmd2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+81	eff5p3tri_TGG	242.649135	0.036598	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+82	5p5A	229.06299	0.088803	59	5p5A	expression	nucleotide frequency	numerical	pred	see ID 43
+83	eff3p1di_TG	228.198106	0.035966	123	eff3p1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+84	eff3p3tri_TGG	225.442064	0.035415	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+85	md4C	224.837961	-0.087520	96	md4C	expression	nucleotide frequency	numerical	pred	see ID 83
+86	eff3p3di_CC	223.706996	-0.035672	125	eff3p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+87	eff3p3di_TG	219.096578	0.035929	125	eff3p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+88	eff5p2di_AT	212.83514	0.034614	119	eff5p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+89	eff5p1_G	211.496431	-0.037358	103	eff5p1	structure	nucleotide type	categorical	"pred, vali"	single nucleotide base type at a specific position on active siRNA
+90	md4A	210.793356	0.084682	95	md4A	expression	nucleotide frequency	numerical	pred	see ID 83
+91	effmd1di_AT	208.627978	0.034592	128	effmd1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+92	effmd1tri_TGT	208.142212	0.033970	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+93	eff3p4di_CC	206.28179	-0.034108	126	eff3p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+94	effmd3tri_CTA	204.830753	-0.033621	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+95	NBtripletG	204.375483	0.033275	159	NBtripletG	structure	triplet	numerical	"pred, vali"	see ID 156
+96	effmd3tri_TGG	200.698603	-0.042142	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+97	eff3p4tri_AGA	197.083228	0.033127	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+98	eff3p3tri_TCC	196.490706	-0.032955	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+99	5p2G	196.225443	-0.080964	49	5p2G	expression	nucleotide frequency	numerical	pred	see ID 43
+100	eff3p2di_GC	193.348591	0.033305	124	eff3p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+101	eff3p4di_TC	192.141635	-0.033290	126	eff3p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+102	5p2A	188.977628	0.080218	47	5p2A	expression	nucleotide frequency	numerical	pred	see ID 43
+103	effmd2tri_TGG	181.18542	0.031639	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+104	eff5p4tri_TGA	180.361834	0.031494	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+105	eff5p2di_CC	178.73782	-0.031556	119	eff5p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+106	md3A	176.628052	0.077421	91	md3A	expression	nucleotide frequency	numerical	pred	see ID 83
+107	A%	175.919521	0.079466	19	A%	expression	nucleotide frequency	numerical	pred	"expression-weighted percentage of a nucleotide base type (A, C, G, T/U) in a segment, considering Dicer Call"
+108	eff5p4_C	175.534229	-0.034182	106	eff5p4	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+109	eff3p2di_TC	174.068987	-0.031350	124	eff3p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+110	eff3p1tri_CCT	173.257462	-0.030900	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+111	eff5p3di_TG	172.397121	0.031581	120	eff5p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+112	effmd3tri_ATT	171.113207	0.030637	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+113	eff3p4tri_GTT	169.275802	0.030461	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+114	effmd3di_GA	169.263238	0.031722	130	effmd3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+115	effmd1di_CC	168.601244	-0.030557	128	effmd1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+116	effmd1di_AC	168.579553	-0.030947	128	effmd1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+117	effmd2tri_AAG	168.147257	0.030488	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+118	3p3A	166.420769	-0.074671	71	3p3A	expression	nucleotide frequency	numerical	pred	see ID 63
+119	Guo_ccdf	163.19415	-0.072722	27	Guo_ccdf	expression	phase score	numerical	pred	see ID 25
+120	T%	162.304044	0.076421	22	T%	expression	nucleotide frequency	numerical	pred	see ID 19
+121	3p5C	158.523634	-0.073192	80	3p5C	expression	nucleotide frequency	numerical	pred	see ID 63
+122	3p1C	158.382377	-0.073035	64	3p1C	expression	nucleotide frequency	numerical	pred	see ID 63
+123	eff3p2di_AG	158.267644	-0.029706	124	eff3p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+124	eff3p4tri_GAT	156.182075	0.029528	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+125	eff5p3di_CC	156.106307	-0.029478	120	eff5p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+126	eff5p2di_AA	154.812196	0.029930	119	eff5p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+127	effmd5di_AG	152.715257	0.029865	132	effmd5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+128	effmd3tri_GAT	152.254523	0.029013	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+129	eff3p5tri_ACT	151.538151	-0.028956	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+130	eff5p4di_CC	150.640216	-0.028960	121	eff5p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+131	3p4A	150.125781	0.072064	75	3p4A	expression	nucleotide frequency	numerical	pred	see ID 63
+132	effmd4di_TA	150.053316	-0.029418	131	effmd4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+133	eff5p5tri_AGT	148.88903	-0.028755	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+134	eff5p1tri_ATT	148.136919	0.028459	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+135	effmd3di_TG	148.007585	0.029328	130	effmd3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+136	eff5p1_3p3_CC	145.722898	-0.028785	148	eff5p1_3p3	structure	nucleotide type	categorical	"pred, vali"	the first and the last nucleotides on active siRNA
+137	3p5A	144.905231	0.071095	79	3p5A	expression	nucleotide frequency	numerical	pred	see ID 63
+138	eff3p5tri_CAG	143.912176	-0.028086	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+139	eff3p2tri_ACC	143.552181	-0.028088	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+140	eff3p2di_CC	142.899668	-0.028570	124	eff3p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+141	effmd5tri_TGT	141.790908	0.027856	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+142	eff3p5di_GT	141.175284	0.028325	127	eff3p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+143	eff5p4tri_AGG	140.913697	0.027808	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+144	effmd5di_CC	140.309525	-0.027964	132	effmd5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+145	eff5p2tri_ATA	139.150485	0.027498	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+146	eff3p3_A	138.078572	-0.029841	110	eff3p3	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+147	effmd5di_TC	137.221945	-0.027817	132	effmd5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+148	effmd3tri_GAG	136.856001	0.027431	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+149	eff3p5tri_GAG	135.666018	0.027464	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+150	eff3p5tri_TAA	135.423408	-0.027285	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+151	eff5p2tri_AGT	135.192829	-0.027474	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+152	eff5p3di_TA	135.108809	0.027540	120	eff5p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+153	eff3p4di_AT	134.518504	0.027991	126	eff3p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+154	eff3p5di_CC	133.98056	-0.027326	127	eff3p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+155	eff3p1tri_CTG	133.601767	0.027013	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+156	eff3p5tri_GGT	133.582192	0.027040	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+157	eff5p2tri_AAA	131.809445	0.026923	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+158	eff5p5tri_TGA	131.415402	0.026914	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+159	eff3p1tri_GAA	130.97925	0.026937	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+160	eff5p1_C	130.880884	-0.028516	103	eff5p1	structure	nucleotide type	categorical	"pred, vali"	single nucleotide base type at a specific position on active siRNA
+161	eff5p3_C	127.370686	-0.028834	105	eff5p3	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+162	3p1G	127.0744	0.064945	65	3p1G	expression	nucleotide frequency	numerical	pred	see ID 63
+163	eff5p5tri_CCA	125.837601	-0.026231	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+164	eff3p2tri_GGA	125.747664	0.026406	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+165	eff3p1di_CT	125.607132	-0.026865	123	eff3p1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+166	eff5p1di_TT	124.262943	0.026835	118	eff5p1di	structure	nucleotide type	categorical	"pred, vali"	di-nucleotide base type at a specific position on active siRNA
+167	eff3p4tri_ACC	123.500819	-0.026103	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+168	eff3p3_T	121.933061	-0.029309	110	eff3p3	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+169	eff3p1tri_CAG	121.378564	0.025725	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+170	effmd2tri_GAT	120.498827	0.025920	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+171	eff5p1_3p3_CA	120.365398	-0.025650	148	eff5p1_3p3	structure	nucleotide type	categorical	"pred, vali"	the first and the last nucleotides on active siRNA
+172	eff3p5tri_TGA	119.120791	0.025599	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+173	eff3p4di_GA	118.823779	0.026533	126	eff3p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+174	eff3p2di_AC	118.814366	-0.025945	124	eff3p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+175	eff3p4tri_GGG	118.403037	-0.025493	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+176	5p3G	117.143802	0.063292	53	5p3G	expression	nucleotide frequency	numerical	pred	see ID 43
+177	5p4T	117.138234	0.062848	58	5p4T	expression	nucleotide frequency	numerical	pred	see ID 43
+178	eff3p2tri_CCG	116.400336	-0.025219	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+179	eff3p5di_CT	115.99841	-0.025628	127	eff3p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+180	eff5p1di_TG	115.429896	0.026091	118	eff5p1di	structure	nucleotide type	categorical	"pred, vali"	di-nucleotide base type at a specific position on active siRNA
+181	eff5p4di_GG	114.937579	0.026024	121	eff5p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+182	3p3T	113.800966	-0.062246	74	3p3T	expression	nucleotide frequency	numerical	pred	see ID 63
+183	eff5p4di_CG	113.718971	-0.025306	121	eff5p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+184	effmd2tri_TTG	113.234043	0.024956	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+185	effmd3tri_AGA	112.866614	0.025096	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+186	eff5p4tri_TCC	111.90019	-0.024769	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+187	eff5p1tri_TGA	110.704621	0.024756	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+188	eff3p1tri_AAA	109.82113	0.024431	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+189	eff3p4tri_CTC	108.485757	-0.024392	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+190	eff5p3tri_TGA	108.191004	0.024398	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+191	eff3p1di_GG	108.107724	-0.025040	123	eff3p1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+192	eff3p1tri_GCA	107.908504	0.024474	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+193	eff5p1_3p3_TC	107.555067	0.024775	148	eff5p1_3p3	structure	nucleotide type	categorical	"pred, vali"	the first and the last nucleotides on active siRNA
+194	eff3p2tri_CTC	107.2696	-0.024220	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+195	NBtripletA	106.744596	0.033569	156	NBtripletA	structure	triplet	numerical	"pred, vali"	occurrences of triplet A around eff_seq
+196	eff5p4tri_ACC	106.519177	-0.024100	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+197	effmd4_C	106.281752	-0.026184	116	effmd4	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+198	effmd4tri_GGA	105.775541	0.024262	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+199	eff5p5di_TG	105.248061	0.024627	122	eff5p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+200	N	105.011427	0.060965	3	N	expression	phase score	numerical	pred	number of all positions expressed by sRNA of any size within the 9-cycle window
+201	eff5p4di_TT	104.43988	0.024364	121	eff5p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+202	eff5p1tri_TTT	104.149417	0.023918	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+203	md2T	104.144231	0.060239	90	md2T	expression	nucleotide frequency	numerical	pred	see ID 83
+204	5p4G	103.587448	0.059535	57	5p4G	expression	nucleotide frequency	numerical	pred	see ID 43
+205	effmd1tri_GAG	102.759834	0.023814	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+206	effmd4di_GC	102.391645	0.024139	131	effmd4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+207	eff3p4tri_CAT	102.364333	0.023647	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+208	eff5p5di_GA	101.841273	0.024835	122	eff5p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+209	effmd1tri_GGC	101.824947	-0.023611	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+210	eff3p2_C	101.809998	-0.026373	109	eff3p2	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+211	effmd2di_CG	101.074108	-0.023842	129	effmd2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+212	effmd1tri_TAC	100.236211	-0.023493	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+213	eff5p1tri_ATC	100.091177	-0.023502	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+214	effmd2di_AC	99.672533	-0.023946	129	effmd2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+215	3p3C	98.456903	-0.057980	72	3p3C	expression	nucleotide frequency	numerical	pred	see ID 63
+216	eff3p3tri_CTG	98.442438	0.023149	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+217	eff5p1di_CC	98.27437	-0.023284	118	eff5p1di	structure	nucleotide type	categorical	"pred, vali"	di-nucleotide base type at a specific position on active siRNA
+218	effmd4di_CT	97.007018	-0.023440	131	effmd4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+219	eff3p5di_GA	96.921922	0.024145	127	eff3p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+220	effmd3tri_TGT	96.127005	0.022914	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+221	C%	95.867218	-0.058076	20	C%	expression	nucleotide frequency	numerical	pred	see ID 19
+222	eff3p4tri_CGC	95.51054	0.022748	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+223	eff3p3tri_CCA	94.860656	-0.022750	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+224	effmd4tri_GCT	94.75358	0.022752	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+225	eff5p5tri_TTA	94.058146	0.022687	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+226	effmd1tri_CCG	93.808938	-0.022605	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+227	eff3p2tri_AGA	93.227877	0.022659	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+228	eff3p3di_CA	92.941596	-0.023027	125	eff3p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+229	effmd2tri_GGG	92.899031	-0.022619	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+230	eff5p2_C	92.81918	-0.024741	104	eff5p2	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+231	effmd1tri_GAA	92.494675	0.022632	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+232	effmd5di_AA	92.29661	-0.023374	132	effmd5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+233	eff5p2di_CG	92.060698	-0.022748	119	eff5p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+234	eff3p3tri_TAA	91.949431	-0.022361	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+235	eff3p3di_AA	91.680943	-0.022580	125	eff3p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+236	eff5p2tri_CGA	91.416833	-0.022377	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+237	effmd1tri_ATA	91.20154	0.022332	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+238	effmd3di_CT	90.770856	-0.022729	130	effmd3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+239	eff5p3tri_GCG	90.517133	-0.022261	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+240	effmd4tri_GAT	90.475669	0.022445	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+241	eff5p5tri_TCC	90.29622	-0.022180	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+242	eff3p4tri_ATC	90.083069	-0.022312	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+243	eff5p4tri_CAC	89.851758	-0.022148	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+244	eff5p2tri_AAT	89.459149	0.022085	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+245	eff5p2di_TT	89.38471	0.022528	119	eff5p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+246	effmd5tri_CCA	87.832464	-0.021916	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+247	effmd4tri_ACC	87.491843	-0.021884	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+248	5p5T	86.210298	0.054373	62	5p5T	expression	nucleotide frequency	numerical	pred	see ID 43
+249	eff5p2_A	85.874919	0.025420	104	eff5p2	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+250	effmd3tri_TAC	85.003181	-0.021623	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+251	eff3p2tri_ACT	83.892435	0.021452	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+252	eff3p2tri_AAC	83.730181	-0.021359	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+253	effmd4tri_CCT	83.464148	-0.021320	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+254	effmd2di_AG	83.425103	0.022126	129	effmd2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+255	eff5p2tri_ATC	82.955695	-0.021268	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+256	effmd2di_CA	82.92561	-0.021689	129	effmd2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+257	effmd5tri_AAA	82.04103	-0.021329	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+258	eff5p1_3p3_AG	81.803952	0.022536	148	eff5p1_3p3	structure	nucleotide type	categorical	"pred, vali"	the first and the last nucleotides on active siRNA
+259	eff3p5tri_TCC	81.01293	-0.021022	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+260	eff5p5tri_CGA	81.008178	-0.021078	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+261	eff5p3tri_TTG	80.838448	0.021016	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+262	dominant_strand_Watson	80.59783	-0.024182	11	dominant_strand	expression	ratio	categorical	pred	"proportion of forward reads to the total reads within a window; if the ratio exceeds 0.8, it's labeled as Watson; if it falls below 0.2, it's labeled as Crick; otherwise, it's labeled as both. The final label is determined by the majority vote among the windows within a segment."
+263	eff5p1_3p3_AT	80.442437	-0.021975	148	eff5p1_3p3	structure	nucleotide type	categorical	"pred, vali"	the first and the last nucleotides on active siRNA
+264	eff5p5tri_AAG	80.383865	0.021065	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+265	effmd3di_CC	80.158382	-0.021049	130	effmd3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+266	effmd1tri_CGT	80.088356	-0.020894	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+267	effmd4tri_CTA	79.869978	-0.020885	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+268	effmd3tri_GCG	79.652798	-0.020822	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+269	eff5p3tri_TAG	79.071416	0.020763	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+270	eff3p3di_GG	78.868127	0.021740	125	eff3p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+271	eff3p5tri_CTC	78.685536	-0.020743	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+272	eff5p5tri_TGG	78.60004	0.020758	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+273	effmd1di_CT	77.980043	-0.021096	128	effmd1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+274	eff3p5tri_GGA	77.629392	0.020802	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+275	eff5p3tri_CGA	77.455268	-0.020590	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+276	eff3p2_A	77.342596	0.023596	109	eff3p2	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+277	effmd5di_GA	76.659165	0.021372	132	effmd5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+278	eff3p2tri_TAC	76.374336	0.020353	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+279	eff5p4tri_CCA	76.319697	-0.020377	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+280	eff5p5tri_CCT	75.812082	-0.020390	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+281	eff5p1tri_GAC	75.496591	-0.020294	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+282	eff3p1di_AG	75.41512	0.020667	123	eff3p1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+283	eff5p2tri_TTT	75.268716	0.020286	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+284	eff5p4di_AC	74.853105	-0.020653	121	eff5p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+285	eff3p2tri_CAC	74.769028	-0.020209	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+286	eff5p4tri_TTG	73.941962	0.020136	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+287	eff5p4tri_TTT	73.843231	0.020090	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+288	eff3p5tri_GTG	73.569662	0.020080	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+289	effmd1di_TT	73.161531	0.020432	128	effmd1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+290	eff3p1di_AA	73.081666	0.020686	123	eff3p1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+291	eff3p1tri_AGC	72.590708	-0.019866	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+292	eff3p2tri_GAC	72.436949	-0.019942	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+293	eff5p1tri_GCG	72.20879	-0.019826	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+294	eff3p2tri_CAG	72.038384	-0.019804	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+295	eff5p1di_GG	71.98903	-0.020147	118	eff5p1di	structure	nucleotide type	categorical	"pred, vali"	di-nucleotide base type at a specific position on active siRNA
+296	eff3p1tri_GGC	71.597001	0.019823	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+297	effmd5tri_TTA	71.335271	-0.019799	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+298	eff3p4tri_CCC	71.289487	-0.019683	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+299	eff3p5tri_GCA	70.690446	0.019639	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+300	eff3p4_T	70.022779	0.022341	111	eff3p4	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+301	effmd1tri_CTC	69.980841	-0.019521	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+302	eff_strand_B	69.960339	-0.019545	4	eff_strand	expression	abundance	categorical	pred	coordinate of the most abundant effector siRNA allowing drift
+303	eff5p1di_GC	69.624937	-0.019683	118	eff5p1di	structure	nucleotide type	categorical	"pred, vali"	di-nucleotide base type at a specific position on active siRNA
+304	eff3p5_C	69.375823	-0.021409	112	eff3p5	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+305	effmd5tri_TAC	69.372133	-0.019491	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+306	effmd5tri_CCT	69.297071	-0.019412	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+307	eff5p4tri_ATT	69.221812	0.019450	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+308	effmd3tri_ACT	69.12619	-0.019491	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+309	eff5p1di_AG	68.759262	-0.020549	118	eff5p1di	structure	nucleotide type	categorical	"pred, vali"	di-nucleotide base type at a specific position on active siRNA
+310	effmd1tri_ACT	68.563738	-0.019396	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+311	eff3p4tri_GTG	68.520955	0.019386	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+312	eff3p1tri_TCT	68.267135	-0.019283	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+313	effmd2tri_GTT	68.025971	-0.019369	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+314	effmd4di_AC	67.875163	-0.019827	131	effmd4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+315	eff5p1tri_TTC	67.809321	0.019250	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+316	eff3p2di_CT	67.464542	0.019785	124	eff3p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+317	effmd3tri_TCT	67.380618	-0.019174	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+318	eff3p5tri_CAC	67.278273	-0.019149	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+319	effmd3tri_TCA	67.099022	-0.019146	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+320	mircheck_conclu_MIXED_PAIRING	66.731607	0.020225	34	mircheck_conclu	structure	hairpin	categorical	"pred, vali"	"checking if the precursor (the sequence of this segment) forms a hairpin; True if it says 5-prime or 3-prime, else False"
+321	effmd2tri_TGT	66.717866	0.019093	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+322	effmd1tri_AAG	66.670294	0.019184	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+323	eff5p5di_TT	66.629375	0.019564	122	eff5p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+324	effmd5tri_GCA	66.373778	-0.019166	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+325	eff3p4tri_TGG	66.367064	0.019232	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+326	eff5p4tri_ATG	66.329206	0.019099	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+327	eff5p3tri_CCC	66.294424	-0.018973	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+328	eff3p1tri_GCT	66.192628	0.019028	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+329	effmd3di_CG	65.942857	-0.019265	130	effmd3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+330	md2A	65.838396	0.047772	87	md2A	expression	nucleotide frequency	numerical	pred	see ID 83
+331	eff5p1tri_GGC	65.809278	-0.018905	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+332	eff3p1di_GT	65.762594	0.019437	123	eff3p1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+333	effmd1di_TG	65.727879	0.019789	128	effmd1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+334	effmd3_G	65.299388	0.021957	115	effmd3	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+335	eff5p4tri_CCC	65.250515	-0.018807	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+336	eff5p3tri_ACC	64.854718	-0.018810	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+337	eff3p1tri_TCA	64.844565	-0.018859	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+338	eff3p2tri_CCT	64.607937	-0.018772	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+339	eff3p1tri_ACT	64.120888	-0.018730	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+340	eff5p3tri_CAC	63.99819	-0.018649	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+341	effmd4tri_GCA	63.871265	0.018719	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+342	eff5p1tri_GGA	63.860434	-0.018692	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+343	eff5p3tri_GAC	63.776884	-0.018744	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+344	eff5p2tri_CTC	63.767529	0.018685	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+345	eff5p1tri_ACC	63.766257	-0.018641	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+346	effmd1tri_TTG	63.648606	0.018737	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+347	effmd3tri_CCT	63.603177	-0.018585	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+348	eff3p1di_CC	63.486438	-0.018943	123	eff3p1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+349	effmd1tri_GAC	63.188715	-0.018635	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+350	eff3p2di_GG	63.183577	0.019475	124	eff3p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+351	effmd5tri_TCT	63.098787	-0.018556	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+352	effmd4tri_TAT	63.006421	-0.018550	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+353	effmd3tri_TCG	62.769626	0.018532	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+354	eff3p2tri_AAG	62.75319	-0.018466	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+355	eff5p5_T	62.377922	0.020946	107	eff5p5	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+356	eff3p5tri_CAT	61.640786	-0.018435	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+357	eff5p2tri_ACC	61.5856	-0.018336	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+358	effmd5di_AC	61.548434	-0.018735	132	effmd5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+359	eff5p3tri_CAG	61.286651	-0.018317	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+360	eff5p1tri_TGT	61.263429	0.018318	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+361	effmd4di_AT	60.594794	0.018660	131	effmd4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+362	eff5p4di_AT	60.477499	0.018667	121	eff5p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+363	eff3p4tri_GCT	60.163078	0.018092	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+364	eff5p3di_GC	59.96698	-0.018474	120	eff5p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+365	md1G	59.509659	0.045522	85	md1G	expression	nucleotide frequency	numerical	pred	see ID 83
+366	eff5p3tri_GTT	58.903856	0.017934	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+367	md4G	58.889611	0.044561	97	md4G	expression	nucleotide frequency	numerical	pred	see ID 83
+368	effmd2tri_ACT	58.880599	-0.018049	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+369	effmd4di_CC	58.830217	-0.018066	131	effmd4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+370	eff3p1tri_ACC	58.553238	-0.017873	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+371	fback_stop52	58.422857	-0.018248	42	fback_stop52	structure	hairpin	numerical	pred	see ID 40
+372	effmd2di_CT	58.399403	-0.017834	129	effmd2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+373	eff5p4tri_GCG	58.233229	-0.017849	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+374	eff5p4tri_ACT	58.062089	-0.017724	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+375	eff5p1tri_GCC	57.962718	0.020968	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+376	effmd4_G	57.93532	-0.017756	116	effmd4	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+377	fback_start52	57.907203	-0.017750	41	fback_start52	structure	hairpin	numerical	pred	see ID 40
+378	eff3p3tri_CCT	57.891518	-0.018228	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+379	eff3p5tri_CGG	57.603823	-0.017832	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+380	eff3p3di_GT	57.435409	0.017908	125	eff3p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+381	effmd2di_CC	57.387324	0.017714	129	effmd2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+382	eff3p2tri_TGG	57.273891	-0.018075	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+383	eff5p2tri_CAA	57.2181	-0.017927	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+384	eff5p4di_TC	56.798691	0.044773	121	eff5p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+385	pval_fdr	56.451946	-0.018016	24	pval_fdr	expression	phase score	numerical	pred	FDR $<$ 0.05
+386	effmd3di_TT	56.116365	0.018029	130	effmd3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+387	effmd2di_AT	55.810386	0.017369	129	effmd2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+388	eff3p5tri_GTA	55.289118	-0.017340	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+389	eff5p4tri_CGT	55.104871	0.017453	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+390	eff5p1tri_ATG	54.871247	-0.017864	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+391	eff5p5di_AC	54.843355	-0.017859	122	eff5p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+392	effmd2di_TC	54.536891	-0.017481	129	effmd2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+393	eff3p4tri_TAC	54.422271	0.017215	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+394	premfe_500_200	54.175357	0.044541	18	premfe_500_200	structure	MFE	numerical	pred	"MFE of the structure [eff_seq-500, eff_seq+200], calculated by RNAfold"
+395	effmd5tri_GAT	54.166528	0.017346	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+396	eff5p1tri_AGG	54.071935	-0.017349	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+397	effmd2tri_TCG	53.904399	-0.017155	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+398	effmd2tri_TCC	53.868279	-0.017095	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+399	effmd5tri_ACC	53.778531	-0.017120	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+400	eff3p5tri_ATA	53.652459	0.017114	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+401	eff5p2tri_CCT	53.554371	-0.017050	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+402	effmd3tri_AGT	53.46794	-0.017175	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+403	eff3p4di_TG	53.36139	0.017594	126	eff3p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+404	effmd4tri_TAC	53.344022	-0.017061	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+405	eff5p2tri_TTA	53.09326	0.017006	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+406	effmd4tri_TTC	52.847031	-0.016968	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+407	eff5p2tri_GTT	52.666909	0.016933	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+408	eff3p1tri_GAG	52.625751	0.016979	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+409	eff3p5di_GG	52.604566	-0.017559	127	eff3p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+410	eff5p3di_AC	52.460682	-0.017394	120	eff5p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+411	eff3p2tri_GCT	51.573928	0.016898	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+412	effmd3tri_TGC	51.17093	0.016704	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+413	effmd1di_TA	51.120086	-0.017218	128	effmd1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+414	eff5p4tri_AGA	51.05079	-0.016936	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+415	effmd4_T	51.022192	-0.019219	116	effmd4	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+416	eff5p2tri_CCA	50.950056	-0.016672	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+417	eff5p5di_AA	50.808009	0.017326	122	eff5p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+418	eff5p5tri_ACT	50.7877	-0.016799	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+419	eff3p3tri_TTA	50.757076	-0.016637	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+420	eff3p5tri_TTG	50.565175	0.016685	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+421	eff5p3tri_GTC	50.540537	-0.016666	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+422	eff3p4tri_CCG	50.531554	-0.016581	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+423	eff5p1tri_TCG	50.38907	-0.016599	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+424	effmd4di_AA	50.358601	0.017211	131	effmd4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+425	effmd3di_AC	50.028865	-0.016910	130	effmd3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+426	effmd4tri_TGC	49.967444	-0.016582	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+427	eff3p3tri_CCC	49.593463	-0.016430	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+428	eff5p3_G	49.446203	-0.019857	105	eff5p3	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+429	effmd3tri_AGC	49.389908	0.016430	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+430	eff3p5tri_GAT	49.314595	0.016513	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+431	effmd2tri_CAC	49.242937	-0.016350	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+432	eff3p1tri_CGG	49.201327	-0.016464	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+433	eff5p4tri_GAT	49.027511	0.016475	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+434	effmd2tri_AGT	48.861747	-0.016386	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+435	eff3p5tri_TAG	48.852442	0.016369	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+436	eff5p1tri_GTC	48.829823	-0.016264	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+437	mircheck_conclu_FBACK_SHORT	48.815016	-0.016346	34	mircheck_conclu	structure	hairpin	categorical	"pred, vali"	"checking if the precursor (the sequence of this segment) forms a hairpin; True if it says 5-prime or 3-prime, else False"
+438	mircheck_conclu52_3prime	48.657406	-0.016414	40	mircheck_conclu52	structure	hairpin	categorical	pred	"checking the alternative precursor [eff_seq-500, eff_seq+200], see ID 34-36"
+439	effmd4tri_ACT	48.353685	-0.016289	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+440	eff3p2tri_CCC	48.138274	-0.016242	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+441	eff3p1tri_ATT	48.108864	-0.016192	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+442	5p1A	47.790773	0.040475	43	5p1A	expression	nucleotide frequency	numerical	pred	"expression-weighted percentage of a nucleotide base type in a segment considering Dicer Call at a specific position on active siRNA; e.g., 5p1A: A at the first (1) position on the 5-prime end of the active siRNA"
+443	effmd1di_AA	47.699924	0.016693	128	effmd1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+444	eff5p2tri_TCC	47.568265	-0.016080	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+445	effmd2tri_GCT	47.501783	-0.016105	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+446	effmd4_A	47.032908	0.018898	116	effmd4	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+447	effmd4tri_CTC	47.011744	-0.016008	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+448	effmd2di_GC	46.995738	-0.016236	129	effmd2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+449	eff5p2tri_TGT	46.846564	0.016004	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+450	effmd4di_AG	46.790639	0.016512	131	effmd4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+451	eff5p1di_GT	46.601206	-0.016194	118	eff5p1di	structure	nucleotide type	categorical	"pred, vali"	di-nucleotide base type at a specific position on active siRNA
+452	effmd4tri_TAA	46.550405	-0.015980	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+453	eff5p2tri_TGC	46.457302	-0.015926	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+454	effmd4tri_CGT	46.396193	0.015904	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+455	eff5p4tri_CTA	46.297363	-0.015893	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+456	effmd2tri_TTA	46.221691	-0.015900	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+457	eff5p4tri_CAG	46.110086	-0.015866	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+458	eff3p2tri_CTA	45.892457	-0.015831	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+459	eff3p1tri_GGG	45.877152	-0.015914	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+460	eff5p4tri_CAA	45.793595	0.015885	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+461	effmd1tri_CAT	45.471641	-0.015803	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+462	eff3p1tri_ATG	45.450759	0.015725	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+463	effmd2_A	45.404315	0.018649	114	effmd2	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+464	eff3p3di_TC	45.303025	0.016170	125	eff3p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+465	eff3p5_A	44.69405	0.018232	112	eff3p5	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+466	effmd1tri_ACA	44.664431	-0.015632	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+467	eff5p3tri_ACA	44.643266	-0.015662	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+468	eff5p4tri_CGA	44.604129	-0.015592	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+469	eff5p1tri_CTA	44.497782	-0.015556	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+470	eff3p5di_TG	43.932678	0.016001	127	eff3p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+471	eff5p2tri_CCC	43.911744	-0.015427	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+472	eff5p3tri_CCG	43.876987	-0.015434	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+473	eff3p4tri_TTC	43.803106	-0.015467	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+474	effmd4tri_CCC	43.622535	-0.015363	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+475	eff5p2tri_GGC	43.430365	-0.015425	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+476	eff3p5di_TA	43.352564	0.015621	127	eff3p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+477	eff3p3di_TT	43.30842	-0.015769	125	eff3p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+478	eff3p1tri_GAC	43.217631	0.015449	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+479	effmd1di_CG	43.16736	-0.015571	128	effmd1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+480	eff5p1_3p3_TT	43.122189	0.015819	148	eff5p1_3p3	structure	nucleotide type	categorical	"pred, vali"	the first and the last nucleotides on active siRNA
+481	eff3p3tri_ACA	43.083902	-0.015349	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+482	effmd1_G	42.672391	0.017983	113	effmd1	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+483	effmd1tri_CAC	42.598147	-0.015201	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+484	3p2A	42.533018	0.038138	67	3p2A	expression	nucleotide frequency	numerical	pred	see ID 63
+485	eff5p5di_CG	42.328538	-0.015428	122	eff5p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+486	effmd5di_GC	42.010264	-0.015423	132	effmd5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+487	eff5p1_3p3_CT	41.927867	-0.015196	148	eff5p1_3p3	structure	nucleotide type	categorical	"pred, vali"	the first and the last nucleotides on active siRNA
+488	effmd2tri_TAG	41.905212	0.015226	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+489	eff5p2tri_GCG	41.783472	-0.015062	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+490	md3T	41.736637	0.037822	94	md3T	expression	nucleotide frequency	numerical	pred	see ID 83
+491	eff3p4tri_GAA	41.690137	0.015119	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+492	eff5p3tri_AGG	41.686255	0.015165	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+493	mircheck_conclu25_FBACK_SHORT	41.576979	-0.015087	37	mircheck_conclu25	structure	hairpin	categorical	pred	"checking the alternative precursor [eff_seq-200, eff_seq+500], see ID 34-36"
+494	eff5p2di_GC	41.454026	-0.015229	119	eff5p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+495	eff5p2tri_GTA	41.140323	0.014987	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+496	effmd3di_AG	41.090195	0.015624	130	effmd3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+497	effmd5tri_CTA	41.078292	-0.014959	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+498	eff5p4tri_CCG	40.883666	-0.014897	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+499	effmd5tri_TCA	40.851032	-0.014918	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+500	effmd4tri_CGG	40.78557	-0.014933	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+501	eff3p1tri_GAT	40.624447	0.014945	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+502	eff5p5tri_ATA	40.27599	-0.014860	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+503	effmd4di_GG	40.191653	0.015262	131	effmd4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+504	mircheck_conclu25_5prime	40.026868	-0.014859	37	mircheck_conclu25	structure	hairpin	categorical	pred	"checking the alternative precursor [eff_seq-200, eff_seq+500], see ID 34-36"
+505	eff3p1tri_GTG	39.895224	0.014813	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+506	eff5p5tri_CCG	39.864035	-0.014698	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+507	effmd5tri_CAA	39.787269	0.014769	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+508	eff5p4tri_GAA	39.37481	0.014815	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+509	eff3p2tri_CGA	39.30889	0.014665	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+510	eff5p1tri_CCA	39.132059	-0.014580	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+511	eff3p2tri_AGC	39.071424	0.014613	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+512	eff5p1tri_TCC	39.024465	-0.014595	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+513	effmd2_T	39.004583	0.016642	114	effmd2	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+514	eff3p1tri_AGT	38.928877	-0.014551	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+515	eff3p3tri_AAG	38.682321	0.014586	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+516	eff5p2tri_GGT	38.582493	0.014515	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+517	eff3p2tri_CGG	38.533346	-0.014627	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+518	eff5p3tri_AAT	38.528838	0.014523	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+519	eff3p2di_CG	38.356999	-0.014937	124	eff3p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+520	mircheck_conclu52_MIR_BULGE	38.350418	-0.014583	40	mircheck_conclu52	structure	hairpin	categorical	pred	"checking the alternative precursor [eff_seq-500, eff_seq+200], see ID 34-36"
+521	eff5p2tri_CGG	38.233069	-0.014455	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+522	effmd4tri_TTA	38.209934	-0.014447	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+523	eff3p1tri_TCC	38.104187	-0.014429	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+524	effmd1tri_CTA	38.029266	-0.014444	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+525	eff5p4tri_ATC	37.976564	-0.014432	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+526	effmd2tri_TGC	37.96619	0.014378	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+527	eff3p3di_CT	37.747328	-0.014663	125	eff3p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+528	eff5p2tri_AAG	37.54593	0.014381	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+529	eff5p1di_GA	37.257681	-0.014659	118	eff5p1di	structure	nucleotide type	categorical	"pred, vali"	di-nucleotide base type at a specific position on active siRNA
+530	mircheck_conclu_5prime	37.241344	-0.014286	34	mircheck_conclu	structure	hairpin	categorical	"pred, vali"	"checking if the precursor (the sequence of this segment) forms a hairpin; True if it says 5-prime or 3-prime, else False"
+531	effmd4tri_AGG	37.049314	0.014255	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+532	5p3A	36.939276	-0.035653	51	5p3A	expression	nucleotide frequency	numerical	pred	see ID 43
+533	eff3p3tri_GGT	36.818219	-0.014287	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+534	eff3p3tri_TGT	36.649843	-0.014141	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+535	eff5p2tri_CAG	36.611529	-0.014153	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+536	effmd3tri_CAA	36.576848	-0.014152	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+537	effmd3tri_CGA	36.199421	-0.014060	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+538	eff3p2di_TA	36.16076	-0.014345	124	eff3p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+539	eff5p2tri_CTT	36.145059	-0.014065	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+540	effmd3tri_CGT	35.782621	-0.013952	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+541	effmd3tri_GCT	35.760401	0.013949	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+542	eff5p3di_AA	35.744618	0.014531	120	eff5p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+543	effmd2tri_CGT	35.638363	-0.013934	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+544	eff5p3tri_ATT	35.448709	0.013926	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+545	effmd5tri_GTT	35.398612	0.013933	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+546	effmd5tri_ACA	35.099356	-0.013867	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+547	effmd2tri_CAG	35.037121	-0.013869	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+548	eff3p2tri_GTC	34.697918	-0.013737	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+549	effmd3di_CA	34.629715	-0.013998	130	effmd3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+550	eff3p1tri_TTG	34.448267	0.013671	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+551	effmd1tri_GGA	34.439248	0.013841	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+552	eff3p4tri_CTA	34.353438	-0.013687	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+553	eff3p5tri_CCC	34.262862	-0.013619	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+554	effmd1di_CA	34.17347	-0.013941	128	effmd1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+555	eff5p2tri_CCG	34.163155	-0.013623	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+556	eff3p4tri_AAA	34.062844	-0.013679	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+557	eff5p1tri_GTG	34.052273	-0.013628	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+558	effmd2tri_CGA	34.043669	-0.013639	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+559	eff5p1tri_CAG	33.99797	-0.013618	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+560	eff5p2tri_GAA	33.958947	-0.013778	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+561	eff5p5tri_GGT	33.665495	-0.013574	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+562	eff3p4tri_GCG	33.563871	-0.013526	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+563	eff3p2tri_GAT	33.526097	0.013522	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+564	eff3p3tri_GGC	33.24553	0.013579	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+565	eff5p5di_AT	33.210422	0.013811	122	eff5p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+566	effmd3tri_CGG	33.132551	-0.013458	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+567	effmd1tri_TTT	32.905406	0.013411	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+568	eff3p2tri_GAG	32.653674	-0.013318	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+569	effmd5tri_AAC	32.623501	-0.013383	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+570	eff3p4di_CG	32.396859	-0.013552	126	eff3p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+571	eff5p1di_CT	32.389132	-0.013427	118	eff5p1di	structure	nucleotide type	categorical	"pred, vali"	di-nucleotide base type at a specific position on active siRNA
+572	eff3p3tri_AGG	32.338833	0.013354	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+573	eff5p3tri_AAG	32.281816	0.013439	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+574	eff5p1tri_CGT	32.060069	0.013164	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+575	eff5p4tri_ATA	31.908518	0.013204	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+576	eff3p4tri_CGG	31.573671	-0.013157	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+577	effmd4tri_CGC	31.551742	-0.013064	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+578	eff3p5tri_AGT	31.463605	0.013106	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+579	eff3p2tri_ATC	31.300238	-0.013051	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+580	eff3p3tri_CGG	31.185913	-0.013127	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+581	eff3p2tri_TAA	31.137759	-0.013015	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+582	eff3p5tri_TAC	31.11439	-0.013041	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+583	eff5p3tri_CCA	31.004857	-0.012995	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+584	eff3p2tri_TCT	30.926292	0.013010	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+585	effmd5tri_TAT	30.735882	-0.012942	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+586	effmd1tri_ACG	30.648133	-0.012919	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+587	eff3p3tri_TAT	30.6267	-0.012888	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+588	effmd1tri_CGC	30.624327	0.012873	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+589	eff5p3di_GA	30.622367	-0.013562	120	eff5p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+590	eff5p2di_TC	30.594907	-0.013183	119	eff5p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+591	eff3p1tri_CAT	30.591638	-0.013031	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+592	effmd2tri_TTT	30.58201	-0.012957	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+593	eff5p2di_GT	30.475436	0.013116	119	eff5p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+594	eff3p2tri_GGC	30.44973	0.012975	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+595	effmd2tri_CAT	30.402457	-0.012883	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+596	effmd2di_AA	30.320665	0.013306	129	effmd2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+597	eff3p4_A	30.221525	0.014616	111	eff3p4	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+598	effmd3tri_ACC	30.206561	-0.012842	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+599	5p3T	30.204052	0.032015	54	5p3T	expression	nucleotide frequency	numerical	pred	see ID 43
+600	eff3p5tri_GCG	30.140983	-0.012808	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+601	effmd3tri_ATA	29.960235	-0.012808	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+602	effmd1di_GC	29.907167	-0.013031	128	effmd1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+603	eff3p1_G	29.839986	0.014065	108	eff3p1	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+604	effmd2tri_CCT	29.834968	-0.012717	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+605	3p4T	29.816738	0.031869	78	3p4T	expression	nucleotide frequency	numerical	pred	see ID 63
+606	effmd3tri_GAA	29.683373	-0.012985	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+607	fback_stop25	29.678469	0.012829	39	fback_stop25	structure	hairpin	numerical	pred	see ID 37
+608	effmd5tri_ATC	29.454075	-0.012695	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+609	fback_start25	29.416769	-0.012686	38	fback_start25	structure	hairpin	numerical	pred	see ID 37
+610	eff5p1tri_AGC	29.396753	0.013220	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+611	eff3p5di_AG	29.388163	-0.012557	127	eff3p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+612	eff5p2tri_CGC	29.127436	0.012549	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+613	effmd5tri_AGC	28.916864	-0.012575	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+614	effmd2tri_CTA	28.866226	-0.013041	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+615	eff3p4tri_TTT	28.841238	-0.012603	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+616	eff3p1tri_TGC	28.781039	-0.012562	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+617	eff5p1tri_CCT	28.717177	-0.012473	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+618	effmd3tri_GCA	28.7148	0.012519	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+619	effmd1tri_CCT	28.588291	-0.012453	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+620	eff5p3tri_GAA	28.560069	-0.012584	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+621	effmd5di_TT	28.542031	-0.012813	132	effmd5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+622	eff5p4_G	28.480495	0.014934	106	eff5p4	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+623	md5G	28.350401	0.030681	101	md5G	expression	nucleotide frequency	numerical	pred	see ID 83
+624	eff5p5tri_CAC	28.348099	-0.012397	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+625	eff5p5di_CA	28.289373	-0.012639	122	eff5p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+626	eff3p1tri_AGA	28.271335	-0.012413	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+627	eff3p3tri_GTC	28.211622	-0.012435	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+628	eff5p5di_GT	28.090466	-0.012681	122	eff5p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+629	eff3p5tri_ACG	28.085042	0.012409	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+630	eff3p3tri_TTT	27.832145	-0.012352	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+631	mircheck_conclu52_FBACK_SHORT	27.62383	-0.012286	40	mircheck_conclu52	structure	hairpin	categorical	pred	"checking the alternative precursor [eff_seq-500, eff_seq+200], see ID 34-36"
+632	eff3p2tri_GAA	27.623176	0.012258	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+633	eff3p1_C	27.607109	-0.013627	108	eff3p1	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+634	eff5p3tri_GCC	27.576237	-0.012228	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+635	eff5p5di_TC	27.54977	-0.012507	122	eff5p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+636	eff3p3tri_TAG	27.501552	0.012260	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+637	effmd2tri_CCA	27.480158	-0.012223	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+638	eff5p1tri_CCC	27.426745	-0.012180	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+639	eff5p5tri_GGA	27.420206	0.012336	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+640	eff5p3tri_CAA	27.375978	0.012262	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+641	effmd3di_TC	27.155298	-0.012390	130	effmd3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+642	eff3p1tri_AAG	27.022528	-0.012138	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+643	eff3p1tri_AGG	26.975703	-0.012086	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+644	eff3p1tri_TAT	26.864529	-0.012122	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+645	eff5p3tri_TAC	26.751648	0.012055	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+646	effmd4tri_GTA	26.611999	0.012097	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+647	eff5p3di_CG	26.593273	-0.012249	120	eff5p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+648	effmd2tri_ACA	26.461552	-0.012029	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+649	eff3p5di_AA	26.011716	-0.012347	127	eff3p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+650	eff3p5di_TT	25.867338	-0.012227	127	eff3p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+651	effmd1tri_CCC	25.831527	-0.011828	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+652	eff5p4tri_TTA	25.819075	0.011854	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+653	anyhitBool_True	25.748539	0.048439	32	anyhitBool	structure	miRNA targeting	categorical	"pred, vali"	"boolean, any miRNA targeting this segment"
+654	dominant_strand_both	25.453231	0.016327	11	dominant_strand	expression	ratio	categorical	pred	"proportion of forward reads to the total reads within a window; if the ratio exceeds 0.8, it's labeled as Watson; if it falls below 0.2, it's labeled as Crick; otherwise, it's labeled as both. The final label is determined by the majority vote among the windows within a segment."
+655	effmd1tri_ACC	25.334491	-0.011734	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+656	effmd5di_GT	25.185202	0.012001	132	effmd5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+657	eff5p4tri_CGG	25.137548	-0.011733	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+658	eff3p5tri_GTC	24.92018	0.011640	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+659	eff3p1tri_CGC	24.915394	-0.011649	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+660	eff3p5tri_CCT	24.79199	-0.011590	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+661	eff3p3tri_GGA	24.707217	-0.011639	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+662	eff5p3di_TT	24.514172	0.011772	120	eff5p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+663	effmd2tri_CGC	24.424439	-0.011496	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+664	eff3p3tri_TCT	24.383134	-0.011531	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+665	effmd1tri_CCA	24.34679	-0.011484	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+666	effmd1tri_AGC	24.3337	-0.011511	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+667	effmd2tri_CTT	24.251755	-0.011503	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+668	effmd4tri_AAA	24.247238	-0.011600	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+669	eff3p2tri_TCG	24.03641	0.011517	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+670	effmd3tri_TGA	23.980708	-0.011512	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+671	effmd4tri_GTC	23.952124	-0.011412	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+672	eff5p3tri_GAT	23.950732	0.011515	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+673	effmd5tri_ATG	23.752512	0.011475	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+674	effmd5tri_TCG	23.714828	-0.011386	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+675	eff5p5tri_CAT	23.71465	-0.011387	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+676	eff5p2di_GG	23.465641	-0.011813	119	eff5p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+677	eff5p5tri_AAC	23.454385	0.011342	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+678	G%	23.323155	-0.028572	21	G%	expression	nucleotide frequency	numerical	pred	see ID 19
+679	eff3p2_T	23.204545	0.012812	109	eff3p2	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+680	eff5p3tri_TGC	23.150549	-0.011226	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+681	eff5p3tri_CCT	23.118093	-0.011199	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+682	eff3p4tri_GGT	23.059082	-0.011263	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+683	eff3p2tri_CAT	22.922602	-0.011245	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+684	eff3p5tri_GAA	22.857227	0.011222	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+685	eff3p1tri_TAC	22.670535	-0.011118	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+686	eff3p1tri_GCG	22.639105	0.011086	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+687	eff3p4tri_ATG	22.592855	0.011177	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+688	eff5p1tri_TCT	22.532292	0.011165	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+689	eff5p1tri_TCA	22.529199	0.011111	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+690	eff5p3tri_TAT	22.505143	0.011075	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+691	eff3p5tri_ACC	22.207438	-0.011008	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+692	effmd2tri_ATT	22.025712	0.010979	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+693	effmd4tri_TCC	22.007452	-0.010928	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+694	eff5p3di_AT	21.975037	0.011194	120	eff5p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+695	eff5p5_G	21.944588	0.012826	107	eff5p5	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+696	eff5p2tri_GGG	21.855116	-0.010987	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+697	eff5p2tri_TAC	21.73644	-0.010934	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+698	effmd2tri_GCC	21.593692	-0.010809	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+699	fback_stop	21.552669	-0.010821	36	fback_stop	structure	hairpin	numerical	"pred, vali"	hairpin stop position on the precursor
+700	eff5p5tri_CTA	21.489852	-0.010778	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+701	eff3p1tri_AAC	21.396001	-0.010787	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+702	eff3p2tri_GCG	21.255704	-0.011005	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+703	eff5p3di_CA	21.254259	-0.010779	120	eff5p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+704	eff3p1tri_TAA	21.18108	-0.010730	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+705	eff5p3tri_TCG	21.174856	-0.010761	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+706	eff5p5tri_GTG	21.106253	-0.010721	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+707	eff3p5tri_CTT	21.068566	-0.010950	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+708	eff5p4di_CA	20.905761	0.010677	121	eff5p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+709	eff5p3tri_TTT	20.89984	-0.010626	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+710	effmd4tri_CTT	20.652026	-0.010574	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+711	effmd3tri_TTC	20.514554	-0.010585	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+712	effmd4tri_ATC	20.508023	-0.010537	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+713	eff5p3tri_ATC	20.397895	-0.012443	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+714	eff5p2_G	20.26547	-0.010569	104	eff5p2	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+715	eff5p5tri_GAG	20.243354	-0.010523	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+716	effmd1tri_GCA	20.151796	0.010491	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+717	effmd1tri_AAC	20.0887	-0.010446	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+718	eff3p4tri_GGC	19.89019	0.010414	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+719	eff3p4tri_ATT	19.861229	-0.010570	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+720	eff5p1di_CG	19.858126	-0.010377	118	eff5p1di	structure	nucleotide type	categorical	"pred, vali"	di-nucleotide base type at a specific position on active siRNA
+721	fback_start	19.781287	-0.010393	35	fback_start	structure	hairpin	numerical	"pred, vali"	hairpin start position on the precursor
+722	effmd2tri_TAT	19.71035	0.010351	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+723	eff5p3tri_AAC	19.706279	0.010391	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+724	eff5p4tri_GCT	19.643768	-0.010896	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+725	eff3p2tri_TGA	19.576905	-0.010329	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+726	eff5p2di_AG	19.413602	0.010236	119	eff5p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+727	effmd4tri_GTG	19.409412	0.025445	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+728	eff3p1tri_AAT	19.310825	0.010245	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+729	md1T	19.298789	-0.010261	86	md1T	expression	nucleotide frequency	numerical	pred	see ID 83
+730	effmd5tri_GCT	19.287983	-0.010217	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+731	eff5p2tri_GCA	19.265675	0.010229	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+732	eff3p5tri_CCA	19.193461	-0.010171	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+733	eff5p4tri_CTG	19.151076	-0.010224	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+734	eff5p3tri_CGC	19.141714	-0.010207	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+735	eff5p3tri_TTA	19.136316	-0.010204	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+736	effmd1tri_CGG	19.097348	-0.010187	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+737	eff5p2tri_TCG	19.083863	-0.010165	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+738	eff3p3tri_CCG	19.022933	0.024982	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+739	eff5p1tri_CGG	18.871748	-0.010173	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+740	pval	18.861905	0.010403	9	pval	expression	phase score	numerical	pred	"minimum score in a segment's windows; Chen_Xia_2013 (cycle, k, n)"
+741	effmd4tri_GTT	18.855273	-0.010174	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+742	eff3p4di_TT	18.822469	0.025244	126	eff3p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+743	eff3p2tri_GTA	18.810396	0.017408	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+744	3p1A	18.765079	-0.010119	63	3p1A	expression	nucleotide frequency	numerical	pred	"expression-weighted percentage of a nucleotide base type in a segment considering Dicer Call at a specific position on active siRNA; e.g., 3p1A: A at the first (1) position on the 3-prime end of the active siRNA"
+745	mircheck_conclu25_NONPAIRING	18.749911	-0.010123	37	mircheck_conclu25	structure	hairpin	categorical	pred	"checking the alternative precursor [eff_seq-200, eff_seq+500], see ID 34-36"
+746	effmd1tri_TCG	18.738771	0.010160	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+747	eff5p2tri_GTG	18.6927	0.010114	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+748	eff3p4tri_GGA	18.680968	0.010150	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+749	effmd5tri_TAA	18.67072	-0.010264	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+750	eff3p2tri_ACA	18.629104	-0.010020	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+751	eff5p5di_CT	18.564682	-0.010274	122	eff5p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+752	eff3p4tri_TCC	18.469994	0.010079	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+753	eff5p1tri_AGA	18.467248	-0.010016	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+754	eff5p4tri_AAG	18.394873	-0.009991	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+755	effmd1tri_ATC	18.378686	-0.010016	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+756	effmd5tri_GCG	18.367212	0.009963	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+757	eff3p4tri_AAT	18.278105	0.011586	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+758	effmd3tri_CTC	18.262638	-0.009953	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+759	effmd5_G	18.262131	-0.010051	117	effmd5	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+760	eff3p3tri_GCC	18.261001	0.010035	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+761	eff3p2tri_GTG	18.230707	0.009927	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+762	mircheck_conclu_MIR_BULGE	18.227433	-0.009979	34	mircheck_conclu	structure	hairpin	categorical	"pred, vali"	"checking if the precursor (the sequence of this segment) forms a hairpin; True if it says 5-prime or 3-prime, else False"
+763	eff5p2tri_CGT	18.160155	-0.009928	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+764	eff5p1tri_CGA	18.091338	0.009870	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+765	effmd4tri_AAC	17.962446	-0.010491	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+766	eff5p3tri_TAA	17.899763	-0.009946	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+767	eff5p4tri_GAG	17.820004	-0.009878	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+768	eff5p2tri_GAC	17.761704	0.009848	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+769	eff5p2tri_CTG	17.683074	0.009887	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+770	eff5p5tri_AGA	17.6387	-0.009794	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+771	eff5p1tri_GTT	17.620404	-0.009884	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+772	eff3p4di_TA	17.398794	-0.009711	126	eff3p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+773	eff3p3tri_CGA	17.394446	0.009759	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+774	eff5p2tri_TTG	17.338647	0.009797	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+775	eff5p2tri_TGG	17.283507	-0.009709	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+776	eff3p2tri_TTC	17.271085	0.009728	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+777	eff3p4tri_ACA	17.257847	0.009901	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+778	effmd5di_CG	17.257841	-0.010062	132	effmd5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+779	eff5p5di_AG	17.208961	-0.009605	122	eff5p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+780	eff3p4tri_CCT	17.005209	-0.009631	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+781	effmd2tri_TAC	16.971654	-0.009600	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+782	eff3p3tri_CGT	16.923878	-0.009622	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+783	eff3p2tri_ACG	16.81601	-0.009535	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+784	eff3p1tri_CCG	16.795039	0.009625	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+785	eff5p5tri_GAC	16.767986	-0.009555	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+786	eff3p3tri_GTT	16.657174	-0.010165	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+787	effmd4tri_AGT	16.628613	0.009546	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+788	effmd1tri_TAA	16.60728	-0.009525	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+789	eff5p3tri_GGG	16.597451	-0.009550	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+790	effmd3tri_TTG	16.580131	-0.009587	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+791	eff5p5tri_GCG	16.567257	-0.009519	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+792	effmd5tri_TCC	16.482605	-0.009459	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+793	eff3p4tri_AGT	16.470312	-0.009494	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+794	md5C	16.425486	-0.023765	100	md5C	expression	nucleotide frequency	numerical	pred	see ID 83
+795	eff3p4tri_AGC	16.333313	-0.009474	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+796	eff3p1tri_CTA	16.27078	0.009474	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+797	eff5p5tri_GTA	16.260989	-0.009444	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+798	effmd4tri_GAA	16.176109	-0.009476	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+799	eff5p5tri_TCG	16.137798	-0.009386	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+800	effmd2tri_GCG	16.051838	-0.009340	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+801	eff5p5tri_CCC	16.013051	-0.009310	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+802	eff5p4di_TG	15.992252	0.009588	121	eff5p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+803	effmd5tri_CGA	15.981015	0.009382	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+804	effmd2di_GT	15.980412	0.009602	129	effmd2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+805	eff5p4tri_GAC	15.977694	-0.009426	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+806	eff5p3tri_TCT	15.960419	0.009321	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+807	eff3p1tri_CCC	15.884404	-0.009304	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+808	eff3p1tri_ATC	15.880184	-0.009304	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+809	eff3p3tri_TCG	15.813611	-0.009318	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+810	effmd1tri_CTT	15.680617	-0.009259	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+811	eff3p3tri_AAC	15.51045	-0.009263	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+812	eff5p1di_AC	15.401757	-0.009394	118	eff5p1di	structure	nucleotide type	categorical	"pred, vali"	di-nucleotide base type at a specific position on active siRNA
+813	eff3p3tri_CAT	15.399732	-0.009157	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+814	eff5p3tri_ATA	15.397885	0.009159	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+815	effmd5tri_CAC	15.392427	-0.009174	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+816	effmd2di_GA	15.360934	0.009646	129	effmd2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+817	eff3p2tri_CCA	15.331564	-0.009138	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+818	effmd4tri_AGA	15.32326	0.009233	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+819	eff5p1_3p3_CG	15.308056	0.009296	148	eff5p1_3p3	structure	nucleotide type	categorical	"pred, vali"	the first and the last nucleotides on active siRNA
+820	effmd1di_TC	15.297417	-0.009290	128	effmd1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+821	eff5p1_3p3_AA	15.285137	-0.009397	148	eff5p1_3p3	structure	nucleotide type	categorical	"pred, vali"	the first and the last nucleotides on active siRNA
+822	effmd3tri_CCA	15.276192	-0.009112	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+823	eff3p2di_GT	15.266926	0.009418	124	eff3p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+824	effmd4di_TG	15.224612	-0.009449	131	effmd4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+825	effmd5di_TA	15.117066	-0.009311	132	effmd5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+826	effmd3tri_TTA	15.095794	-0.009078	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+827	eff3p5di_AC	15.069711	-0.009344	127	eff3p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+828	effmd3tri_GCC	15.054511	-0.009027	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+829	eff5p1di_CA	15.051824	-0.009172	118	eff5p1di	structure	nucleotide type	categorical	"pred, vali"	di-nucleotide base type at a specific position on active siRNA
+830	eff3p2_G	15.047178	-0.010760	109	eff3p2	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+831	eff3p3tri_CAA	14.912686	-0.009000	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+832	effmd2tri_CGG	14.698401	-0.008961	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+833	eff5p4tri_AAT	14.626213	0.008932	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+834	effmd5tri_ACT	14.454848	-0.008877	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+835	effmd5tri_GAC	14.448659	0.008929	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+836	eff3p2tri_GGG	14.431918	-0.008885	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+837	effmd1tri_GGG	14.426755	0.008874	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+838	effmd4tri_CAA	14.343688	-0.008856	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+839	effmd5tri_AAT	14.289289	-0.008848	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+840	eff3p2tri_TTT	14.281981	-0.008837	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+841	paired_percentage	14.273877	0.022333	149	paired_percentage	structure	base pairing	numerical	"pred, vali"	paired percentage at positions -4 to +4 around start and end of the active siRNA (abbreviation: around eff_seq)
+842	eff3p3tri_TGA	14.24937	0.008818	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+843	eff5p1tri_GAA	14.217119	-0.008808	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+844	effmd2tri_ACC	14.206917	-0.008800	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+845	eff3p3tri_CGC	14.197839	0.008785	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+846	eff5p1di_AA	14.164501	0.009417	118	eff5p1di	structure	nucleotide type	categorical	"pred, vali"	di-nucleotide base type at a specific position on active siRNA
+847	eff5p2tri_GTC	14.156819	0.008760	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+848	effmd3di_TA	14.106884	0.009041	130	effmd3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+849	effmd2tri_GAC	14.10576	-0.008817	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+850	eff5p5tri_CTC	14.069727	-0.008764	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+851	eff3p1tri_TAG	14.053413	0.008744	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+852	paired_roll3	14.050984	0.021694	150	paired_roll3	structure	base pairing	numerical	"pred, vali"	average of paired nucleotides in rolling window of 3 bp around eff_seq
+853	effmd5di_CT	14.017097	-0.008927	132	effmd5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+854	effmd2tri_ATC	13.989027	-0.008755	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+855	eff3p1tri_ACA	13.944372	-0.008751	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+856	effmd5tri_CTG	13.932395	0.008714	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+857	eff3p3tri_TGC	13.932296	-0.008732	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+858	eff3p1di_GC	13.882602	-0.008893	123	eff3p1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+859	eff3p3tri_CAC	13.870292	0.008722	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+860	effmd3tri_GAC	13.810937	-0.008718	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+861	eff5p5tri_GGG	13.764614	0.008664	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+862	eff5p4di_GC	13.675415	-0.008784	121	eff5p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+863	eff3p3tri_CAG	13.664456	0.008626	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+864	GGG(((	13.496645	-0.034017	184	GGG(((	structure	triplet	numerical	"pred, vali"	see ID 162
+865	eff3p3tri_ATA	13.489405	0.008553	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+866	effmd4di_TT	13.395859	0.008767	131	effmd4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+867	effmd1tri_CAA	13.209823	0.008510	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+868	mircheck_conclu25_MIXED_PAIRING	13.173159	-0.009144	37	mircheck_conclu25	structure	hairpin	categorical	pred	"checking the alternative precursor [eff_seq-200, eff_seq+500], see ID 34-36"
+869	eff3p1_T	13.1496	-0.009747	108	eff3p1	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+870	effmd5tri_CAT	13.123298	0.008480	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+871	eff5p1tri_AAG	12.968555	-0.008629	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+872	effmd4di_GT	12.945292	-0.008643	131	effmd4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+873	eff5p4tri_AGC	12.845651	0.008373	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+874	effmd3tri_CGC	12.821345	0.008338	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+875	effmd1tri_CAG	12.76225	-0.008337	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+876	paired_roll7	12.729737	0.021108	152	paired_roll7	structure	base pairing	numerical	"pred, vali"	average of paired nucleotides in rolling window of 7 bp around eff_seq
+877	eff5p4tri_TGC	12.705713	-0.008327	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+878	eff5p1di_AT	12.624436	0.008671	118	eff5p1di	structure	nucleotide type	categorical	"pred, vali"	di-nucleotide base type at a specific position on active siRNA
+879	longest_paired_length	12.611679	0.008482	155	longest_paired_length	structure	base pairing	numerical	"pred, vali"	length of longest paired nucleotides around eff_seq
+880	eff5p1_3p3_GG	12.607973	0.008545	148	eff5p1_3p3	structure	nucleotide type	categorical	"pred, vali"	the first and the last nucleotides on active siRNA
+881	eff5p2di_TG	12.590359	-0.008265	119	eff5p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+882	eff5p5tri_TAA	12.49259	0.008229	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+883	mircheck_conclu_MIR_ASSYMETRY	12.476869	-0.008285	34	mircheck_conclu	structure	hairpin	categorical	"pred, vali"	"checking if the precursor (the sequence of this segment) forms a hairpin; True if it says 5-prime or 3-prime, else False"
+884	eff3p5tri_AGG	12.448832	0.013946	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+885	mircheck_conclu52_NONPAIRING	12.414183	0.008233	40	mircheck_conclu52	structure	hairpin	categorical	pred	"checking the alternative precursor [eff_seq-500, eff_seq+200], see ID 34-36"
+886	eff5p2tri_ACG	12.358356	0.008228	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+887	eff5p3tri_AAA	12.324322	0.020798	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+888	paired_roll5	12.248086	0.019824	151	paired_roll5	structure	base pairing	numerical	"pred, vali"	average of paired nucleotides in rolling window of 5 bp around eff_seq
+889	pval_cdf	12.166238	-0.020084	29	pval_cdf	expression	phase score	numerical	pred	"significant if $<$ 0.05, Cumulative Distribution Function"
+890	5p5G	12.117674	-0.008127	61	5p5G	expression	nucleotide frequency	numerical	pred	see ID 43
+891	effmd1tri_AGT	12.091268	0.009407	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+892	effmd1_T	12.046203	0.008107	113	effmd1	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+893	effmd2tri_TGA	11.895351	-0.008043	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+894	effmd3tri_CAC	11.865544	-0.008005	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+895	eff5p5tri_CGT	11.802419	0.020730	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+896	premfe_200_500	11.78434	-0.008003	17	premfe_200_500	structure	MFE	numerical	pred	"MFE of the structure [eff_seq-200, eff_seq+500], calculated by RNAfold"
+897	effmd5tri_GGC	11.753062	-0.008000	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+898	effmd2tri_CTC	11.731497	-0.008030	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+899	effmd4tri_TAG	11.693067	0.008012	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+900	effmd5tri_GAG	11.687589	-0.008016	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+901	effmd2tri_AAA	11.662938	-0.007944	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+902	eff3p5tri_TTA	11.572653	-0.008211	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+903	effmd1di_AG	11.499985	-0.007885	128	effmd1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+904	eff5p1tri_CTT	11.444754	0.007936	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+905	eff5p5tri_TAG	11.432844	0.007903	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+906	eff3p4tri_TGA	11.376162	0.007874	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+907	eff5p2tri_ACA	11.353454	0.008026	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+908	eff5p1_3p3_TA	11.327425	0.008807	148	eff5p1_3p3	structure	nucleotide type	categorical	"pred, vali"	the first and the last nucleotides on active siRNA
+909	eff5p4_T	11.31641	0.020034	106	eff5p4	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+910	eff3p4tri_CAG	11.277988	-0.007838	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+911	md3G	11.26009	0.019532	93	md3G	expression	nucleotide frequency	numerical	pred	see ID 83
+912	effmd3tri_CTT	11.189485	-0.007815	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+913	eff5p4tri_ACG	11.166955	0.007802	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+914	eff3p4tri_CCA	11.128142	-0.007779	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+915	eff5p4tri_AAC	11.093609	-0.007819	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+916	eff5p2_T	11.064584	0.008852	104	eff5p2	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+917	eff3p4tri_CGT	11.037802	0.007770	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+918	eff5p1tri_GCA	10.911345	-0.007701	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+919	eff3p4tri_GAG	10.902734	0.007768	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+920	mircheck_conclu52_5prime	10.788397	-0.007668	40	mircheck_conclu52	structure	hairpin	categorical	pred	"checking the alternative precursor [eff_seq-500, eff_seq+200], see ID 34-36"
+921	eff5p1tri_CAT	10.779014	-0.007651	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+922	eff3p1tri_CGT	10.707528	-0.007658	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+923	eff3p3tri_ACG	10.707126	0.007674	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+924	effmd3di_AT	10.694642	0.007897	130	effmd3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+925	eff5p1tri_AAA	10.68037	0.007712	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+926	eff5p3_A	10.670636	0.009107	105	eff5p3	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+927	eff5p2tri_AGG	10.567375	0.007672	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+928	eff3p1tri_TTC	10.564573	-0.007577	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+929	eff5p2tri_CAC	10.513767	-0.007569	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+930	eff5p5tri_TTC	10.509098	0.007555	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+931	effmd5tri_ATT	10.506281	0.007581	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+932	eff3p5tri_CGT	10.497145	0.007558	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+933	eff3p5tri_ATC	10.493381	0.007580	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+934	eff5p5tri_ACC	10.490675	-0.007554	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+935	eff5p1tri_TTA	10.48326	0.007569	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+936	eff3p2tri_TTA	10.470272	-0.007546	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+937	eff3p2tri_CAA	10.407938	0.007524	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+938	eff3p5tri_GTT	10.394116	-0.007549	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+939	eff3p4tri_GAC	10.389425	-0.007584	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+940	eff5p5tri_AGG	10.344918	0.007525	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+941	eff3p2tri_TCA	10.33213	0.007524	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+942	eff3p5tri_CCG	10.301785	-0.007475	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+943	effmd4di_GA	10.262475	0.007843	131	effmd4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+944	eff5p5tri_CAG	10.236631	-0.007459	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+945	effmd2tri_GGA	10.164421	0.007502	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+946	eff3p4tri_AAC	10.15032	-0.007457	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+947	effmd1tri_GCC	10.133798	-0.007412	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+948	eff5p4tri_GGT	10.123112	-0.007444	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+949	eff3p2tri_ATA	9.93681	0.007356	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+950	eff5p1tri_CCG	9.92575	-0.007338	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+951	effmd5_C	9.918352	-0.008171	117	effmd5	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+952	eff3p5tri_GCC	9.876139	-0.007311	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+953	3p4G	9.750188	0.018068	77	3p4G	expression	nucleotide frequency	numerical	pred	see ID 63
+954	effmd5tri_CTC	9.727368	-0.007301	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+955	effmd5tri_CCC	9.658194	-0.007224	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+956	effmd3tri_GGC	9.616708	0.007278	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+957	eff5p2tri_GGA	9.598704	-0.007342	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+958	effmd3tri_TCC	9.517204	-0.007184	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+959	eff3p3tri_CTT	9.483277	-0.007196	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+960	eff3p2tri_CTG	9.47345	0.007195	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+961	eff3p3tri_GAA	9.461973	-0.007169	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+962	eff5p3tri_GAG	9.409962	-0.007219	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+963	eff3p3_C	9.395597	-0.008379	110	eff3p3	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+964	effmd3tri_CCG	9.309559	-0.007096	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+965	eff5p4tri_TGG	9.218175	-0.007115	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+966	effmd4tri_TCG	9.208337	0.007105	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+967	effmd3tri_GGA	9.187423	0.007141	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+968	eff3p4tri_TAA	9.14369	0.007056	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+969	eff3p4tri_CGA	9.111099	-0.007062	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+970	eff3p1_A	9.068246	0.008741	108	eff3p1	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+971	effmd1_A	9.066214	0.008180	113	effmd1	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+972	eff3p4tri_CTT	9.021902	-0.007014	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+973	mircheck_conclu_NONPAIRING	9.002004	-0.012743	34	mircheck_conclu	structure	hairpin	categorical	"pred, vali"	"checking if the precursor (the sequence of this segment) forms a hairpin; True if it says 5-prime or 3-prime, else False"
+974	eff3p1di_TT	8.985716	-0.007179	123	eff3p1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+975	eff5p2tri_GCC	8.965789	-0.006969	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+976	eff3p3tri_GAT	8.915275	0.007023	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+977	effmd5tri_CGC	8.887354	-0.006934	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+978	eff5p3tri_ATG	8.849676	0.006975	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+979	eff_strand_W	8.843551	0.009731	4	eff_strand	expression	abundance	categorical	pred	coordinate of the most abundant effector siRNA allowing drift
+980	eff5p4tri_TTC	8.826743	-0.006936	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+981	3p5G	8.791805	0.017382	81	3p5G	expression	nucleotide frequency	numerical	pred	see ID 63
+982	effmd2tri_AGC	8.687538	-0.006880	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+983	eff3p5tri_ATT	8.677381	-0.006899	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+984	eff5p2tri_GAG	8.671631	0.006985	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+985	effmd3tri_AAA	8.641495	-0.006902	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+986	eff3p1tri_TCG	8.62299	-0.006831	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+987	eff3p1tri_CTC	8.537825	0.006842	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+988	eff3p2tri_GGT	8.404749	0.006843	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+989	effmd3tri_CAG	8.387517	-0.006758	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+990	eff3p1tri_CAC	8.361427	0.006749	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+991	eff3p5tri_GGC	8.353756	-0.006747	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+992	effmd3tri_AAG	8.344762	0.006793	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+993	eff5p3tri_CTG	8.25807	-0.006716	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+994	effmd5tri_CGT	8.21488	0.006688	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+995	eff3p5tri_AAC	8.159213	0.006698	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+996	eff3p1tri_GTT	8.152985	0.006692	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+997	eff3p4di_GT	8.048028	-0.006797	126	eff3p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+998	eff5p4tri_TAG	8.004946	-0.006629	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+999	effmd3tri_TTT	7.916617	-0.006587	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1000	eff5p4tri_TAC	7.838333	0.006527	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1001	eff3p1tri_TTA	7.788908	-0.006542	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1002	effmd2tri_TAA	7.756996	0.006515	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1003	effmd1tri_GCT	7.755106	-0.006527	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1004	effmd3tri_GTG	7.708428	-0.006515	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1005	eff3p5_T	7.640699	-0.007357	112	eff3p5	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+1006	eff5p5tri_GCA	7.612504	0.006441	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1007	eff3p4di_GC	7.598239	-0.006582	126	eff3p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1008	NBtripletT	7.587857	0.008463	157	NBtripletT	structure	triplet	numerical	"pred, vali"	see ID 156
+1009	eff5p4tri_GTC	7.580604	-0.006425	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1010	effmd4tri_GCG	7.498469	0.006405	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1011	eff5p2tri_CAT	7.457692	-0.006370	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1012	eff3p4di_CT	7.401941	0.006465	126	eff3p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1013	effmd4tri_TTT	7.369875	-0.006355	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1014	eff3p5tri_TGT	7.277058	0.006307	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1015	eff3p2tri_TAG	7.21554	-0.006260	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1016	eff3p4tri_TAT	7.213102	0.006262	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1017	eff3p1tri_GCC	7.183889	0.006253	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1018	effmd4tri_GAC	7.152558	-0.006267	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1019	eff5p1tri_GCT	7.128413	0.006222	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1020	effmd5di_AT	7.12632	0.006444	132	effmd5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1021	eff3p3tri_AGC	7.007334	-0.006224	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1022	effmd2tri_GTG	6.915558	-0.006157	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1023	eff5p4tri_TCG	6.904586	-0.006131	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1024	eff5p4di_AA	6.894627	0.006339	121	eff5p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1025	eff5p2di_GA	6.834835	-0.006466	119	eff5p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1026	effmd5di_CA	6.796017	0.006254	132	effmd5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1027	eff5p1tri_CAA	6.696848	0.006046	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1028	eff3p4tri_GCC	6.688196	-0.006018	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1029	eff5p2tri_TTC	6.68279	-0.006024	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1030	eff5p5tri_GCC	6.68221	-0.006014	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1031	eff3p5_G	6.677524	0.007177	112	eff3p5	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+1032	effmd5tri_TTG	6.669036	0.006049	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1033	eff5p3tri_TCA	6.626351	0.006021	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1034	effmd3tri_GGT	6.623171	-0.006037	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1035	effmd5tri_TTT	6.622895	-0.006028	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1036	eff3p3tri_TCA	6.609836	-0.006001	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1037	eff5p1tri_GGT	6.59211	-0.005985	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1038	eff3p1tri_GTA	6.508861	-0.005998	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1039	eff3p2di_CA	6.486416	0.006157	124	eff3p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1040	eff3p2tri_TTG	6.47647	-0.005985	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1041	effmd2tri_GTC	6.435473	-0.005916	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1042	eff5p3di_AG	6.388127	0.006181	120	eff5p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1043	effmd5tri_GAA	6.361975	0.005927	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1044	eff5p4tri_CAT	6.326467	-0.005878	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1045	effmd2tri_TCA	6.282025	-0.005849	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1046	eff5p3tri_TCC	6.261541	-0.005828	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1047	effmd4tri_GAG	6.257892	0.005870	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1048	eff5p4di_GA	6.204718	0.006162	121	eff5p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1049	eff5p2di_CT	6.197401	0.005950	119	eff5p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1050	eff3p3tri_ATG	6.149292	0.005856	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1051	effmd2tri_TCT	6.144785	0.005780	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1052	eff5p4tri_GCA	6.093546	-0.005769	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1053	eff5p5tri_GAA	6.07894	0.005810	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1054	effmd3tri_CCC	6.0456	-0.005724	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1055	eff5p5tri_ACA	5.986606	-0.005740	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1056	eff3p2tri_TGT	5.877544	0.005658	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1057	eff3p1tri_TTT	5.870588	-0.005660	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1058	eff3p3di_GA	5.808845	-0.005731	125	eff3p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1059	effmd2tri_ACG	5.776122	-0.005613	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1060	eff3p2tri_TAT	5.742271	-0.005586	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1061	eff5p4tri_TCA	5.736136	0.005587	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1062	eff3p4tri_GCA	5.711587	-0.005571	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1063	effmd2tri_ATA	5.707286	-0.005608	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1064	effmd1tri_TCA	5.631559	-0.005539	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1065	eff5p2tri_CTA	5.599431	-0.005517	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1066	eff3p2tri_AGT	5.512707	0.005495	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1067	effmd3_T	5.497296	0.006316	115	effmd3	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+1068	eff3p1tri_TGG	5.480036	-0.005492	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1069	eff5p4_A	5.452454	0.006408	106	eff5p4	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+1070	CCC(((	5.451873	-0.005437	176	CCC(((	structure	triplet	numerical	"pred, vali"	see ID 162
+1071	effmd4tri_GCC	5.446675	0.005457	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1072	eff5p3tri_CGG	5.417784	-0.005392	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1073	effmd2tri_CCC	5.374976	0.005564	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1074	eff5p5di_GG	5.359301	-0.005500	122	eff5p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1075	eff5p1_3p3_GC	5.296309	-0.005422	148	eff5p1_3p3	structure	nucleotide type	categorical	"pred, vali"	the first and the last nucleotides on active siRNA
+1076	eff3p5tri_TGG	5.287027	-0.005379	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1077	effmd4tri_ACA	5.247887	0.005330	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1078	eff3p3tri_GTA	5.230589	-0.005312	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1079	effmd5tri_GCC	5.213902	-0.005553	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1080	eff3p2di_TG	5.202758	0.005297	124	eff3p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1081	eff3p5tri_TGC	5.163952	0.005293	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1082	effmd4tri_CAG	5.141873	-0.005289	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1083	eff5p3tri_CTC	5.134986	-0.005550	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1084	eff5p1_3p3_AC	5.059027	-0.005220	148	eff5p1_3p3	structure	nucleotide type	categorical	"pred, vali"	the first and the last nucleotides on active siRNA
+1085	eff5p4tri_TCT	5.000395	-0.005314	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1086	effmd4di_CA	4.995121	-0.005179	131	effmd4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1087	effmd2tri_CCG	4.929532	0.005189	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1088	effmd2tri_GGT	4.921055	0.005201	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1089	effmd1tri_TGA	4.888517	0.005164	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1090	effmd4tri_ACG	4.879799	-0.005149	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1091	eff5p2tri_AAC	4.843268	-0.005225	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1092	eff3p2di_TT	4.832147	0.005147	124	eff3p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1093	eff3p3tri_GTG	4.81614	-0.005128	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1094	effmd2tri_GAG	4.762404	-0.005148	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1095	eff3p1tri_GGA	4.727739	-0.012809	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1096	3p5T	4.723687	-0.005087	82	3p5T	expression	nucleotide frequency	numerical	pred	see ID 63
+1097	eff5p5tri_TGT	4.721444	-0.005016	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1098	effmd1tri_TCC	4.630234	0.005010	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1099	eff5p2tri_ACT	4.60694	0.005020	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1100	eff5p2tri_TAA	4.606724	0.004974	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1101	eff5p4tri_GTT	4.513648	0.005907	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1102	effmd3_A	4.498587	-0.005116	115	effmd3	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+1103	effmd2di_GG	4.496804	-0.004953	129	effmd2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1104	effmd1tri_CGA	4.491327	-0.004926	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1105	eff3p3tri_AAA	4.471903	-0.006390	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1106	eff5p1_A	4.427031	-0.004891	103	eff5p1	structure	nucleotide type	categorical	"pred, vali"	single nucleotide base type at a specific position on active siRNA
+1107	eff3p3tri_GCT	4.36707	0.004895	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1108	eff5p5tri_TTT	4.362694	-0.004860	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1109	eff5p4tri_ACA	4.322045	-0.004890	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1110	eff5p3tri_AGT	4.319211	0.005023	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1111	eff3p4di_AG	4.318881	0.004861	126	eff3p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1112	eff5p5tri_ATG	4.302746	0.004837	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1113	eff3p2tri_CTT	4.287389	0.004825	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1114	eff5p1tri_TGC	4.273741	0.004825	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1115	eff5p3tri_CTT	4.268125	0.005508	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1116	dominant_strand_Crick	4.178966	0.004803	11	dominant_strand	expression	ratio	categorical	pred	"proportion of forward reads to the total reads within a window; if the ratio exceeds 0.8, it's labeled as Watson; if it falls below 0.2, it's labeled as Crick; otherwise, it's labeled as both. The final label is determined by the majority vote among the windows within a segment."
+1117	eff3p4tri_AAG	4.163751	-0.004738	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1118	eff3p5tri_CAA	4.094072	0.004719	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1119	eff5p4tri_CTC	4.082502	0.004720	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1120	effmd3tri_ACA	4.081809	-0.032994	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1121	eff5p1tri_CTC	3.999555	-0.004664	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1122	eff5p4tri_CCT	3.970465	-0.004649	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1123	eff5p5tri_CGG	3.894929	0.004615	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1124	effmd5tri_AGG	3.871828	-0.004624	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1125	eff3p2di_AA	3.863283	0.004642	124	eff3p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1126	eff5p3tri_GCT	3.834261	-0.004582	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1127	effmd5tri_CGG	3.81496	0.004571	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1128	md2G	3.758544	0.011221	89	md2G	expression	nucleotide frequency	numerical	pred	see ID 83
+1129	eff3p5tri_CGC	3.73299	-0.004493	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1130	eff3p5di_CA	3.666746	0.004558	127	eff3p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1131	eff3p2di_AT	3.618579	-0.004527	124	eff3p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1132	effmd2tri_AGG	3.61616	0.004466	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1133	effmd3di_GG	3.547231	0.004564	130	effmd3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1134	eff5p5tri_TTG	3.539472	0.004413	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1135	eff5p4di_AG	3.512015	0.004562	121	eff5p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1136	effmd5tri_TTC	3.5105	-0.004368	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1137	eff5p5tri_AGC	3.500034	-0.004368	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1138	eff3p5tri_TCA	3.476708	-0.004353	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1139	eff3p4tri_CAA	3.470711	-0.004360	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1140	effmd3tri_AGG	3.414558	0.004337	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1141	eff3p5tri_GGG	3.414139	-0.004317	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1142	eff3p1tri_GTC	3.359297	0.004273	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1143	C(.(	3.310864	-0.016668	198	C(.(	structure	triplet	numerical	"pred, vali"	see ID 196
+1144	eff3p5tri_CGA	3.203421	-0.004193	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1145	eff5p4tri_CTT	3.198906	-0.004189	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1146	eff3p4tri_CAC	3.196625	-0.004168	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1147	occ_bulgeAllnt	3.148409	0.016419	200	occ_bulgeAllnt	structure	bulge	numerical	"pred, vali"	"occurrences of bulge around eff_seq, any length"
+1148	AAA...	3.145488	0.004204	167	AAA...	structure	triplet	numerical	"pred, vali"	see ID 162
+1149	eff3p1di_AC	3.103111	-0.004100	123	eff3p1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1150	eff3p2tri_GCC	3.090007	-0.004095	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1151	eff3p2tri_ATT	3.087067	-0.004205	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1152	eff3p3di_CG	3.069869	-0.004072	125	eff3p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1153	eff3p4tri_TGC	3.038012	-0.004112	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1154	effmd1tri_TGG	3.037376	-0.004090	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1155	eff3p5tri_AAA	3.036408	0.004060	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1156	eff3p1tri_CGA	2.979804	0.004004	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1157	effmd5tri_GTC	2.943524	-0.003944	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1158	eff3p4tri_GTA	2.865081	-0.009936	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1159	md5T	2.859309	0.010297	102	md5T	expression	nucleotide frequency	numerical	pred	see ID 83
+1160	eff5p1tri_CAC	2.741281	-0.003851	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1161	eff3p4di_GG	2.7321	-0.004034	126	eff3p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1162	eff3p3di_TA	2.726422	-0.003895	125	eff3p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1163	eff5p2tri_TAT	2.700519	0.003837	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1164	eff5p5tri_CGC	2.679166	-0.003805	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1165	eff_strand_C	2.66449	-0.005308	4	eff_strand	expression	abundance	categorical	pred	coordinate of the most abundant effector siRNA allowing drift
+1166	effmd1tri_AGG	2.634749	-0.003801	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1167	eff3p3tri_ACC	2.634438	-0.003790	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1168	eff5p5tri_TAC	2.615221	0.003776	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1169	effmd1tri_TTA	2.5701	0.003743	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1170	effmd5tri_GGG	2.522983	-0.003710	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1171	eff5p4tri_TAT	2.490184	0.003682	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1172	occ_loop3nt	2.489726	0.003811	225	occ_loop3nt	structure	loop	numerical	"pred, vali"	occurrences of 3-nt loop around eff_seq
+1173	eff3p3di_GC	2.487876	-0.003671	125	eff3p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1174	effmd5tri_CTT	2.465927	-0.003774	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1175	effmd1di_GT	2.458759	-0.003653	128	effmd1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1176	eff3p2tri_CGC	2.458489	-0.003696	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1177	eff5p1tri_AAC	2.457601	-0.003640	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1178	effmd2tri_CTG	2.422344	-0.003648	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1179	eff5p3di_CT	2.361405	0.003587	120	eff5p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1180	eff5p2tri_TGA	2.353067	-0.003647	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1181	eff5p2di_CA	2.337721	0.003642	119	eff5p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1182	eff5p5di_TA	2.321595	-0.003732	122	eff5p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1183	eff3p1di_GA	2.292665	0.008786	123	eff3p1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1184	md5A	2.28156	0.003520	99	md5A	expression	nucleotide frequency	numerical	pred	see ID 83
+1185	eff5p5tri_GCT	2.262194	0.003523	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1186	occ_bulge2nt	2.240893	-0.003578	202	occ_bulge2nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1187	eff3p5tri_AAG	2.236255	0.003479	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1188	effmd3di_GT	2.235939	-0.003469	130	effmd3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1189	effmd3tri_GTA	2.214409	0.003636	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1190	eff3p5tri_TAT	2.209936	-0.003455	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1191	mircheck_conclu52_FAILED_MIR_EXTENSION	2.197818	-0.003448	40	mircheck_conclu52	structure	hairpin	categorical	pred	"checking the alternative precursor [eff_seq-500, eff_seq+200], see ID 34-36"
+1192	eff3p4tri_ATA	2.1946	0.008575	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1193	eff3p5tri_CTG	2.183667	-0.008614	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1194	CCC...	2.170775	-0.003390	183	CCC...	structure	triplet	numerical	"pred, vali"	see ID 162
+1195	3p2G	2.162134	0.003385	69	3p2G	expression	nucleotide frequency	numerical	pred	see ID 63
+1196	5p4A	2.14489	0.003477	55	5p4A	expression	nucleotide frequency	numerical	pred	see ID 43
+1197	eff5p4tri_GTG	2.102523	0.003387	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1198	eff5p3tri_GGT	2.095063	-0.003346	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1199	effmd2di_TA	2.090471	-0.003324	129	effmd2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1200	eff3p5tri_AGA	2.058352	-0.003306	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1201	eff3p1tri_CCA	2.03802	0.003323	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1202	effmd4tri_AGC	2.029016	0.003356	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1203	eff3p2tri_AAT	2.01677	0.020992	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1204	effmd5tri_ATA	2.013287	0.003271	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1205	eff5p3tri_AGA	2.012048	-0.003345	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1206	GGG((.	1.987012	-0.003345	185	GGG((.	structure	triplet	numerical	"pred, vali"	see ID 162
+1207	eff5p1tri_CTG	1.973023	0.003248	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1208	eff3p3di_AT	1.968663	0.003831	125	eff3p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1209	eff3p4di_AC	1.948584	0.009601	126	eff3p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1210	effmd5tri_TGC	1.937692	-0.003213	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1211	eff3p4_G	1.925865	-0.003259	111	eff3p4	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+1212	eff3p1tri_ACG	1.909279	-0.003217	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1213	eff3p5di_GC	1.905565	-0.003298	127	eff3p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1214	effmd4tri_GGG	1.900432	-0.003182	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1215	eff3p5di_AT	1.873244	0.003154	127	eff3p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1216	effmd4tri_CAT	1.849847	0.003156	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1217	eff5p5tri_TCT	1.820125	0.003126	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1218	eff5p1tri_TTG	1.804556	0.003119	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1219	effmd3tri_CAT	1.794373	-0.003111	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1220	effmd4tri_CGA	1.783743	-0.003095	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1221	eff5p1tri_GAT	1.774852	0.003082	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1222	eff3p5tri_AAT	1.752067	0.003099	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1223	eff5p2tri_AGC	1.728175	0.003062	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1224	eff5p1tri_TGG	1.722805	-0.003034	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1225	eff5p5tri_AAA	1.689966	-0.003027	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1226	eff5p2tri_TCA	1.681784	-0.003013	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1227	effmd1tri_TAT	1.679885	-0.002972	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1228	length_longest_loop	1.664715	-0.027027	154	length_longest_loop	structure	loop	numerical	"pred, vali"	length of longest loop around eff_seq
+1229	eff5p4tri_TAA	1.658472	-0.021078	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1230	eff5p4tri_GCC	1.627456	-0.002953	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1231	CCC(..	1.605542	-0.002930	182	CCC(..	structure	triplet	numerical	"pred, vali"	see ID 162
+1232	effmd5tri_CAG	1.592336	-0.002921	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1233	effmd3tri_ACG	1.573045	-0.023804	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1234	effmd4tri_CAC	1.573024	-0.002919	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1235	effmd4tri_TCT	1.564527	-0.003029	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1236	eff3p3di_AC	1.560753	0.002926	125	eff3p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1237	occ_loop5nt	1.554358	0.010272	227	occ_loop5nt	structure	loop	numerical	"pred, vali"	see ID 225
+1238	eff3p4tri_AGG	1.544752	0.002904	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1239	occ_bulge3nt	1.54251	-0.002889	203	occ_bulge3nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1240	eff3p3tri_GGG	1.530182	-0.002870	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1241	effmd4tri_TCA	1.526412	-0.007320	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1242	eff5p1tri_CGC	1.523426	0.002865	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1243	min_mfe	1.512362	-0.002887	13	min_mfe	structure	MFE	numerical	pred	minimum MFE of folding sequences in a segment's scanning windows
+1244	eff3p1tri_TGT	1.500074	0.011528	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1245	effmd4di_TC	1.471917	-0.002818	131	effmd4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1246	TTT(((	1.455183	-0.002900	168	TTT(((	structure	triplet	numerical	"pred, vali"	see ID 162
+1247	effmd1tri_ATT	1.45156	0.002807	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1248	eff3p1di_AT	1.451178	0.004134	123	eff3p1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1249	effmd4tri_CTG	1.447519	0.002774	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1250	eff5p5tri_TAT	1.414213	0.006980	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1251	md1A	1.407279	0.002754	83	md1A	expression	nucleotide frequency	numerical	pred	"expression-weighted percentage of a nucleotide base type in a segment considering Dicer Call at a specific position on active siRNA; e.g., md1A: A at the first (1) position in the middle of the active siRNA"
+1252	eff3p3tri_ACT	1.384573	-0.002756	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1253	effmd4tri_TGG	1.375299	0.002752	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1254	eff5p2tri_GAT	1.373635	-0.002736	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1255	eff5p5tri_GTT	1.369454	-0.002722	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1256	eff5p3tri_CGT	1.365081	0.002732	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1257	eff5p1tri_GTA	1.363165	-0.002752	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1258	effmd4di_CG	1.347947	0.018876	131	effmd4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1259	occ_loop8nt	1.334077	0.002824	230	occ_loop8nt	structure	loop	numerical	"pred, vali"	see ID 225
+1260	mircheck_conclu_FAILED_MIR_EXTENSION	1.328212	0.002673	34	mircheck_conclu	structure	hairpin	categorical	"pred, vali"	"checking if the precursor (the sequence of this segment) forms a hairpin; True if it says 5-prime or 3-prime, else False"
+1261	eff5p1tri_GGG	1.307818	0.002613	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1262	eff3p2tri_AAA	1.259034	-0.016444	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1263	eff5p3tri_AGC	1.234459	-0.002595	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1264	effmd1tri_TCT	1.230786	0.002591	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1265	eff5p3di_GT	1.224486	-0.002662	120	eff5p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1266	effmd5di_GG	1.202333	-0.002634	132	effmd5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1267	effmd1tri_TAG	1.195783	0.002570	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1268	eff5p5tri_CAA	1.185577	0.002550	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1269	effmd2tri_GAA	1.184159	0.002566	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1270	effmd4tri_ATT	1.181977	0.002542	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1271	effmd5tri_AGT	1.178308	0.002539	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1272	eff5p4di_CT	1.167861	0.006291	121	eff5p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1273	eff3p2tri_TCC	1.166716	-0.002581	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1274	eff3p1tri_CAA	1.158602	-0.002522	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1275	effmd5tri_GTA	1.158299	0.002533	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1276	TTT((.	1.152336	0.002516	169	TTT((.	structure	triplet	numerical	"pred, vali"	see ID 162
+1277	occ_bulge5nt	1.134162	-0.002490	205	occ_bulge5nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1278	eff3p3tri_GCA	1.129411	0.002464	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1279	eff3p4tri_TCA	1.11394	-0.002440	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1280	occ_bulge1nt	1.106213	-0.002454	201	occ_bulge1nt	structure	bulge	numerical	"pred, vali"	occurrences of 1-nt bulges around eff_seq
+1281	eff3p3tri_TAC	1.092382	-0.002439	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1282	mircheck_conclu25_MIR_BULGE	1.087327	-0.002442	37	mircheck_conclu25	structure	hairpin	categorical	pred	"checking the alternative precursor [eff_seq-200, eff_seq+500], see ID 34-36"
+1283	eff5p3tri_GTG	1.085851	0.002438	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1284	effmd1tri_GTT	1.085109	-0.005666	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1285	AAA(..	1.084267	0.009720	166	AAA(..	structure	triplet	numerical	"pred, vali"	see ID 162
+1286	effmd1tri_AAT	1.083975	-0.002437	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1287	length_longest_bulge	1.075487	0.002429	153	length_longest_bulge	structure	bulge	numerical	"pred, vali"	length of longest bulge around eff_seq
+1288	G(.(	1.072056	-0.002373	199	G(.(	structure	triplet	numerical	"pred, vali"	see ID 196
+1289	eff3p5tri_ATG	1.071487	-0.002368	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1290	AAA.((	1.061809	-0.002784	163	AAA.((	structure	triplet	numerical	"pred, vali"	see ID 162
+1291	eff3p1tri_TGA	1.053014	-0.002335	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1292	eff5p5tri_ATC	1.032936	-0.002330	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1293	effmd5tri_CCG	1.032765	0.002327	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1294	effmd5_A	1.011367	0.002326	117	effmd5	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+1295	eff5p4tri_GGC	0.995028	0.002288	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1296	effmd3tri_ATC	0.987918	-0.002281	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1297	eff5p4tri_AAA	0.987387	-0.002272	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1298	effmd5tri_GGA	0.975808	0.002255	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1299	eff3p4tri_TTG	0.951144	-0.002258	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1300	eff3p1di_CG	0.946928	0.002241	123	eff3p1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1301	eff5p5tri_ACG	0.944682	0.002228	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1302	eff3p5tri_CTA	0.937627	0.002217	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1303	eff3p1tri_CTT	0.929228	-0.011686	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1304	effmd5tri_GTG	0.916184	0.014225	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1305	effmd5tri_TAG	0.905039	0.027858	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1306	effmd4tri_CCA	0.903879	0.016921	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1307	occ_loop10nt	0.853932	-0.002196	232	occ_loop10nt	structure	loop	numerical	"pred, vali"	see ID 225
+1308	T(.(	0.850075	-0.002134	197	T(.(	structure	triplet	numerical	"pred, vali"	see ID 196
+1309	eff5p4di_GT	0.839179	-0.016248	121	eff5p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1310	eff5p5tri_AAT	0.82965	0.002118	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1311	eff3p3tri_GCG	0.820614	-0.002114	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1312	effmd3tri_TAT	0.819248	0.002112	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1313	effmd5tri_TGA	0.807185	-0.002137	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1314	eff3p5di_TC	0.806681	-0.002083	127	eff3p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1315	eff5p4tri_CGC	0.801986	-0.002074	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1316	effmd1tri_GTC	0.79145	-0.002047	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1317	eff3p2tri_GTT	0.768338	0.002078	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1318	eff5p3tri_GGA	0.764142	0.002044	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1319	eff3p3tri_AGT	0.761537	0.002041	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1320	effmd4tri_AAT	0.761511	0.002001	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1321	CCC((.	0.736589	-0.002028	177	CCC((.	structure	triplet	numerical	"pred, vali"	see ID 162
+1322	eff5p5tri_TCA	0.733335	0.008395	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1323	eff5p5di_GC	0.728446	0.001952	122	eff5p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1324	GGG.((	0.719702	0.006813	187	GGG.((	structure	triplet	numerical	"pred, vali"	see ID 162
+1325	occ_bulge7nt	0.705422	0.001921	207	occ_bulge7nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1326	occ_bulge4nt	0.700258	-0.001913	204	occ_bulge4nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1327	eff5p1tri_AGT	0.693957	0.001912	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1328	eff3p4tri_ACT	0.673308	0.001915	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1329	eff5p3tri_CAT	0.671053	-0.001853	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1330	eff3p5tri_ACA	0.666805	-0.001872	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1331	TTT.((	0.648441	0.001837	171	TTT.((	structure	triplet	numerical	"pred, vali"	see ID 162
+1332	eff5p2di_AC	0.643485	-0.001849	119	eff5p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1333	eff5p4tri_TGT	0.629587	-0.001826	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1334	eff3p1di_TC	0.621402	-0.018152	123	eff3p1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1335	mircheck_conclu25_MIR_ASSYMETRY	0.621265	-0.001778	37	mircheck_conclu25	structure	hairpin	categorical	pred	"checking the alternative precursor [eff_seq-200, eff_seq+500], see ID 34-36"
+1336	effmd1tri_GTA	0.618996	-0.001826	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1337	eff5p5tri_CTT	0.609252	0.001798	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1338	effmd3tri_GTT	0.578375	0.001765	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1339	eff5p2di_TA	0.577415	-0.013629	119	eff5p2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1340	effmd1tri_AGA	0.576189	0.001745	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1341	CCC.((	0.573096	-0.013433	179	CCC.((	structure	triplet	numerical	"pred, vali"	see ID 162
+1342	effmd5tri_ACG	0.568555	0.002009	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1343	eff3p4tri_TGT	0.558557	-0.001710	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1344	TTT..(	0.552326	0.001695	172	TTT..(	structure	triplet	numerical	"pred, vali"	see ID 162
+1345	AAA..(	0.54577	0.001700	164	AAA..(	structure	triplet	numerical	"pred, vali"	see ID 162
+1346	effmd2_G	0.532659	0.001696	114	effmd2	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+1347	eff5p1tri_ACA	0.531649	-0.001656	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1348	eff3p4tri_TTA	0.526251	-0.001656	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1349	eff3p5tri_TCG	0.526044	0.012496	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1350	effmd5tri_GGT	0.52565	-0.001611	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1351	effmd4tri_GGT	0.501659	-0.001668	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1352	eff5p1di_TC	0.473671	-0.016502	118	eff5p1di	structure	nucleotide type	categorical	"pred, vali"	di-nucleotide base type at a specific position on active siRNA
+1353	eff5p2tri_AGA	0.466213	0.012553	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1354	mircheck_conclu25_FAILED_MIR_EXTENSION	0.465278	0.001552	37	mircheck_conclu25	structure	hairpin	categorical	pred	"checking the alternative precursor [eff_seq-200, eff_seq+500], see ID 34-36"
+1355	eff3p4tri_GTC	0.442309	-0.001532	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1356	effmd4tri_CCG	0.432967	0.001528	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1357	effmd2tri_GCA	0.426928	0.001547	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1358	effmd1di_GG	0.411997	0.001496	128	effmd1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1359	effmd4tri_GGC	0.409345	-0.001502	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1360	effmd5tri_AAG	0.407343	0.010047	147	effmd5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1361	eff3p3tri_GAC	0.389067	-0.001470	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1362	occ_loopAllnt	0.383065	0.004553	224	occ_loopAllnt	structure	loop	numerical	"pred, vali"	"occurrences of loop around eff_seq, any length"
+1363	eff3p4di_CA	0.379967	0.001465	126	eff3p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1364	eff3p5tri_GAC	0.37046	0.001431	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1365	CCC..(	0.369315	0.001408	180	CCC..(	structure	triplet	numerical	"pred, vali"	see ID 162
+1366	eff3p1tri_ATA	0.361813	0.001389	138	eff3p1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1367	eff5p2tri_ATT	0.355348	0.001660	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1368	eff5p5_A	0.354441	-0.001375	107	eff5p5	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+1369	effmd3tri_GGG	0.346979	-0.001334	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1370	AAA(((	0.316518	-0.014590	160	AAA(((	structure	triplet	numerical	"pred, vali"	"occurrences of triplet A with ""paired, paired, paired"" structure around eff_seq. Note: Open brackets denote both opening and closing brackets in the structure"
+1371	eff5p4di_TA	0.312902	0.003808	121	eff5p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1372	eff3p3tri_ATT	0.286248	-0.001251	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1373	eff5p1tri_ATA	0.285776	-0.001259	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1374	eff3p4tri_TCT	0.280823	0.001238	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1375	effmd1tri_TGC	0.276472	0.001226	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1376	effmd5_T	0.269857	0.006857	117	effmd5	structure	nucleotide type	categorical	"pred, vali"	see ID 103
+1377	mircheck_conclu52_MIXED_PAIRING	0.258446	-0.001381	40	mircheck_conclu52	structure	hairpin	categorical	pred	"checking the alternative precursor [eff_seq-500, eff_seq+200], see ID 34-36"
+1378	eff5p3di_GG	0.250378	-0.001281	120	eff5p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1379	effmd1tri_GTG	0.241431	-0.001224	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1380	A(.(	0.237649	-0.001151	196	A(.(	structure	triplet	numerical	"pred, vali"	"occurrences of lone bulge nucleotide around eff_seq, A in this case. Note: Open brackets denote both opening and closing brackets in the structure"
+1381	eff5p2tri_GCT	0.232307	0.001125	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1382	eff5p4tri_GGG	0.22799	0.001117	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1383	eff3p4tri_TAG	0.224938	0.001109	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1384	eff5p1tri_TAG	0.218199	0.001093	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1385	mircheck_conclu25_3prime	0.210602	-0.001071	37	mircheck_conclu25	structure	hairpin	categorical	pred	"checking the alternative precursor [eff_seq-200, eff_seq+500], see ID 34-36"
+1386	effmd4tri_ATA	0.207228	0.001064	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1387	effmd1tri_CTG	0.206462	0.001062	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1388	effmd3tri_AAT	0.204919	-0.001059	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1389	effmd1tri_TTC	0.201592	-0.001046	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1390	eff3p4tri_CTG	0.200405	-0.001043	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1391	eff5p3tri_GCA	0.188292	0.001015	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1392	effmd3tri_GTC	0.18821	-0.001012	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1393	eff3p4di_AA	0.186665	0.001036	126	eff3p4di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1394	effmd2tri_AAC	0.185716	-0.001007	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1395	effmd3tri_TAG	0.18045	0.000996	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1396	occ_loop4nt	0.178748	-0.004464	226	occ_loop4nt	structure	loop	numerical	"pred, vali"	see ID 225
+1397	eff3p2tri_ATG	0.170602	0.000971	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1398	eff5p3di_TC	0.169386	0.000975	120	eff5p3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1399	occ_bulge8nt	0.165551	-0.008363	208	occ_bulge8nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1400	eff3p5tri_GCT	0.159442	-0.000931	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1401	effmd2tri_GGC	0.149782	0.000903	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1402	GGG..(	0.143285	-0.008277	188	GGG..(	structure	triplet	numerical	"pred, vali"	see ID 162
+1403	GGG...	0.140376	0.000855	191	GGG...	structure	triplet	numerical	"pred, vali"	see ID 162
+1404	eff5p5tri_TGC	0.134355	-0.000842	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1405	effmd2di_TT	0.123488	-0.009743	129	effmd2di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1406	GGG(.(	0.122199	-0.000812	186	GGG(.(	structure	triplet	numerical	"pred, vali"	see ID 162
+1407	eff3p5tri_AGC	0.121172	-0.008871	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1408	occ_bulge6nt	0.119086	-0.000823	206	occ_bulge6nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1409	occ_loop9nt	0.117122	0.000790	231	occ_loop9nt	structure	loop	numerical	"pred, vali"	see ID 225
+1410	eff3p1di_TA	0.11513	0.000779	123	eff3p1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1411	eff3p3tri_AAT	0.114809	-0.000780	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1412	eff5p5tri_CTG	0.111217	0.000764	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1413	eff5p4tri_GTA	0.11039	0.000765	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1414	effmd4tri_TGT	0.106533	0.006888	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1415	eff5p3tri_GGC	0.106406	0.000747	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1416	effmd3tri_AAC	0.101865	0.004869	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1417	eff5p3tri_TTC	0.095466	0.000720	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1418	eff5p3tri_GTA	0.095143	-0.000723	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1419	eff3p3tri_CTC	0.095	-0.000722	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1420	effmd4tri_TGA	0.094813	0.000723	146	effmd4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1421	effmd2tri_TTC	0.093678	-0.000714	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1422	effmd1tri_AAA	0.091807	-0.000711	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1423	eff5p3tri_TGT	0.084996	0.000682	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1424	eff3p3tri_TTC	0.077631	-0.000651	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1425	eff5p1tri_GAG	0.076102	-0.000650	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1426	eff5p3tri_ACG	0.075752	-0.000643	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1427	effmd1tri_GGT	0.068132	-0.000610	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1428	3p1T	0.068029	0.001528	66	3p1T	expression	nucleotide frequency	numerical	pred	see ID 63
+1429	eff5p5tri_GGC	0.065712	0.000599	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1430	effmd3tri_CTG	0.064999	-0.000594	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1431	effmd2tri_AAT	0.061871	0.000582	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1432	effmd3di_GC	0.055705	0.000558	130	effmd3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1433	eff3p3tri_AGA	0.051974	0.000532	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1434	eff3p3tri_CTA	0.045209	-0.000495	140	eff3p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1435	eff3p4tri_TCG	0.043075	0.000486	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1436	eff5p3tri_CTA	0.040813	0.000471	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1437	TTT(..	0.040767	0.000470	174	TTT(..	structure	triplet	numerical	"pred, vali"	see ID 162
+1438	eff5p2tri_TCT	0.040286	0.000467	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1439	eff3p5tri_TCT	0.040128	0.000469	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1440	eff5p2tri_TAG	0.039915	-0.005139	134	eff5p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1441	GGG(..	0.039902	0.003541	190	GGG(..	structure	triplet	numerical	"pred, vali"	see ID 162
+1442	effmd2tri_CAA	0.031177	-0.000412	144	effmd2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1443	AAA((.	0.027966	-0.000387	161	AAA((.	structure	triplet	numerical	"pred, vali"	"occurrences of triplet A with ""paired, paired, non-paired"" structure around eff_seq. see previous column"
+1444	eff5p1tri_ACT	0.027279	-0.005420	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1445	occ_loop11nt	0.02643	0.000354	233	occ_loop11nt	structure	loop	numerical	"pred, vali"	see ID 225
+1446	effmd1tri_GCG	0.023129	-0.005518	143	effmd1tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1447	occ_loop12nt	0.022768	-0.002664	234	occ_loop12nt	structure	loop	numerical	"pred, vali"	see ID 225
+1448	eff3p2tri_CGT	0.018917	-0.000321	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1449	TTT(.(	0.017439	0.000308	170	TTT(.(	structure	triplet	numerical	"pred, vali"	see ID 162
+1450	eff5p4tri_AGT	0.017222	0.005982	136	eff5p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1451	occ_loop6nt	0.016676	0.003014	228	occ_loop6nt	structure	loop	numerical	"pred, vali"	see ID 225
+1452	occ_loop16nt	0.016084	0.001510	238	occ_loop16nt	structure	loop	numerical	"pred, vali"	see ID 225
+1453	eff5p3tri_ACT	0.01264	-0.000264	135	eff5p3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1454	occ_bulge10nt	0.012455	0.003180	210	occ_bulge10nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1455	TTT...	0.011729	0.000244	175	TTT...	structure	triplet	numerical	"pred, vali"	see ID 162
+1456	eff3p4tri_ACG	0.010933	0.004851	141	eff3p4tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1457	occ_bulge21nt	0.00939	-0.003598	221	occ_bulge21nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1458	occ_bulge14nt	0.007294	0.000192	214	occ_bulge14nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1459	eff3p2tri_GCA	0.006675	-0.000184	139	eff3p2tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1460	eff3p5tri_TTT	0.006135	0.003218	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1461	CCC(.(	0.005769	0.002280	178	CCC(.(	structure	triplet	numerical	"pred, vali"	see ID 162
+1462	occ_loop20nt	0.004101	0.002280	242	occ_loop20nt	structure	loop	numerical	"pred, vali"	see ID 225
+1463	TTT.(.	0.004003	0.002280	173	TTT.(.	structure	triplet	numerical	"pred, vali"	see ID 162
+1464	T.(.	0.004003	0.002280	193	T.(.	structure	triplet	numerical	"pred, vali"	see ID 192
+1465	occ_loop23nt	0.004003	0.002280	245	occ_loop23nt	structure	loop	numerical	"pred, vali"	see ID 225
+1466	occ_loop22nt	0.004003	0.002280	244	occ_loop22nt	structure	loop	numerical	"pred, vali"	see ID 225
+1467	occ_loop21nt	0.004003	0.002280	243	occ_loop21nt	structure	loop	numerical	"pred, vali"	see ID 225
+1468	occ_bulge23nt	0.004003	0.002280	223	occ_bulge23nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1469	occ_bulge22nt	0.004003	0.002280	222	occ_bulge22nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1470	GGG.(.	0.004003	0.002280	189	GGG.(.	structure	triplet	numerical	"pred, vali"	see ID 162
+1471	G.(.	0.004003	0.002280	195	G.(.	structure	triplet	numerical	"pred, vali"	see ID 192
+1472	CCC.(.	0.004003	0.002280	181	CCC.(.	structure	triplet	numerical	"pred, vali"	see ID 162
+1473	C.(.	0.004003	0.002280	194	C.(.	structure	triplet	numerical	"pred, vali"	see ID 192
+1474	AAA.(.	0.004003	-0.002202	165	AAA.(.	structure	triplet	numerical	"pred, vali"	see ID 162
+1475	A.(.	0.004003	-0.000133	192	A.(.	structure	triplet	numerical	"pred, vali"	"occurrences of lone paired nucleotide around eff_seq, A in this case. Note: Open brackets denote both opening and closing brackets in the structure"
+1476	mircheck_conclu_3prime	0.003242	0.000116	34	mircheck_conclu	structure	hairpin	categorical	"pred, vali"	"checking if the precursor (the sequence of this segment) forms a hairpin; True if it says 5-prime or 3-prime, else False"
+1477	eff5p1tri_ACG	0.002473	-0.000592	133	eff5p1tri	structure	nucleotide type	categorical	"pred, vali"	tri-nucleotide base type at a specific position on active siRNA
+1478	occ_loop14nt	0.001765	-0.001684	236	occ_loop14nt	structure	loop	numerical	"pred, vali"	see ID 225
+1479	occ_loop19nt	0.001733	0.002088	241	occ_loop19nt	structure	loop	numerical	"pred, vali"	see ID 225
+1480	occ_bulge15nt	0.001699	0.001854	215	occ_bulge15nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1481	occ_loop13nt	0.001456	-0.001580	235	occ_loop13nt	structure	loop	numerical	"pred, vali"	see ID 225
+1482	occ_bulge13nt	0.001117	0.001319	213	occ_bulge13nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1483	occ_bulge20nt	0.001059	0.001627	220	occ_bulge20nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1484	occ_bulge19nt	0.001051	0.001587	219	occ_bulge19nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1485	eff3p5tri_TTC	0.000896	-0.000070	142	eff3p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1486	effmd3di_AA	0.000832	0.000070	130	effmd3di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1487	effmd3tri_ATG	0.000657	-0.000060	145	effmd3tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1488	occ_bulge11nt	0.000549	-0.000713	211	occ_bulge11nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1489	occ_bulge18nt	0.000335	0.000896	218	occ_bulge18nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1490	occ_bulge9nt	0.000308	0.000491	209	occ_bulge9nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1491	occ_loop15nt	0.000246	0.000451	237	occ_loop15nt	structure	loop	numerical	"pred, vali"	see ID 225
+1492	eff3p1di_CA	0.00024	0.000714	123	eff3p1di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1493	occ_loop7nt	0.00019	0.000038	229	occ_loop7nt	structure	loop	numerical	"pred, vali"	see ID 225
+1494	AAA(.(	0.000189	-0.000255	162	AAA(.(	structure	triplet	numerical	"pred, vali"	see ID 162
+1495	occ_loop18nt	0.000112	0.000512	240	occ_loop18nt	structure	loop	numerical	"pred, vali"	see ID 225
+1496	mircheck_conclu52_MIR_ASSYMETRY	0.000065	-0.000019	40	mircheck_conclu52	structure	hairpin	categorical	pred	"checking the alternative precursor [eff_seq-500, eff_seq+200], see ID 34-36"
+1497	occ_bulge12nt	0.000063	-0.000296	212	occ_bulge12nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1498	occ_loop17nt	0.000054	0.000353	239	occ_loop17nt	structure	loop	numerical	"pred, vali"	see ID 225
+1499	eff3p5di_CG	0.000016	-0.000009	127	eff3p5di	structure	nucleotide type	categorical	"pred, vali"	see ID 118
+1500	eff5p5tri_GTC	0.000013	-0.000008	137	eff5p5tri	structure	nucleotide type	categorical	"pred, vali"	see ID 133
+1501	occ_bulge16nt	0.000006	0.000116	216	occ_bulge16nt	structure	bulge	numerical	"pred, vali"	see ID 201
+1502	occ_bulge17nt	0.000003	-0.000077	217	occ_bulge17nt	structure	bulge	numerical	"pred, vali"	see ID 201
