@@ -380,6 +380,7 @@ def run_one_precursor(name, precursor, DicerCall=21,
 
   Returns (start, end, score, indication_tsv, top6_recommendation_tsv).
   """
+  siRNA_structure_file = get_siRNA_structure(name, precursor, DicerCall, tmpdir, species, mirbase_file)
   kw = {}
   if pickle_file is not None:
     kw['pickle_file'] = pickle_file
