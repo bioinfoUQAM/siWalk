@@ -373,7 +373,7 @@ def get_siRNA_structure(name, precursor, DicerCall=21, tmpdir='../tmp/', species
   return siRNA_structure_file
 
 
-def run_one_precursor(name, precursor, DicerCall=21, datafile, pickle_file,
+def run_one_precursor(name, precursor, datafile, pickle_file, DicerCall=21,
                       tmpdir='../tmp/', species='ath', mirbase_file='../dbs/mature.fa'):
   """Run the full localization prediction pipeline for one precursor sequence.
 
@@ -408,7 +408,7 @@ def user_interface(name, pri, DicerCall, outdir, datafile, pickle_file, ground_t
   ground_truths : list of (label, start, end) tuples, or None
       Passed through to the barplot so ground truth positions are marked.
   """
-  start, end, score, outfile, outfile2 = run_one_precursor(name, pri, DicerCall, datafile, pickle_file)
+  start, end, score, outfile, outfile2 = run_one_precursor(name, pri, datafile, pickle_file, DicerCall)
   outfile_newname = outdir + name + '.effector_localization_indication.tsv'
   outfile2_newname = outdir + name + '.effector_localization_top6_recommendation.tsv'
   os.rename(outfile, outfile_newname)
