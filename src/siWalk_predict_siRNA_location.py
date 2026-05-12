@@ -383,9 +383,10 @@ def run_one_precursor(name, precursor, datafile, pickle_file, DicerCall=21,
   position_list = mlloc.classify_a_file(siRNA_structure_file, datafile, pickle_file)
   te, NB_instances = pretreat_location_features(siRNA_structure_file)
   siRNA_indication_file = encode_and_compute_weight(te, NB_instances, datafile)
-  start, end, score, outfile, outfile2 = compute_indications_for_effector_start_end(siRNA_indication_file, position_list)
-  print(f"{name}, predicted siRNA start: {start}, end: {end}, score: {score}")
-  return start, end, score, outfile, outfile2
+  
+  start, end, best_score, outfile, outfile2 = compute_indications_for_effector_start_end(siRNA_indication_file, position_list)
+  print(f"{name}, predicted siRNA start: {start}, end: {end}, score: {best_score}")
+  return start, end, best_score, outfile, outfile2
 
 
 def dna_to_rna(dna_sequence):
