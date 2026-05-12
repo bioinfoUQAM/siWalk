@@ -438,10 +438,10 @@ if __name__ == "__main__":
   pickle_file  = '../model/GBAs100.pkl'
   if len(args) == 3:
       model = args[2]
-      if model = "GBA100":
+      if model == "GBA100":
         datafile     = '../model/Arabidopsis_structure_feature_importance_n_correlation.tsv'
         pickle_file  = '../model/GBAs100.pkl'
-      elif model = "GBAs100" or "RFAs100":
+      elif model == "GBAs100" or "RFAs100":
         datafile     = '../model/Arabidopsis_structure_feature_importance_n_correlation.tsv'
         pickle_file  = '../model/' + model + '.pkl'
       else:
