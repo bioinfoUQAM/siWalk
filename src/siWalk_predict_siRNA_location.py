@@ -374,13 +374,16 @@ def get_siRNA_structure(name, precursor, DicerCall=21, tmpdir='../tmp/', species
 
 
 def run_one_precursor(name, precursor, DicerCall=21,
-                      tmpdir='../tmp/', species='ath', mirbase_file='../dbs/mature.fa'):
+                      tmpdir='../tmp/', species='ath', mirbase_file='../dbs/mature.fa', 
+                      pickle_file=None, feature_file=None):
   """Run the full localization prediction pipeline for one precursor sequence.
 
   Returns (start, end, score, indication_tsv, top6_recommendation_tsv).
   """
-  siRNA_structure_file = get_siRNA_structure(name, precursor, DicerCall, tmpdir, species, mirbase_file)
-  position_list = mlloc.classify_a_file(siRNA_structure_file)
+  kw = {}
+  if pickle_file is not None:
+    kw['pickle_file'] = pickle_file
+  position_list = mlloc.classify_a_file(siRNA_structure_file, **kw)
   te, NB_instances = pretreat_location_features(siRNA_structure_file)
   siRNA_indication_file = encode_and_compute_weight(te, NB_instances, datafile)
   start, end, score, outfile, outfile2 = compute_indications_for_effector_start_end(siRNA_indication_file, position_list)
@@ -400,7 +403,8 @@ def rna_to_dna(rna_sequence):
   return dna_sequence
 
 
-def user_interface(name, pri, DicerCall, outdir, ground_truths=None):
+def user_interface(name, pri, DicerCall, outdir, ground_truths=None,
+                    pickle_file=None, feature_file=None):
   """Run localization prediction and save renamed output files with a candidate plot.
 
   Parameters
@@ -408,7 +412,8 @@ def user_interface(name, pri, DicerCall, outdir, ground_truths=None):
   ground_truths : list of (label, start, end) tuples, or None
       Passed through to the barplot so ground truth positions are marked.
   """
-  start, end, score, outfile, outfile2 = run_one_precursor(name, pri, DicerCall)
+  start, end, score, outfile, outfile2 = run_one_precursor(
+      name, pri, DicerCall, pickle_file=pickle_file, feature_file=feature_file)
   outfile_newname = outdir + name + '.effector_localization_indication.tsv'
   outfile2_newname = outdir + name + '.effector_localization_top6_recommendation.tsv'
   os.rename(outfile, outfile_newname)
@@ -417,12 +422,24 @@ def user_interface(name, pri, DicerCall, outdir, ground_truths=None):
                                   ground_truths=ground_truths)
 
 
+
+
+
+
+  pri, DicerCall = args[0], int(args[1])
+  pickle_file = args[2] if len(args) == 4 else None
+  feature_file = args[3] if len(args) == 4 else None
+  pri = rna_to_dna(pri)  # convert RNA to DNA if needed
+  user_interface(precursorName, pri, DicerCall, outdir,
+                 pickle_file=pickle_file, feature_file=feature_file)
+                 
+                 
 if __name__ == "__main__":
   timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
   outdir = '../output/' + timestamp + '/'; os.makedirs(outdir)
   precursorName = 'yourPrecursor'
   args = sys.argv[1:]
-  if len(args) > 2 or len(args) == 0:
+  if len(args) not in (2, 4):
     print("The script take two arguments: the sequence of siRNA generating locus; and DicerCall")
     print("usage: python siWalk_predict_siRNA_location.py $priseq $DicerCall")
     print("example usage: TAS3 (PHAS21-21) segment 3__5862036_5862355 with siRNA=TTCTTGACCTTGTAAGACCCC located between 50 and 70 ")
@@ -434,7 +451,10 @@ if __name__ == "__main__":
     sys.exit(0)
 
   pri, DicerCall = args[0], int(args[1])
+  pickle_file = args[2] if len(args) == 4 else None
+  feature_file = args[3] if len(args) == 4 else None
   pri = rna_to_dna(pri)  # convert RNA to DNA if needed
-  user_interface(precursorName, pri, DicerCall, outdir)
+  user_interface(precursorName, pri, DicerCall, outdir,
+                 pickle_file=pickle_file, feature_file=feature_file)
   print('==== See results in', outdir)
   pass
