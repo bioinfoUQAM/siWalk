@@ -41,7 +41,7 @@ cols2drop_for_locapredi = ['CONTIG', 'k', 'n', 'N', 'eff_strand', 'eff_pos', 'ef
     'md3G', 'md3T', 'md4A', 'md4C', 'md4G', 'md4T', 'md5A', 'md5C', 'md5G', 'md5T',
     'mircheck_conclu25', 'fback_start25', 'fback_stop25', 'mircheck_conclu52',
     'fback_start52', 'fback_stop52', 'retained', tag]
-#cols_to_drop += cols2drop_for_locapredi
+cols_to_drop += cols2drop_for_locapredi
 show_cols = 'dist_5p, dist_3p, _longeur_, Probability_FALSE, Probability_TRUE, Predicted_Class'.split(', ')
 
 

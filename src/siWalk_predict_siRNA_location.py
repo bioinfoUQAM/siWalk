@@ -373,14 +373,14 @@ def get_siRNA_structure(name, precursor, DicerCall=21, tmpdir='../tmp/', species
   return siRNA_structure_file
 
 
-def run_one_precursor(name, precursor, datafile, pickle_file, DicerCall=21,
+def run_one_precursor(name, precursor, datafile, pickle_file, cols_to_drop, DicerCall=21, 
                       tmpdir='../tmp/', species='ath', mirbase_file='../dbs/mature.fa'):
   """Run the full localization prediction pipeline for one precursor sequence.
 
   Returns (start, end, score, indication_tsv, top6_recommendation_tsv).
   """
   siRNA_structure_file = get_siRNA_structure(name, precursor, DicerCall, tmpdir, species, mirbase_file)
-  position_list = mlloc.classify_a_file(siRNA_structure_file, pickle_file, datafile)
+  position_list = mlloc.classify_a_file(siRNA_structure_file, pickle_file, datafile, cols_to_drop)
   te, NB_instances = pretreat_location_features(siRNA_structure_file)
   siRNA_indication_file = encode_and_compute_weight(te, NB_instances, datafile)
   
@@ -401,7 +401,7 @@ def rna_to_dna(rna_sequence):
   return dna_sequence
 
 
-def user_interface(name, pri, DicerCall, outdir, datafile, pickle_file, ground_truths=None):
+def user_interface(name, pri, DicerCall, outdir, datafile, pickle_file, cols_to_drop, ground_truths=None):
   """Run localization prediction and save renamed output files with a candidate plot.
 
   Parameters
@@ -409,7 +409,7 @@ def user_interface(name, pri, DicerCall, outdir, datafile, pickle_file, ground_t
   ground_truths : list of (label, start, end) tuples, or None
       Passed through to the barplot so ground truth positions are marked.
   """
-  start, end, score, outfile, outfile2 = run_one_precursor(name, pri, datafile, pickle_file, DicerCall)
+  start, end, score, outfile, outfile2 = run_one_precursor(name, pri, datafile, pickle_file, cols_to_drop, DicerCall)
   outfile_newname = outdir + name + '.effector_localization_indication.tsv'
   outfile2_newname = outdir + name + '.effector_localization_top6_recommendation.tsv'
   os.rename(outfile, outfile_newname)
@@ -441,8 +441,8 @@ if __name__ == "__main__":
       model = args[2]
       if model == "GBA100":
         datafile     = '../model/Arabidopsis_feature_importance_n_correlation.tsv'
-        #datafile     = '../model/Arabidopsis_structure_feature_importance_n_correlation.tsv'
         pickle_file  = '../model/GBA100.pkl'
+        cols_to_drop = ['CONTIG', 'eff_seq', 'retained', tag, 'segment']
       elif model == "GBAs100" or model == "RFAs100":
         datafile     = '../model/Arabidopsis_structure_feature_importance_n_correlation.tsv'
         pickle_file  = '../model/' + model + '.pkl'
@@ -453,6 +453,6 @@ if __name__ == "__main__":
   print(datafile)
   pri, DicerCall = args[0], int(args[1])
   pri = rna_to_dna(pri)  # convert RNA to DNA if needed
-  user_interface(precursorName, pri, DicerCall, outdir, datafile, pickle_file)
+  user_interface(precursorName, pri, DicerCall, outdir, datafile, pickle_file, cols_to_drop)
   print('==== See results in', outdir)
   pass
