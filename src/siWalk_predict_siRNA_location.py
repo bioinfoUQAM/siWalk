@@ -440,7 +440,8 @@ if __name__ == "__main__":
   if len(args) == 3:
       model = args[2]
       if model == "GBA100":
-        datafile     = '../model/Arabidopsis_feature_importance_n_correlation.tsv'
+        #datafile     = '../model/Arabidopsis_feature_importance_n_correlation.tsv'
+        datafile     = '../model/Arabidopsis_structure_feature_importance_n_correlation.tsv'
         pickle_file  = '../model/GBA100.pkl'
       elif model == "GBAs100" or model == "RFAs100":
         datafile     = '../model/Arabidopsis_structure_feature_importance_n_correlation.tsv'
@@ -448,7 +449,8 @@ if __name__ == "__main__":
       else:
         print("Model is not be supported.")
         sys.exit(0)
-
+  print(pickle_file)
+  print(datafile)
   pri, DicerCall = args[0], int(args[1])
   pri = rna_to_dna(pri)  # convert RNA to DNA if needed
   user_interface(precursorName, pri, DicerCall, outdir, datafile, pickle_file)
