@@ -107,7 +107,7 @@ def classify_a_file(infile2, pickle_file=pickle_file, datafile=datafile, cols_to
   Preprocesses the structure file, applies the localization model, and
   returns a deduplicated list of predicted positive start positions.
   """
-  if "GBA100" in datafile:
+  if "GBA100" in pickle_file:
       cols_to_drop = ['CONTIG', 'eff_seq', 'retained', tag, 'segment']
   infile2, NB_instances = pretreat_location_features(infile2)
   feature_names_topk, feature_correlations, feature_importances = get_data(datafile, k)
