@@ -83,7 +83,7 @@ def get_data(datafile, k=100):
   feature_names_topk   = get_top_k_features(feature_importances, k).keys()
   return feature_names_topk, feature_correlations, feature_importances
 
-def pretreat_location_features(infile_of_Instance):
+def pretreat_location_features(infile_of_Instance, cols_to_drop):
   """Prepend background data for Quantile normalization and save a pretreated file."""
   outfile = infile_of_Instance[:-3] + 'pretreated.tsv'
   df1 = pd.read_csv(infile_of_Instance, sep='\t', index_col=False)
@@ -109,7 +109,7 @@ def classify_a_file(infile2, pickle_file=pickle_file, datafile=datafile, cols_to
   """
   if "GBA100" in pickle_file:
       cols_to_drop = ['CONTIG', 'eff_seq', 'retained', tag, 'segment']
-  infile2, NB_instances = pretreat_location_features(infile2)
+  infile2, NB_instances = pretreat_location_features(infile2, cols_to_drop)
   feature_names_topk, feature_correlations, feature_importances = get_data(datafile, k)
   output_file = infile2[:-3] + 'prediction.tsv'
 
