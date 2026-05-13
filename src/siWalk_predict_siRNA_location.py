@@ -380,7 +380,7 @@ def run_one_precursor(name, precursor, datafile, pickle_file, DicerCall=21,
   Returns (start, end, score, indication_tsv, top6_recommendation_tsv).
   """
   siRNA_structure_file = get_siRNA_structure(name, precursor, DicerCall, tmpdir, species, mirbase_file)
-  position_list = mlloc.classify_a_file(siRNA_structure_file, datafile, pickle_file)
+  position_list = mlloc.classify_a_file(siRNA_structure_file, pickle_file, datafile)
   te, NB_instances = pretreat_location_features(siRNA_structure_file)
   siRNA_indication_file = encode_and_compute_weight(te, NB_instances, datafile)
   
@@ -442,7 +442,7 @@ if __name__ == "__main__":
       if model == "GBA100":
         datafile     = '../model/Arabidopsis_structure_feature_importance_n_correlation.tsv'
         pickle_file  = '../model/GBAs100.pkl'
-      elif model == "GBAs100" or "RFAs100":
+      elif model == "GBAs100" or model == "RFAs100":
         datafile     = '../model/Arabidopsis_structure_feature_importance_n_correlation.tsv'
         pickle_file  = '../model/' + model + '.pkl'
       else:
