@@ -418,39 +418,71 @@ def user_interface(name, pri, DicerCall, outdir, datafile, pickle_file, ground_t
                                   ground_truths=ground_truths)
 
 
-if __name__ == "__main__":
-  timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-  outdir = '../output/' + timestamp + '/'; os.makedirs(outdir)
-  precursorName = 'yourPrecursor'
-  args = sys.argv[1:]
-  if len(args) not in [2, 3]:
-    print("The script take two arguments: the sequence of siRNA generating locus; and DicerCall")
-    print("The script may take one additional arguments: model={GBA100, GBAs100, RFAs100}, default=GBAs100")
-    print("usage: python siWalk_predict_siRNA_location.py $priseq $DicerCall")
-    print("example usage: TAS3 (PHAS21-21) segment 3__5862036_5862355 with siRNA=TTCTTGACCTTGTAAGACCCC located between 50 and 70 ")
-    print("priseq=TCTAGATGATGCATTTCATTATTCTCTTTTTCTTGACCTTGTAAGGCCTTTTCTTGACCTTGTAAGACCCCATCTCTTTCTAAACGTTTTATTATTTTCTCGTTTTACAGATTCTATTCTA")
-    print("example usage: TAS3 (PHAS21-21) segment 3_5862187_5862334 with siRNA=TTCTTGACCTTGTAAGACCCC located between 19 and 39 ")
-    print("priseq=CTTGACCTTGTAAGGCCTTTTCTTGACCTTGTAAGACCCCATCTCTTTCTAAACGTTTTATTATTTTCTCGTTTTACAGATTCTATTCTATCTCTTCTCAATATAGAATAGATATCTATCT")
-    print("DicerCall=21")
-    print("python siWalk_predict_siRNA_location.py $priseq $DicerCall")
-    sys.exit(0)
+# if __name__ == "__main__":
+  # timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+  # outdir = '../output/' + timestamp + '/'; os.makedirs(outdir)
+  # precursorName = 'yourPrecursor'
+  # args = sys.argv[1:]
+  # if len(args) not in [2, 3]:
+    # print("The script take two arguments: the sequence of siRNA generating locus; and DicerCall")
+    # print("The script may take one additional arguments: model={GBA100, GBAs100, RFAs100}, default=GBAs100")
+    # print("usage: python siWalk_predict_siRNA_location.py $priseq $DicerCall")
+    # print("example usage: TAS3 (PHAS21-21) segment 3__5862036_5862355 with siRNA=TTCTTGACCTTGTAAGACCCC located between 50 and 70 ")
+    # print("priseq=TCTAGATGATGCATTTCATTATTCTCTTTTTCTTGACCTTGTAAGGCCTTTTCTTGACCTTGTAAGACCCCATCTCTTTCTAAACGTTTTATTATTTTCTCGTTTTACAGATTCTATTCTA")
+    # print("example usage: TAS3 (PHAS21-21) segment 3_5862187_5862334 with siRNA=TTCTTGACCTTGTAAGACCCC located between 19 and 39 ")
+    # print("priseq=CTTGACCTTGTAAGGCCTTTTCTTGACCTTGTAAGACCCCATCTCTTTCTAAACGTTTTATTATTTTCTCGTTTTACAGATTCTATTCTATCTCTTCTCAATATAGAATAGATATCTATCT")
+    # print("DicerCall=21")
+    # print("python siWalk_predict_siRNA_location.py $priseq $DicerCall")
+    # sys.exit(0)
 
-  datafile     = '../model/Arabidopsis_structure_feature_importance_n_correlation.tsv'
-  pickle_file  = '../model/GBAs100.pkl'
-  if len(args) == 3:
-      model = args[2]
-      if model == "GBA100":
-        datafile     = '../model/Arabidopsis_feature_importance_n_correlation.tsv'
-        pickle_file  = '../model/GBA100.pkl'
-      elif model == "GBAs100" or model == "RFAs100":
-        datafile     = '../model/Arabidopsis_structure_feature_importance_n_correlation.tsv'
-        pickle_file  = '../model/' + model + '.pkl'
-      else:
-        print("Model is not be supported.")
+  # datafile     = '../model/Arabidopsis_structure_feature_importance_n_correlation.tsv'
+  # pickle_file  = '../model/GBAs100.pkl'
+  # if len(args) == 3:
+      # model = args[2]
+      # if model == "GBA100":
+        # datafile     = '../model/Arabidopsis_feature_importance_n_correlation.tsv'
+        # pickle_file  = '../model/GBA100.pkl'
+      # elif model == "GBAs100" or model == "RFAs100":
+        # datafile     = '../model/Arabidopsis_structure_feature_importance_n_correlation.tsv'
+        # pickle_file  = '../model/' + model + '.pkl'
+      # else:
+        # print("Model is not be supported.")
+        # sys.exit(0)
+
+  # pri, DicerCall = args[0], int(args[1])
+  # pri = rna_to_dna(pri)  # convert RNA to DNA if needed
+  # user_interface(precursorName, pri, DicerCall, outdir, datafile, pickle_file)
+  # print('==== See results in', outdir)
+  # pass
+
+if __name__ == "__main__":
+    MODELS = {
+        "GBA100":   ('../model/Arabidopsis_feature_importance_n_correlation.tsv',           '../model/GBA100.pkl'),
+        "GBAs100":  ('../model/Arabidopsis_structure_feature_importance_n_correlation.tsv', '../model/GBAs100.pkl'),
+        "RFAs100":  ('../model/Arabidopsis_structure_feature_importance_n_correlation.tsv', '../model/RFAs100.pkl'),
+    }
+
+    args = sys.argv[1:]
+    if len(args) not in [2, 3]:
+        print(
+            "Usage: python siWalk_predict_siRNA_location.py <priseq> <DicerCall> [model]\n"
+            "  model: GBA100 | GBAs100 | RFAs100  (default: GBAs100)\n\n"
+            "Example (TAS3 segment 3__5862036_5862355, siRNA at pos 50–70):\n"
+            "  python siWalk_predict_siRNA_location.py \\\n"
+            "    TCTAGATGATGCATTTCATTATTCTCTTTTTCTTGACCTTGTAAGGCCTTTTCTTGACCTTGTAAGACCCCATCTCTTTCTAAACGTTTTATTATTTTCTCGTTTTACAGATTCTATTCTA 21"
+        )
         sys.exit(0)
 
-  pri, DicerCall = args[0], int(args[1])
-  pri = rna_to_dna(pri)  # convert RNA to DNA if needed
-  user_interface(precursorName, pri, DicerCall, outdir, datafile, pickle_file)
-  print('==== See results in', outdir)
-  pass
+    model_key = args[2] if len(args) == 3 else "GBAs100"
+    if model_key not in MODELS:
+        print(f"Unsupported model '{model_key}'. Choose from: {', '.join(MODELS)}")
+        sys.exit(1)
+
+    datafile, pickle_file = MODELS[model_key]
+    pri, DicerCall = rna_to_dna(args[0]), int(args[1])
+
+    outdir = f"../output/{datetime.now().strftime('%Y%m%d_%H%M%S')}/"
+    os.makedirs(outdir)
+
+    user_interface('yourPrecursor', pri, DicerCall, outdir, datafile, pickle_file)
+    print('==== See results in', outdir)

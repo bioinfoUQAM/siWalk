@@ -120,7 +120,7 @@ def classify_a_file(infile2, pickle_file=pickle_file, datafile=datafile, cols_to
   num_col = [i for i, var in enumerate(X.columns) if pd.api.types.is_numeric_dtype(X[var]) and X[var].dtype != 'bool']
   X_encoded = preprocess_direct(X, num_col, cat_col, ord_col)
   X100 = X_encoded[feature_names_topk]
-  print('NB of attributes after encoding:', len(X_encoded.columns))
+  #print('NB of attributes after encoding:', len(X_encoded.columns))
   print('NB of attributes used for prediction:', len(X100.columns))
 
   X100 = X100.head(NB_instances)
@@ -137,7 +137,7 @@ def classify_a_file(infile2, pickle_file=pickle_file, datafile=datafile, cols_to
   df.to_csv(output_file, sep='\t', index=False)
   print("Output prediction file: \n", output_file)
 
-  df['position'] = df['dist_5p'] + 1 #+1 or not?
+  df['position'] = df['dist_5p'] + 1
   position_list = df[df['Predicted_Class'] == True]['position'].tolist()
   return list(set(position_list))
 
