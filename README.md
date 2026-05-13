@@ -69,9 +69,9 @@ python siWalk_predict_siRNA_location.py $priseq $DicerCall
 
 ### 3. Expected output
 
-The predicted position is printed to stdout:
+The predicted position is printed to stdout (default GBAs100):
 ```
-yourPrecursor, predicted siRNA start: 75, end: 93, score: -154.733188
+yourPrecursor, predicted siRNA start: 75, end: 93, score: -270.567784
 ```
 The stdout shows the top-ranked candidate. The full list of 6 candidates can be found in `yourPrecursor.effector_localization_top6_recommendation.tsv`.
 
