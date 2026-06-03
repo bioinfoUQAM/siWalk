@@ -54,6 +54,8 @@ pip install --no-index statsmodels sklearn
 
 Run `siWalk_Localization_Colab.ipynb` on Colab
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bioinfoUQAM/siWalk/blob/main/siWalk_Localization_Colab.ipynb)
+
 ### 2. Run the example
 
 The script `siWalk_predict_siRNA_location.py` takes two arguments: a precursor sequence and DicerCall (the expected siRNA length, typically 21).
