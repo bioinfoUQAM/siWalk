@@ -51,6 +51,7 @@ pip install --no-index statsmodels sklearn
 ```
 
 **Option C — Google Colab:**
+
 Run `siWalk_Localization_Colab.ipynb` on Colab
 
 ### 2. Run the example
